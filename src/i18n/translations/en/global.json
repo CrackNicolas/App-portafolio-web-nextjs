@@ -1,0 +1,121 @@
+{
+    "button_view" : {
+        "txt_1" : "See more",
+        "txt_2" : "See less"
+    },
+    "menu" : {
+        "i_1" : "Start",
+        "i_2" : "About me",
+        "i_3" : "Services",
+        "i_4" : "Experience",
+        "i_5" : "Proyects",
+        "i_6" : "Contact"
+    },
+    "inicio" : {
+        "txt_1" : "Hi I am",
+        "txt_2" : "I am looking for a company that offers me the opportunity to develop as a professional in the field of programming, working on stimulating and enriching projects.",
+        "txt_3" : "Contact me",
+        "txt_4" : "Download CV"
+    },
+    "sobre-mi" : {
+        "title" : "About me",
+        "subtitle" : "Why do they hire me?",
+        "description" : "Professional committed to excellence in my projects, providing recommendations of technologies and strategies appropriate to each specific case."
+    },
+    "servicios" : {
+        "title" : "Services",
+        "item_1" : {
+            "txt_1" : "Web design",
+            "txt_2" : "Customized solutions to enhance your online presence. Modern and functional designs that adapt to varied projects, including online stores, with a focus on user experience, guaranteeing effectiveness and originality."
+        },
+        "item_2" : {
+            "txt_1" : "Specific Programming",
+            "txt_2" : "My specialization is custom programming, which involves developing unique and effective software designed specifically to meet the individual needs of my clients."
+        },
+        "item_3" : {
+            "txt_1" : "Databases",
+            "txt_2" : "I specialize in the creation and management of databases, ensuring efficient storage and information security. My approach encompasses query optimization to ensure agile and reliable systems."
+        }
+    },
+    "experience": {
+        "title": "Experience",
+        "data": {
+            "item_1": {
+                "title": "Virtual Help Desk",
+                "description": {
+                    "title": "UTN",
+                    "date_1": "8 de junio de 2022 - 20 de octubre de 2023",
+                    "date_2": "8 jun. 2022 - 20 oct. 2023",
+                    "datails": "I was part of a team of 10 people and assumed a main role in the development of the Frontend, in addition to actively collaborating in the design of the database. We implement agile methodologies to effectively manage the project. We addressed the problem of inefficiency in academic procedures, which were exclusively physical and in-person. We created 'Virtual Help Desk' by integrating three independent systems. For the Frontend, we use ReactJS, JavaScript, Tailwind, HTML and CSS. In the Backend, we use PHP and a MySQL database. The project resulted in a complete success, with a significant improvement in the efficiency of academic procedures."
+                }
+            },
+            "item_2": {
+                "title": "Footwear quality",
+                "description": {
+                    "title": "UTN",
+                    "date_1": "3 de marzo de 2021 - 20 de agosto de 2022",
+                    "date_2": "3 mar. 2021 - 20 ago. 2022",
+                    "datails": "I led a team of 5 people in a project to modernize quality inspection in a footwear company. We manually automated a process that resulted in a significant improvement in inspection efficiency. On the Frontend, we use JavaScript, TypeScript, CSS, HTML and Tailwind. On the Backend, we implemented Node.js and a MySQL database, along with templating engines like EJS and Handlebars. We use Axios to make HTTP requests to the server. Additionally, we conduct extensive testing with Jest to ensure the quality of the software. We follow agile methodologies, such as Scrum, for efficient collaboration."
+                }
+            },
+            "item_3": {
+                "title": "Sysacad Efficient",
+                "description": {
+                    "title": "UTN",
+                    "date_1": "Logro",
+                    "date_2": "Logro",
+                    "datails": "I faced a critical challenge with the Sysacad system. Student searches were slow due to lack of indexing in SQL queries, which slowed down the system. To solve this, I led the creation of an index on the key columns of the database, allowing the system to find data quickly, reducing the search time from 1 minute to 0.3 milliseconds. This improvement not only optimized the system, but also provided almost instant responses to users, transforming their experience. Indexing became an essential solution to solve the problem of slow student searches in Sysacad."
+                }
+            }
+        }
+    },
+    "proyects" : {
+        "title" : "Proyects",
+        "proyects" : {
+            "p_1" : {
+                "data" : "App YouTube, make this application only as a replica of the official application without any intention of violating their privacy policies. Application Status (Trial Period) Application 15% complete, from time to time I continue to work on it and plan to complete it 100%.",
+                "tecnologias" : "Technologies used React, JavaScript, HTML5, CSS3."
+            }
+        }
+    },
+    "contact" : {
+        "subtitle" : "Contact Form",
+        "inputs" : {
+            "j_1" : "Name...",
+            "j_2" : "Last name...",
+            "j_3" : "Mail...",
+            "j_4" : "Consultation..."
+        },
+        "validations": {
+            "inputs": {
+                "j_1": {
+                    "text_1": "The name is required",
+                    "text_2": "The name must be less than 10 characters"
+                },
+                "j_2": {
+                    "text_1": "Last name is required",
+                    "text_2": "Last name must be less than 10 characters"
+                },
+                "j_3": {
+                    "text_1": "Email is required",
+                    "text_2": "Wrong email"
+                },
+                "j_4": {
+                    "text_1": "The message is required",
+                    "text_2": "The message must be less than 10 characters"
+                }
+            },
+            "recaptcha": {
+                "title": "You needed to validate that you are not a robot"
+            },
+            "message": {
+                "title": "Successful message",
+                "description": "Your message has been sent successfully. Thank you for contacting! I will answer you as soon as possible.",
+                "button": "Accept"
+            }
+        }   
+    },
+    "footer":{
+        "title": "All rights reserved | Designed by Beltran Alejo"
+    }
+}

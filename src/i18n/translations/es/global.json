@@ -1,0 +1,121 @@
+{
+    "button_view": {
+        "txt_1": "Ver más",
+        "txt_2": "Ver menos"
+    },
+    "menu": {
+        "i_1": "Inicio",
+        "i_2": "Sobre mí",
+        "i_3": "Servicios",
+        "i_4": "Experiencia",
+        "i_5": "Proyectos",
+        "i_6": "Contactar"
+    },
+    "inicio": {
+        "txt_1": "Hola soy",
+        "txt_2": "Estoy en la búsqueda de una empresa que me ofrezca la oportunidad de desarrollarme como profesional en el campo de la programación, trabajando en proyectos estimulantes y enriquecedores.",
+        "txt_3": "Contactame",
+        "txt_4": "Descargar CV"
+    },
+    "sobre-mi": {
+        "title": "Sobre mí",
+        "subtitle": "¿Por qué me contratan?",
+        "description": "Profesional comprometido con la excelencia en mis proyectos, proporcionando recomendaciones de tecnologías y estrategias adecuadas a cada caso específico."
+    },
+    "servicios": {
+        "title": "Servicios",
+        "item_1": {
+            "txt_1": "Diseño Web",
+            "txt_2": "Soluciones personalizadas para potenciar tu presencia en línea. Diseños modernos y funcionales que se adaptan a proyectos variados, incluyendo tiendas en línea, con un enfoque en la experiencia del usuario, garantizando efectividad y originalidad."
+        },
+        "item_2": {
+            "txt_1": "Programacion Especifica",
+            "txt_2": "Mi especialización es la programación a medida, lo que implica desarrollar software único y efectivo diseñado específicamente para satisfacer las necesidades individuales de mis clientes."
+        },
+        "item_3": {
+            "txt_1": "Bases de datos",
+            "txt_2": "Me especializo en la creación y gestión de bases de datos, asegurando un almacenamiento eficiente y la seguridad de la información. Mi enfoque abarca la optimización de consultas para garantizar sistemas ágiles y confiables."
+        }
+    },
+    "experience": {
+        "title": "Experiencia",
+        "data": {
+            "item_1": {
+                "title": "Mesa de ayuda virtual ",
+                "description": {
+                    "title": "UTN",
+                    "date_1": "8 de junio de 2022 - 20 de octubre de 2023",
+                    "date_2": "8 jun. 2022 - 20 oct. 2023",
+                    "datails": "Formé parte de un equipo de 10 personas y asumí un rol principal en el desarrollo del Frontend, además de colaborar activamente en el diseño de la base de datos. Implementamos metodologías ágiles para gestionar eficazmente el proyecto. Abordamos el problema de la ineficiencia en los trámites académicos, que eran exclusivamente físicos y presenciales. Creamos 'Mesa de Ayuda Virtual' al integrar tres sistemas independientes. Para el Frontend, utilizamos ReactJS, JavaScript, Tailwind, HTML y CSS. En el Backend, empleamos PHP y una base de datos MySQL. El proyecto resultó en un éxito total, con una mejora significativa en la eficiencia de los trámites académicos."
+                }
+            },
+            "item_2": {
+                "title": "Calidad de calzados",
+                "description": {
+                    "title": "UTN",
+                    "date_1": "3 de marzo de 2021 - 20 de agosto de 2022",
+                    "date_2": "3 mar. 2021 - 20 ago. 2022",
+                    "datails": "Lideré un equipo de 5 personas en un proyecto para modernizar la inspección de calidad en una empresa de calzados. Automatizamos manualmente un proceso que resultó en una mejora significativa en la eficiencia de la inspección. En el Frontend, utilizamos JavaScript, TypeScript, CSS, HTML y Tailwind. En el Backend, implementamos Node.js y una base de datos MySQL, junto con motores de plantilla como EJS y Handlebars. Utilizamos Axios para realizar solicitudes HTTP al servidor. Además, llevamos a cabo pruebas exhaustivas con Jest para garantizar la calidad del software. Seguimos metodologías ágiles, como Scrum, para una colaboración eficiente."
+                }
+            },
+            "item_3": {
+                "title": "Sysacad Eficiente",
+                "description": {
+                    "title": "UTN",
+                    "date_1": "Logro",
+                    "date_2": "Logro",
+                    "datails": "Enfrenté un desafío crítico con el sistema Sysacad. Las búsquedas de alumnos eran lentas debido a la falta de indexación en las consultas SQL, lo que ralentizaba el sistema. Para solucionarlo, lideré la creación de un índice en las columnas clave de la base de datos, permitiendo al sistema encontrar datos rápidamente, reduciendo el tiempo de búsqueda de 1 minuto a 0.3 milisegundos. Esta mejora no solo optimizó el sistema, sino que también brindó respuestas casi instantáneas a los usuarios, transformando su experiencia. La indexación se convirtió en una solución esencial para resolver el problema de lentitud en las búsquedas de alumnos en Sysacad."
+                }
+            }
+        }
+    },
+    "proyects": {
+        "title": "Proyectos",
+        "data": {
+            "p_1": {
+                "data": "App YouTube, realice esta aplicacion solo como una replica de la aplicacion oficial sin ningun tipo de intencion de violar sus politicas de privacidad. Estado de la aplicacion (Periodo de pruebas) aplicacion completa en un 15%, cada tanto continuo trabajando en ella y planeo completarla en un 100%.",
+                "tecnologias": "Tecnologias utilizadas React, JavaScript, HTML5, CSS3."
+            }
+        }
+    },
+    "contact": {
+        "subtitle": "Formulario de contacto",
+        "inputs": {
+            "j_1": "Nombre...",
+            "j_2": "Apellido...",
+            "j_3": "Correo...",
+            "j_4": "Consulta..."
+        },
+        "validations": {
+            "inputs": {
+                "j_1": {
+                    "text_1": "El nombre es requerido",
+                    "text_2": "El nombre debe tener menos de 10 caracteres"
+                },
+                "j_2": {
+                    "text_1": "El apellido es requerido",
+                    "text_2": "El apellido debe tener menos de 10 caracteres"
+                },
+                "j_3": {
+                    "text_1": "El email es requerido",
+                    "text_2": "Email incorrecto"
+                },
+                "j_4": {
+                    "text_1": "El mensaje es requerido",
+                    "text_2": "El mensaje debe tener menos de 10 caracteres"
+                }
+            },
+            "recaptcha": {
+                "title": "Te faltó validar que no sos un robot"
+            },
+            "message": {
+                "title": "Mensaje exitoso",
+                "description": "Tu mensaje ha sido enviado con éxito. ¡Gracias por ponerte en contacto! Te responderé lo antes posible.",
+                "button": "Aceptar"
+            }
+        }
+    },
+    "footer": {
+        "title": "Todos los derechos resevados | Diseñado por Beltran Alejo"
+    }
+}
