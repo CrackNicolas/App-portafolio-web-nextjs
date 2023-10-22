@@ -1,6 +1,7 @@
 import Next_link from "next/link";
 
 import { Link } from "react-scroll";
+import { Viewer } from '@react-pdf-viewer/core';
 
 import ComponentIcon from "../partials/icon";
 
@@ -53,6 +54,7 @@ export default function ComponentStart(props: Props) {
                                 {t('start.txt_4')}
                             </span>
                         </a>
+                        <Viewer fileUrl="/public/pdf/Curriculum Beltran Alejo.pdf" />;
                     </div>
                 </article>
                 <article className="grid place-items-center lg:justify-end lg:items-center col-span-full mt-12 lg:mt-0 lg:col-span-1 h-full">
