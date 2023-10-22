@@ -45,7 +45,7 @@
                 "title": "Virtual Help Desk",
                 "description": {
                     "title": "UTN",
-                    "date_1": "8 de junio de 2022 - 20 de octubre de 2023",
+                    "date_1": "June 8, 2022 - October 20, 2023",
                     "date_2": "8 jun. 2022 - 20 oct. 2023",
                     "datails": "I was part of a team of 10 people and assumed a main role in the development of the Frontend, in addition to actively collaborating in the design of the database. We implement agile methodologies to effectively manage the project. We addressed the problem of inefficiency in academic procedures, which were exclusively physical and in-person. We created 'Virtual Help Desk' by integrating three independent systems. For the Frontend, we use ReactJS, JavaScript, Tailwind, HTML and CSS. In the Backend, we use PHP and a MySQL database. The project resulted in a complete success, with a significant improvement in the efficiency of academic procedures."
                 }
@@ -54,7 +54,7 @@
                 "title": "Footwear quality",
                 "description": {
                     "title": "UTN",
-                    "date_1": "3 de marzo de 2021 - 20 de agosto de 2022",
+                    "date_1": "March 3, 2021 - August 20, 2022",
                     "date_2": "3 mar. 2021 - 20 ago. 2022",
                     "datails": "I led a team of 5 people in a project to modernize quality inspection in a footwear company. We manually automated a process that resulted in a significant improvement in inspection efficiency. On the Frontend, we use JavaScript, TypeScript, CSS, HTML and Tailwind. On the Backend, we implemented Node.js and a MySQL database, along with templating engines like EJS and Handlebars. We use Axios to make HTTP requests to the server. Additionally, we conduct extensive testing with Jest to ensure the quality of the software. We follow agile methodologies, such as Scrum, for efficient collaboration."
                 }
@@ -81,10 +81,16 @@
     },
     "proyects": {
         "title": "Proyects",
-        "proyects": {
+        "data": {
             "p_1": {
-                "data": "App YouTube, make this application only as a replica of the official application without any intention of violating their privacy policies. Application Status (Trial Period) Application 15% complete, from time to time I continue to work on it and plan to complete it 100%.",
-                "tecnologias": "Technologies used React, JavaScript, HTML5, CSS3."
+                "title": "YouTube Clone",
+                "description": "I decided to embark on this project to put my skills into practice. Currently, I continue working on improving and perfecting this application.",
+                "imagen": "YouTube App"
+            },
+            "p_2": {
+                "title": "YouTube Clone",
+                "description": "I decided to embark on this project to put my skills into practice. Currently, I continue working on improving and perfecting this application.",
+                "imagen": "YouTube App"
             }
         }
     },
@@ -93,7 +99,7 @@
         "data": {
             "item_1": {
                 "institution": "National Technological University",
-                "date": "17 de abril de 2019 - En curso",
+                "date": "April 17, 2019 - In progress",
                 "title": "Information Systems Engineering"
             },
             "item_2": {

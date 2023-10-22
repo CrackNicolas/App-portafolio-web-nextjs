@@ -89,7 +89,7 @@ export default function ComponentNav(props: Props) {
                         <ComponentIcon name="language" size={18} description_class={`w-[15px] h-[15px] w-auto h-auto ${!lenguaje_selected && 'text-text-secondary'}`} />
                         <span className={` hidden sm:grid place-items-center font-semibold rounded-sm transition duration-700 w-full h-[13px] text-[10.2px]`}>
                             {
-                                lenguaje_selected ? 'Inglés' : 'Español'
+                                lenguaje_selected ? 'Inglés' : 'Spanish'
                             }
                         </span>
                     </button>
