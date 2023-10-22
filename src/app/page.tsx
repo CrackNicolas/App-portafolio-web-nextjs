@@ -69,9 +69,9 @@ export default function Home() {
           <ComponentServices animate={(paint_icon === 'services')} />
           <ComponentExperience animate={(paint_icon === 'experience')} />
           <ComponentProyects animate={(paint_icon === 'proyects')} />
-          <ComponentEducacion animate={(paint_icon === 'proyects')} />
+          <ComponentEducacion animate={(paint_icon === 'education')} />
           <ComponentContact animate={(paint_icon === 'contact')} />
-          <ComponentFooter />
+          <ComponentFooter/>
         </section>
       </I18nextProvider>
     </main>

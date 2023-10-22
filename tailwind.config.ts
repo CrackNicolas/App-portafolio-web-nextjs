@@ -38,16 +38,34 @@ const config: Config = {
           '100%': { translate: '-220px 0px' }
         },
         presentationLeft:{
-          '0%': { translate: '-150px 0px' },
-          '100%': { translate: '0px 0px' }
+          '0%': { 
+            translate: '-150px 0px',
+            opacity:'0'
+          },
+          '100%': { 
+            translate: '0px 0px' ,
+            opacity:'1'
+          }
         },
         presentationRight:{
-          '0%': { translate: '150px 0px' },
-          '100%': { translate: '0px 0px' }
+          '0%': { 
+            translate: '150px 0px',
+            opacity:'0'
+          },
+          '100%': { 
+            translate: '0px 0px',
+            opacity:'1'
+          }
         },
         presentationBottom:{
-          '0%': { translate: '0px 150px' },
-          '100%': { translate: '0px 0px' }
+          '0%': { 
+            translate: '0px 150px',
+            opacity:'0'
+          },
+          '100%': { 
+            translate: '0px 0px',
+            opacity:'1'
+          }
         }
       },
       animation: {

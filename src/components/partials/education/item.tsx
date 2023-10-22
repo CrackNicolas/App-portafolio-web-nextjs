@@ -10,16 +10,17 @@ export default function ComponentItem(props: Props) {
     const t = Use_translation(1);
 
     return (
-        <div className="col-span-1 bg-bg-primary hover:bg-text-secondary text-text-primary hover:text-bg-primary flex flex-col items-center rounded-md border-[1px] gap-y-1 border-text-secondary cursor-pointer transition duration-500 p-5">
-            <span className="font-bold text-[20px] tracking-wider">
+        <div className="relative col-span-1 bg-bg-primary hover:bg-text-secondary text-text-primary hover:text-bg-primary flex flex-col items-center rounded-md border-[1px] gap-y-1 border-text-secondary cursor-pointer transition duration-500 py-5 px-3 ml:px-5">
+            <span className="absolute right-[2px] top-0">⭐</span>
+            <span className="font-bold text-[15px] ml:text-[20px] tracking-wider">
                 {t(`education.data.item_${number}.institution`)}
             </span>
-            <span className="font-normal opacity-70 ">
+            <span className="font-normal text-[14px] opacity-70 ">
                 <i>
                     {t(`education.data.item_${number}.date`)}
                 </i>
             </span>
-            <span className="font-normal ">
+            <span className="font-normal text-[15px]">
                 {t(`education.data.item_${number}.title`)}
             </span>
         </div>

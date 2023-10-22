@@ -9,7 +9,8 @@
         "i_3": "Servicios",
         "i_4": "Experiencia",
         "i_5": "Proyectos",
-        "i_6": "Contactar"
+        "i_6": "Educacion",
+        "i_7": "Contactar"
     },
     "start": {
         "txt_1": "Hola soy",
@@ -105,6 +106,11 @@
                 "institution": "Cohorte",
                 "date": "Expedición: junio 2022",
                 "title": "Web Full Stack"
+            },
+            "item_3": {
+                "institution": "Cessi",
+                "date": "Expedición: abril 2022",
+                "title": "#SéProgramar"
             }
         }
     },

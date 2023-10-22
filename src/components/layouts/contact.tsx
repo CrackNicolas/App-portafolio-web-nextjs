@@ -37,7 +37,7 @@ export default function ComponentContact(props: Props) {
             recaptcha.current.reset();
             setSend_email(true);
             setActive_validation(false);
-            
+
             /*emailjs.sendForm(
                 key_service_emailjs,
                 key_template_emaijs,
@@ -78,7 +78,7 @@ export default function ComponentContact(props: Props) {
             <ComponentNameSection animate={animate} name="start.txt_3" icon="contact" />
             <form className="grid gap-[40px] px-[5px] mt-[35px]" action="" method="POST" ref={ref_form} onSubmit={handleSubmit(onSubmit)}>
                 <div className='grid grid-cols-1 sm:grid-cols-2 gap-[40px] sm:gap-[10px]'>
-                    <div className={`${animate && 'animate-[presentationLeft_1.1s_ease-in-out]'} relative grid grid-cols-1 items-center gap-[5px]`}>
+                    <div className={`${animate ? 'animate-[presentationLeft_1.1s_ease-in-out]' : 'opacity-0'} transition duration-500 relative grid grid-cols-1 items-center gap-[5px]`}>
                         {errors.name?.type === "required" && <p className="absolute top-[-27px] text-[15px] font-semibold tracking-widest text-red-500">{t("contact.validations.inputs.j_1.text_1")}</p>}
                         {errors.name?.type === "maxLength" && <p className="absolute top-[-27px] text-[15px] font-semibold tracking-widest text-red-500">{t("contact.validations.inputs.j_1.text_2")}</p>}
                         <input className='outline-0 shadow-1xl shadow-text-primary max-h-[20px] min-h-[20px] py-[20px] pr-[35px] pl-[10px] overflow-auto text-[18px] border-none rounded-sm' type="text" style={style_input(errors.name?.type)} placeholder={t('contact.inputs.j_1')} {...register('name', {
@@ -91,7 +91,7 @@ export default function ComponentContact(props: Props) {
                             }
                         </div>
                     </div>
-                    <div className={`${animate && 'animate-[presentationRight_1.1s_ease-in-out]'} relative grid grid-cols-1 items-center gap-[5px]`}>
+                    <div className={`${animate ? 'animate-[presentationRight_1.1s_ease-in-out]' : 'opacity-0'} transition duration-500 relative grid grid-cols-1 items-center gap-[5px]`}>
                         {errors.last_name?.type === "required" && <p className="absolute top-[-27px] text-[15px] font-semibold tracking-widest text-red-500">{t("contact.validations.inputs.j_2.text_1")}</p>}
                         {errors.last_name?.type === "maxLength" && <p className="absolute top-[-27px] text-[15px] font-semibold tracking-widest text-red-500">{t("contact.validations.inputs.j_2.text_2")}</p>}
                         <input className='outline-0 shadow-1xl shadow-text-primary max-h-[20px] min-h-[20px] py-[20px] pr-[35px] pl-[10px] overflow-auto text-[18px] border-none rounded-sm' type="text" style={style_input(errors.last_name?.type)} placeholder={t('contact.inputs.j_2')} {...register('last_name', {
@@ -105,7 +105,7 @@ export default function ComponentContact(props: Props) {
                         </div>
                     </div>
                 </div>
-                <div className={`${animate && 'animate-[presentationLeft_1.3s_ease-in-out]'} relative grid grid-cols-1 items-center gap-[5px]`}>
+                <div className={`${animate ? 'animate-[presentationLeft_1.3s_ease-in-out]' : 'opacity-0'} transition duration-500 relative grid grid-cols-1 items-center gap-[5px]`}>
                     {errors.email?.type === "required" && <p className="absolute top-[-27px] text-[15px] font-semibold tracking-widest text-red-500">{t("contact.validations.inputs.j_3.text_1")}</p>}
                     {errors.email?.type === "pattern" && <p className="absolute top-[-27px] text-[15px] font-semibold tracking-widest text-red-500">{t("contact.validations.inputs.j_3.text_2")}</p>}
                     <input className='outline-0 shadow-1xl shadow-text-primary max-h-[20px] min-h-[20px] py-[20px] pr-[35px] pl-[10px] overflow-auto text-[18px] border-none rounded-sm' type="email" style={style_input(errors.email?.type)} placeholder={t('contact.inputs.j_3')} {...register('email', {
@@ -118,7 +118,7 @@ export default function ComponentContact(props: Props) {
                         }
                     </div>
                 </div>
-                <div className={`${animate && 'animate-[presentationRight_1.4s_ease-in-out]'} relative grid grid-cols-1 items-center gap-[5px]`}>
+                <div className={`${animate ? 'animate-[presentationRight_1.4s_ease-in-out]' : 'opacity-0'} transition duration-500 relative grid grid-cols-1 items-center gap-[5px]`}>
                     {errors.message?.type === "required" && <p className="absolute top-[-27px] text-[15px] font-semibold tracking-widest text-red-500">{t("contact.validations.inputs.j_4.text_1")}</p>}
                     {errors.message?.type === "maxLength" && <p className="absolute top-[-27px] text-[15px] font-semibold tracking-widest text-red-500">{t("contact.validations.inputs.j_4.text_2")}</p>}
                     <textarea className='outline-0 shadow-1xl shadow-text-primary min-h-[50px] max-h-[100px] resize-none py-[10px] pr-[35px] pl-[10px] text-[19.5px]' style={style_input(errors.message?.type)} placeholder={t('contact.inputs.j_4')} {...register('message', {
@@ -130,7 +130,7 @@ export default function ComponentContact(props: Props) {
                         }
                     </div>
                 </div>
-                <aside className={`${animate && 'animate-[presentationBottom_1.5s_ease-in-out]'} overflow-auto py-0`}>
+                <aside className={`${animate ? 'animate-[presentationBottom_1.5s_ease-in-out]' : 'opacity-0'} transition duration-500 overflow-hidden overflow-auto py-0`}>
                     <div className="grid place-items-center">
                         <ReCAPTCHA
                             ref={recaptcha}
@@ -140,13 +140,13 @@ export default function ComponentContact(props: Props) {
                         {state_captcha === false && <p className='text-[15px] font-semibold tracking-widest text-red-500'>{t("contact.validations.recaptcha.title")}</p>}
                     </div>
                 </aside>
-                <button className={`${animate && 'animate-[presentationBottom_1.5s_ease-in-out]'} outline-none group hover:bg-bg-primary flex justify-center items-center transition duration-700 mx-auto mt-[-10px] px-[20px] w-full py-[5px] gap-x-3 rounded-sm bg-text-secondary border-[0.1px] border-text-secondary`} type="submit" onClick={() => setActive_validation(true)}>
+                <button className={`${animate ? 'animate-[presentationBottom_1.5s_ease-in-out]' : 'opacity-0'} outline-none group hover:bg-bg-primary flex justify-center items-center transition duration-700 mx-auto mt-[-10px] px-[20px] w-full py-[5px] gap-x-3 rounded-sm bg-text-secondary border-[0.1px] border-text-secondary`} type="submit" onClick={() => setActive_validation(true)}>
                     <ComponentIcon name="send" size={16} description_class="group-hover:rotate-45 group-hover:text-text-secondary text-bg-primary" />
                     <span className='group-hover:text-text-secondary text-bg-primary text-[18px] font-bold'>
                         {t('menu.i_6')}
                     </span>
                 </button>
-                <ComponentMessage open={send_email} setOpen={setSend_email}/>
+                <ComponentMessage open={send_email} setOpen={setSend_email} />
             </form>
         </section>
     )

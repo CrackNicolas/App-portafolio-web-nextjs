@@ -1,40 +1,41 @@
 {
-    "button_view" : {
-        "txt_1" : "See more",
-        "txt_2" : "See less"
+    "button_view": {
+        "txt_1": "See more",
+        "txt_2": "See less"
     },
-    "menu" : {
-        "i_1" : "Start",
-        "i_2" : "About me",
-        "i_3" : "Services",
-        "i_4" : "Experience",
-        "i_5" : "Proyects",
-        "i_6" : "Contact"
+    "menu": {
+        "i_1": "Start",
+        "i_2": "About me",
+        "i_3": "Services",
+        "i_4": "Experience",
+        "i_5": "Proyects",
+        "i_6": "Education",
+        "i_7": "Contact"
     },
-    "start" : {
-        "txt_1" : "Hi I am",
-        "txt_2" : "I am looking for a company that offers me the opportunity to develop as a professional in the field of programming, working on stimulating and enriching projects.",
-        "txt_3" : "Contact me",
-        "txt_4" : "Download CV"
+    "start": {
+        "txt_1": "Hi I am",
+        "txt_2": "I am looking for a company that offers me the opportunity to develop as a professional in the field of programming, working on stimulating and enriching projects.",
+        "txt_3": "Contact me",
+        "txt_4": "Download CV"
     },
-    "about" : {
-        "title" : "About me",
-        "subtitle" : "Why do they hire me?",
-        "description" : "Professional committed to excellence in my projects, providing recommendations of technologies and strategies appropriate to each specific case."
+    "about": {
+        "title": "About me",
+        "subtitle": "Why do they hire me?",
+        "description": "Professional committed to excellence in my projects, providing recommendations of technologies and strategies appropriate to each specific case."
     },
-    "services" : {
-        "title" : "Services",
-        "item_1" : {
-            "txt_1" : "Web design",
-            "txt_2" : "Customized solutions to enhance your online presence. Modern and functional designs that adapt to varied projects, including online stores, with a focus on user experience, guaranteeing effectiveness and originality."
+    "services": {
+        "title": "Services",
+        "item_1": {
+            "txt_1": "Web design",
+            "txt_2": "Customized solutions to enhance your online presence. Modern and functional designs that adapt to varied projects, including online stores, with a focus on user experience, guaranteeing effectiveness and originality."
         },
-        "item_2" : {
-            "txt_1" : "Specific Programming",
-            "txt_2" : "My specialization is custom programming, which involves developing unique and effective software designed specifically to meet the individual needs of my clients."
+        "item_2": {
+            "txt_1": "Specific Programming",
+            "txt_2": "My specialization is custom programming, which involves developing unique and effective software designed specifically to meet the individual needs of my clients."
         },
-        "item_3" : {
-            "txt_1" : "Databases",
-            "txt_2" : "I specialize in the creation and management of databases, ensuring efficient storage and information security. My approach encompasses query optimization to ensure agile and reliable systems."
+        "item_3": {
+            "txt_1": "Databases",
+            "txt_2": "I specialize in the creation and management of databases, ensuring efficient storage and information security. My approach encompasses query optimization to ensure agile and reliable systems."
         }
     },
     "experience": {
@@ -78,12 +79,12 @@
             }
         }
     },
-    "proyects" : {
-        "title" : "Proyects",
-        "proyects" : {
-            "p_1" : {
-                "data" : "App YouTube, make this application only as a replica of the official application without any intention of violating their privacy policies. Application Status (Trial Period) Application 15% complete, from time to time I continue to work on it and plan to complete it 100%.",
-                "tecnologias" : "Technologies used React, JavaScript, HTML5, CSS3."
+    "proyects": {
+        "title": "Proyects",
+        "proyects": {
+            "p_1": {
+                "data": "App YouTube, make this application only as a replica of the official application without any intention of violating their privacy policies. Application Status (Trial Period) Application 15% complete, from time to time I continue to work on it and plan to complete it 100%.",
+                "tecnologias": "Technologies used React, JavaScript, HTML5, CSS3."
             }
         }
     },
@@ -99,16 +100,21 @@
                 "institution": "Cohorte",
                 "date": "Expedition: June 2022",
                 "title": "Web Full Stack"
+            },
+            "item_3": {
+                "institution": "Cessi",
+                "date": "Expedition: April 2022",
+                "title": "#IKnowProgram"
             }
         }
     },
-    "contact" : {
-        "subtitle" : "Contact Form",
-        "inputs" : {
-            "j_1" : "Name...",
-            "j_2" : "Last name...",
-            "j_3" : "Mail...",
-            "j_4" : "Consultation..."
+    "contact": {
+        "subtitle": "Contact Form",
+        "inputs": {
+            "j_1": "Name...",
+            "j_2": "Last name...",
+            "j_3": "Mail...",
+            "j_4": "Consultation..."
         },
         "validations": {
             "inputs": {
@@ -137,9 +143,9 @@
                 "description": "Your message has been sent successfully. Thank you for contacting! I will answer you as soon as possible.",
                 "button": "Accept"
             }
-        }   
+        }
     },
-    "footer":{
+    "footer": {
         "title": "All rights reserved | Designed by Beltran Alejo"
     }
 }
