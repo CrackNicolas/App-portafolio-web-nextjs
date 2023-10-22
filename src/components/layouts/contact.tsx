@@ -7,9 +7,10 @@ import { useRef, useState } from "react";
 import { key_global_emailjs, key_service_emailjs, key_template_emaijs, key_recaptcha } from '../../config/credentials';
 
 import ComponentIcon from '../partials/icon';
+import ComponentMessage from '../partials/message';
+import ComponentNameSection from '../partials/name_section';
 
 import { Use_translation } from "@/i18n/logic/use_translation";
-import ComponentMessage from '../partials/message';
 
 type Props = {
     animate: boolean
@@ -74,12 +75,7 @@ export default function ComponentContact(props: Props) {
 
     return (
         <section id="contact" className="px-[10px] sm:px-[30px] lg:pl-[70px] flex flex-col gap-[20px] m-auto max-w-[1200px] pt-[65px] lg:pt-[80px]">
-            <h2 className="flex items-center justify-between py-[5px] border-b-[1px] border-text-secondary">
-                <span className={`${animate && 'animate-[presentationLeft_0.9s_ease-in-out]'} font-bold text-[20px] tracking-wider text-text-secondary`}>
-                    {t('inicio.txt_3')}
-                </span>
-                <ComponentIcon name="contact" size={24} description_class={`${animate && 'animate-[presentationRight_0.9s_ease-in-out]'} text-text-secondary`} />
-            </h2>
+            <ComponentNameSection animate={animate} name="start.txt_3" icon="contact" />
             <form className="grid gap-[40px] px-[5px] mt-[35px]" action="" method="POST" ref={ref_form} onSubmit={handleSubmit(onSubmit)}>
                 <div className='grid grid-cols-1 sm:grid-cols-2 gap-[40px] sm:gap-[10px]'>
                     <div className={`${animate && 'animate-[presentationLeft_1.1s_ease-in-out]'} relative grid grid-cols-1 items-center gap-[5px]`}>

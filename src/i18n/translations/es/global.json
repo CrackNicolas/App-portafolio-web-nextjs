@@ -11,18 +11,18 @@
         "i_5": "Proyectos",
         "i_6": "Contactar"
     },
-    "inicio": {
+    "start": {
         "txt_1": "Hola soy",
         "txt_2": "Estoy en la búsqueda de una empresa que me ofrezca la oportunidad de desarrollarme como profesional en el campo de la programación, trabajando en proyectos estimulantes y enriquecedores.",
         "txt_3": "Contactame",
         "txt_4": "Descargar CV"
     },
-    "sobre-mi": {
+    "about": {
         "title": "Sobre mí",
         "subtitle": "¿Por qué me contratan?",
         "description": "Profesional comprometido con la excelencia en mis proyectos, proporcionando recomendaciones de tecnologías y estrategias adecuadas a cada caso específico."
     },
-    "servicios": {
+    "services": {
         "title": "Servicios",
         "item_1": {
             "txt_1": "Diseño Web",
@@ -66,6 +66,15 @@
                     "date_2": "Logro",
                     "datails": "Enfrenté un desafío crítico con el sistema Sysacad. Las búsquedas de alumnos eran lentas debido a la falta de indexación en las consultas SQL, lo que ralentizaba el sistema. Para solucionarlo, lideré la creación de un índice en las columnas clave de la base de datos, permitiendo al sistema encontrar datos rápidamente, reduciendo el tiempo de búsqueda de 1 minuto a 0.3 milisegundos. Esta mejora no solo optimizó el sistema, sino que también brindó respuestas casi instantáneas a los usuarios, transformando su experiencia. La indexación se convirtió en una solución esencial para resolver el problema de lentitud en las búsquedas de alumnos en Sysacad."
                 }
+            },
+            "item_4": {
+                "title": "Éxito en Proyectos",
+                "description": {
+                    "title": "UTN",
+                    "date_1": "Logro",
+                    "date_2": "Logro",
+                    "datails": "He completado exitosamente proyectos finales en materias como Sintaxis, Paradigmas, Algoritmos, Diseño web y Diseño de sistemas. Utilizando lenguajes como C/C++, Java, MySQL y Arduino, me he destacado al crear un parser en Java, explorar algoritmos de ordenamiento en C/C++, desarrollar un juego de Pong en Arduino y trabajar con estructuras de datos avanzadas como gramáticas, matrices, grafos, autómatas y expresiones regulares. Durante esta etapa, mi pasión por la optimización del código, la aplicación de patrones de diseño y las buenas prácticas de programación ha sido evidente, lo que ha contribuido a asegurar la calidad y eficiencia en mis proyectos. Siempre que hubo un proyecto final, me propuse firmemente ganar."
+                }
             }
         }
     },
@@ -73,8 +82,29 @@
         "title": "Proyectos",
         "data": {
             "p_1": {
-                "data": "App YouTube, realice esta aplicacion solo como una replica de la aplicacion oficial sin ningun tipo de intencion de violar sus politicas de privacidad. Estado de la aplicacion (Periodo de pruebas) aplicacion completa en un 15%, cada tanto continuo trabajando en ella y planeo completarla en un 100%.",
-                "tecnologias": "Tecnologias utilizadas React, JavaScript, HTML5, CSS3."
+                "title": "Clon YouTube",
+                "description": "Desarrollé este proyecto, con el objetivo de aprender más sobre el desarrollo de aplicaciones y mejorar mis habilidades como programador.",
+                "imagen": "App YouTube"
+            },
+            "p_2": {
+                "title": "Clon YouTube",
+                "description": "Desarrollé este proyecto, con el objetivo de aprender más sobre el desarrollo de aplicaciones y mejorar mis habilidades como programador.",
+                "imagen": "App YouTube"
+            }
+        }
+    },
+    "education": {
+        "title": "Educacion",
+        "data": {
+            "item_1": {
+                "institution": "Universidad Tecnológica Nacional",
+                "date": "17 de abril de 2019 - En curso",
+                "title": "Ingeniería en Sistemas de Información"
+            },
+            "item_2": {
+                "institution": "Cohorte",
+                "date": "Expedición: junio 2022",
+                "title": "Web Full Stack"
             }
         }
     },

@@ -11,18 +11,18 @@
         "i_5" : "Proyects",
         "i_6" : "Contact"
     },
-    "inicio" : {
+    "start" : {
         "txt_1" : "Hi I am",
         "txt_2" : "I am looking for a company that offers me the opportunity to develop as a professional in the field of programming, working on stimulating and enriching projects.",
         "txt_3" : "Contact me",
         "txt_4" : "Download CV"
     },
-    "sobre-mi" : {
+    "about" : {
         "title" : "About me",
         "subtitle" : "Why do they hire me?",
         "description" : "Professional committed to excellence in my projects, providing recommendations of technologies and strategies appropriate to each specific case."
     },
-    "servicios" : {
+    "services" : {
         "title" : "Services",
         "item_1" : {
             "txt_1" : "Web design",
@@ -62,9 +62,18 @@
                 "title": "Sysacad Efficient",
                 "description": {
                     "title": "UTN",
-                    "date_1": "Logro",
-                    "date_2": "Logro",
+                    "date_1": "Achievement",
+                    "date_2": "Achievement",
                     "datails": "I faced a critical challenge with the Sysacad system. Student searches were slow due to lack of indexing in SQL queries, which slowed down the system. To solve this, I led the creation of an index on the key columns of the database, allowing the system to find data quickly, reducing the search time from 1 minute to 0.3 milliseconds. This improvement not only optimized the system, but also provided almost instant responses to users, transforming their experience. Indexing became an essential solution to solve the problem of slow student searches in Sysacad."
+                }
+            },
+            "item_4": {
+                "title": "Project Success",
+                "description": {
+                    "title": "UTN",
+                    "date_1": "Achievement",
+                    "date_2": "Achievement",
+                    "datails": "I have successfully completed final projects in subjects such as Syntax, Paradigms, Algorithms, Web Design and Systems Design. Using languages like C/C++, Java, MySQL, and Arduino, I have excelled at creating a parser in Java, exploring sorting algorithms in C/C++, developing a game of Pong on Arduino, and working with advanced data structures like grammars, arrays , graphs, automata and regular expressions. During this stage, my passion for code optimization, the application of design patterns and good programming practices has been evident, which has contributed to ensuring quality and efficiency in my projects. Whenever there was a final project, I firmly set out to win."
                 }
             }
         }
@@ -75,6 +84,21 @@
             "p_1" : {
                 "data" : "App YouTube, make this application only as a replica of the official application without any intention of violating their privacy policies. Application Status (Trial Period) Application 15% complete, from time to time I continue to work on it and plan to complete it 100%.",
                 "tecnologias" : "Technologies used React, JavaScript, HTML5, CSS3."
+            }
+        }
+    },
+    "education": {
+        "title": "Education",
+        "data": {
+            "item_1": {
+                "institution": "National Technological University",
+                "date": "17 de abril de 2019 - En curso",
+                "title": "Information Systems Engineering"
+            },
+            "item_2": {
+                "institution": "Cohorte",
+                "date": "Expedition: June 2022",
+                "title": "Web Full Stack"
             }
         }
     },

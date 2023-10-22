@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import ComponentIcon from '../partials/icon';
 import ComponentImage from '../partials/image';
+import ComponentNameSection from '../partials/name_section';
 
 import { Use_translation } from "@/i18n/logic/use_translation";
 
@@ -19,17 +20,12 @@ export default function ComponentAbout(props: Props) {
     return (
         <section id="about" className="px-[10px] sm:px-[30px] lg:pl-[70px] flex flex-col gap-[20px] m-auto max-w-[1200px] pt-[65px] lg:pt-[80px]">
             <article className="flex flex-col">
-                <h2 className="flex items-center justify-between py-[5px] border-b-[1px] border-text-secondary">
-                    <span className={`${animate && 'animate-[presentationLeft_0.9s_ease-in-out]'} font-bold text-[20px] tracking-wider text-text-secondary`}>
-                        {t('sobre-mi.title')}
-                    </span>
-                    <ComponentIcon name="user" size={24} description_class={`${animate && 'animate-[presentationRight_0.9s_ease-in-out]'} text-text-secondary`} />
-                </h2>
+                <ComponentNameSection animate={animate} name="about.title" icon="user"/>
                 <h4 className={`${animate && 'animate-[presentationLeft_1.1s_ease-in-out]'} text-text-primary font-bold text-[22px] ml:text-[30px] sm:text-[38px] pt-[8px] tracking-widest`}>
-                    {t('sobre-mi.subtitle')}
+                    {t('about.subtitle')}
                 </h4>
                 <p className={`${animate && 'animate-[presentationLeft_1.3s_ease-in-out]'} mt-2 text-text-primary ml:text-[18px] sm:text-[20px] opacity-80 mb-[50px] leading-6`}>
-                    {t('sobre-mi.description')}
+                    {t('about.description')}
                 </p>
                 <article className={`${animate && 'animate-[presentationBottom_1.5s_ease-in-out]'} relative hover:shadow-md hover:shadow-text-primary cursor-pointer transition duration-500 border-[1px] border-text-secondary rounded-md rounded-tr-none w-full mb-[100px] grid px-3 py-8 grid-cols-4 ml:px-4 ml:py-8 ml:grid-cols-6 sm:py-8 sm:grid-cols-7 md:grid-cols-8 lg:px-5 lg:py-11 lg:grid-cols-9 gap-[15px] ml:gap-[35px] items-center`}>
                     <div className="w-full flex items-center flex-col pt-[5px] h-[60px]">

@@ -17,6 +17,7 @@ import ComponentExperience from "@/components/layouts/experience";
 import ComponentProyects from "@/components/layouts/proyects";
 import ComponentContact from "@/components/layouts/contact";
 import ComponentFooter from "@/components/layouts/footer";
+import ComponentEducacion from "@/components/layouts/education";
 
 i18next.init({
   interpolation: {
@@ -68,6 +69,7 @@ export default function Home() {
           <ComponentServices animate={(paint_icon === 'services')} />
           <ComponentExperience animate={(paint_icon === 'experience')} />
           <ComponentProyects animate={(paint_icon === 'proyects')} />
+          <ComponentEducacion animate={(paint_icon === 'proyects')} />
           <ComponentContact animate={(paint_icon === 'contact')} />
           <ComponentFooter />
         </section>
