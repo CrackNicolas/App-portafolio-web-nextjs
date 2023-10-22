@@ -2,9 +2,9 @@ import Link from "next/link";
 
 import ComponentIcon from "../icon";
 import ComponentImage from "../image";
+import ComponentTechnologies from "./technologies";
 
 import { Use_translation } from "@/i18n/logic/use_translation";
-import ComponentTechnologies from "./technologies";
 
 type Props = {
     number: number,
