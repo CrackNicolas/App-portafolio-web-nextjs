@@ -16,7 +16,13 @@
         "txt_1": "Hola soy",
         "txt_2": "Estoy en la búsqueda de una empresa que me ofrezca la oportunidad de desarrollarme como profesional en el campo de la programación, trabajando en proyectos estimulantes y enriquecedores.",
         "txt_3": "Contactame",
-        "txt_4": "Descargar CV"
+        "txt_4": "Descargar CV",
+        "message": {
+            "title": "¡Descarga Exitosa!",
+            "description": "Si necesitas más información, no dudes en contactarme",
+            "button_1": "Abrir CV",
+            "button_2": "Cerrar"
+        }
     },
     "about": {
         "title": "Sobre mí",

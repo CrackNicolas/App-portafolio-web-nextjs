@@ -24,7 +24,7 @@ export default function ComponentNav(props: Props) {
     }
 
     return (
-        <section id="nav" className={`fixed animate-[presentationLeft_1.5s_ease-in-out] z-30 left-0 bg-bg-primary ${isWidth ? 'h-[40px] w-full' : 'w-[58px] h-full pt-[20px] pb-[15px]'}`}>
+        <section id="nav" className={`fixed animate-[presentationLeft_1.5s_ease-in-out] z-30 left-0 bg-bg-primary ${isWidth ? 'h-[40px] w-full' : 'w-[58px] h-screen pt-[20px] pb-[15px]'}`}>
             <article className={`grid h-full ${isWidth ? 'grid-cols-7 border-b-[0.1px] border-text-secondary pl-[10px]' : 'grid-rows-7'}`}>
                 <article className={`flex h-full ${isWidth ? 'col-span-6 gap-x-6 sm:gap-x-4 md:gap-x-6 items-center' : 'row-span-6 flex-col gap-y-6'}`}>
                     <Link to="init" spy={true} smooth={true} offset={0} duration={500} rel="noopener noreferrer" className={`group h-[35px] grid place-items-center cursor-pointer ${isWidth && 'sm:min-w-[47px] sm:max-w-[47px]'}`}>

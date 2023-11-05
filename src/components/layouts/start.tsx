@@ -1,9 +1,10 @@
 import Next_link from "next/link";
-
 import { Link } from "react-scroll";
-import { Viewer } from '@react-pdf-viewer/core';
+
+import { useState } from "react";
 
 import ComponentIcon from "../partials/icon";
+import ComponentMessage from "../partials/message";
 
 import { Use_translation } from "@/i18n/logic/use_translation";
 
@@ -15,6 +16,34 @@ export default function ComponentStart(props: Props) {
     const { animate } = props;
 
     const t = Use_translation(1);
+
+    const [completed, setCompleted] = useState<boolean>(false);
+    const [view_url, setView_url] = useState<string>("");
+
+    const handle_download = () => {
+        const path = "/pdf/Curriculum Beltran Alejo.pdf";
+
+        const xhr = new XMLHttpRequest();
+        xhr.responseType = "blob";
+
+        xhr.onprogress = (event) => {
+            if (event.lengthComputable) {
+                const progress = (event.loaded / event.total) * 100;
+                setCompleted(progress === 100);
+            }
+        };
+
+        xhr.onload = () => {
+            if (xhr.status === 200) {
+                const blob = new Blob([xhr.response], { type: "application/pdf" });
+                const url = window.URL.createObjectURL(blob);
+                setView_url(url);
+            }
+        };
+
+        xhr.open("GET", path, true);
+        xhr.send();
+    };
 
     return (
         <section id="init" className="main m-auto max-w-[1275px]">
@@ -31,7 +60,7 @@ export default function ComponentStart(props: Props) {
                     </h4>
                     <p className={`${animate ? 'animate-[presentationLeft_1.4s_ease-in-out] opacity-60' : 'opacity-0'} text-[15px] sm:text-[15px] mb-[10px] sm:mb-[20px] min-w-[200px] max-w-[460px]`}>
                         {t('start.txt_2')}
-                     </p>
+                    </p>
                     <div className="flex items-center gap-x-5 mb-[13px] sm:mb-[23px] w-[309.5px] sm:w-[376.1px]">
                         <Next_link href="https://www.linkedin.com/in/nicolas-alejo-beltran/" target="_blank" rel="noopener noreferrer" className={`${animate ? 'animate-[presentationLeft_1.5s_ease-in-out]' : 'opacity-0'} group p-2 rounded-full cursor-pointer border-[0.1px] border-bg-primary hover:border-text-secondary transition duration-500`}>
                             <ComponentIcon name="linkedin" size={20} description_class="group-hover:text-text-secondary" />
@@ -48,13 +77,13 @@ export default function ComponentStart(props: Props) {
                                 {t('start.txt_3')}
                             </span>
                         </Link>
-                        <a href="http://localhost:3000/pdf/Curriculum Beltran Alejo.pdf" rel="noopener noreferrer" download="Curriculum Beltran Alejo.pdf" className={`${animate ? 'animate-[presentationBottom_1.6s_ease-in-out]' : 'opacity-0'} group flex items-center min-w-[156px] sm:min-w-[189px] min-w-[156px] sm:max-w-[189px] gap-x-[8px] rounded-md py-[10px] px-[20px] cursor-pointer hover:text-bg-primary hover:bg-text-secondary bg-bg-primary text-text-primary border-[1px] border-text-secondary transition duration-500`}>
+                        <a onClick={handle_download} href="http://localhost:3000/pdf/Curriculum Beltran Alejo.pdf" rel="noopener noreferrer" download="Curriculum Beltran Alejo.pdf" className={`${animate ? 'animate-[presentationBottom_1.6s_ease-in-out]' : 'opacity-0'} group flex items-center min-w-[156px] sm:min-w-[189px] min-w-[156px] sm:max-w-[189px] gap-x-[8px] rounded-md py-[10px] px-[20px] cursor-pointer hover:text-bg-primary hover:bg-text-secondary bg-bg-primary text-text-primary border-[1px] border-text-secondary transition duration-500`}>
                             <ComponentIcon name="dowload" size={16} description_class="group-hover:text-bg-primary text-text-primary w-[14px] h-[14px] sm:w-[16px] sm:h-[16px]" />
                             <span className="text-[15px] sm:text-[20px] font-semibold">
                                 {t('start.txt_4')}
                             </span>
                         </a>
-                        <Viewer fileUrl="/public/pdf/Curriculum Beltran Alejo.pdf" />;
+                        <ComponentMessage open={completed} setOpen={setCompleted} view_url={view_url}/>
                     </div>
                 </article>
                 <article className="grid place-items-center lg:justify-end lg:items-center col-span-full mt-12 lg:mt-0 lg:col-span-1 h-full">

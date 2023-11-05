@@ -16,7 +16,13 @@
         "txt_1": "Hi I am",
         "txt_2": "I am looking for a company that offers me the opportunity to develop as a professional in the field of programming, working on stimulating and enriching projects.",
         "txt_3": "Contact me",
-        "txt_4": "Download CV"
+        "txt_4": "Download CV",
+        "message": {
+            "title": "¡Successful Download!",
+            "description": "If you need more information, do not hesitate to contact me",
+            "button_1": "Open CV",
+            "button_2": "Close"
+        }
     },
     "about": {
         "title": "About me",
