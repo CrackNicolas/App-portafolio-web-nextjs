@@ -46,7 +46,7 @@ export default function ComponentIntro(props: Props) {
                     <span className="relative bottom-[-20px] opacity-0">C</span>
                     <span className="relative bottom-[-20px] opacity-0">K</span>
                 </h1>
-                <p className="animate-translateY text-text-secondary opacity-70 mt-[10px] text-[1.3rem] tracking-wider">
+                <p className="animate-translateY font-semibold text-text-secondary opacity-70 mt-[10px] text-[1.3rem] tracking-wider">
                     Development
                 </p>
             </article>

@@ -15,6 +15,8 @@ type Props = {
 export default function ComponentStart(props: Props) {
     const { animate } = props;
 
+    const domain = process.env.DEVELOPMENT_DOMAIN;
+
     const t = Use_translation(1);
 
     const [completed, setCompleted] = useState<boolean>(false);
@@ -77,7 +79,7 @@ export default function ComponentStart(props: Props) {
                                 {t('start.txt_3')}
                             </span>
                         </Link>
-                        <a onClick={handle_download} href="http://localhost:3000/pdf/Curriculum Beltran Alejo.pdf" rel="noopener noreferrer" download="Curriculum Beltran Alejo.pdf" className={`${animate ? 'animate-[presentationBottom_1.6s_ease-in-out]' : 'opacity-0'} group flex items-center min-w-[156px] sm:min-w-[189px] min-w-[156px] sm:max-w-[189px] gap-x-[8px] rounded-md py-[10px] px-[20px] cursor-pointer hover:text-bg-primary hover:bg-text-secondary bg-bg-primary text-text-primary border-[1px] border-text-secondary transition duration-500`}>
+                        <a onClick={handle_download} href={`${domain}/pdf/Curriculum Beltran Alejo.pdf`} rel="noopener noreferrer" download="Curriculum Beltran Alejo.pdf" className={`${animate ? 'animate-[presentationBottom_1.6s_ease-in-out]' : 'opacity-0'} group flex items-center min-w-[156px] sm:min-w-[189px] min-w-[156px] sm:max-w-[189px] gap-x-[8px] rounded-md py-[10px] px-[20px] cursor-pointer hover:text-bg-primary hover:bg-text-secondary bg-bg-primary text-text-primary border-[1px] border-text-secondary transition duration-500`}>
                             <ComponentIcon name="dowload" size={16} description_class="group-hover:text-bg-primary text-text-primary w-[14px] h-[14px] sm:w-[16px] sm:h-[16px]" />
                             <span className="text-[15px] sm:text-[20px] font-semibold">
                                 {t('start.txt_4')}
