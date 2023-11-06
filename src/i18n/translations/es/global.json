@@ -154,7 +154,7 @@
                 }
             },
             "recaptcha": {
-                "title": "Te faltó validar que no sos un robot"
+                "title": "Valida que no sos un robot"
             },
             "message": {
                 "title": "Mensaje exitoso",

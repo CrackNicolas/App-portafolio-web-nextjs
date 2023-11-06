@@ -22,6 +22,8 @@ export default function ComponentContact(props: Props) {
 
     const t = Use_translation(1);
 
+    console.log(lenguaje);
+
     const { register, formState: { errors }, handleSubmit } = useForm();
 
     const [active_validation, setActive_validation] = useState<boolean>(false)
@@ -139,7 +141,12 @@ export default function ComponentContact(props: Props) {
                             sitekey={key_recaptcha}
                             onChange={onChange}
                         />
-                        {state_captcha === false && <p className='text-[15px] font-semibold tracking-widest text-red-500'>{t("contact.validations.recaptcha.title")}</p>}
+                        {
+                            (state_captcha === false) &&
+                            <p className='text-[15px] font-semibold tracking-widest text-red-500'>
+                                {t("contact.validations.recaptcha.title")}
+                            </p>
+                        }
                     </div>
                 </aside>
                 <button className={`${animate ? 'animate-[presentationBottom_1.5s_ease-in-out]' : 'opacity-0'} outline-none group hover:bg-bg-primary flex justify-center items-center transition duration-700 mx-auto mt-[-10px] px-[20px] w-full py-[5px] gap-x-3 rounded-sm bg-text-secondary border-[0.1px] border-text-secondary`} type="submit" onClick={() => setActive_validation(true)}>

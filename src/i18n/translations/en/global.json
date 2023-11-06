@@ -154,7 +154,7 @@
                 }
             },
             "recaptcha": {
-                "title": "You needed to validate that you are not a robot"
+                "title": "Validate that you are not a robot"
             },
             "message": {
                 "title": "Successful message",
