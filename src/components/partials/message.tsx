@@ -50,13 +50,13 @@ export default function ComponentMessage(props: Props) {
                                         (view_url !== "") &&
                                         <a href={view_url} target="_blank" rel="noopener noreferrer" className="hover:bg-bg-primary hover:text-text-secondary border-[1px] border-text-secondary transition duration-500 outline-none w-[180px] rounded-md bg-text-secondary py-[5px] font-semibold text-bg-primary">
                                             {
-                                                t('start.message.button_1')
+                                                t('start.message.buttons.b_1')
                                             }
                                         </a>
                                     }
-                                    <button type="button" className={`${(view_url !== "") ? 'bg-red-500 border-red-500 hover:text-red-500 w-[180px]':'w-[200px] bg-text-secondary border-text-secondary hover:text-text-secondary'} hover:bg-bg-primary border-[1px] transition duration-500 outline-none rounded-md py-[5px] font-semibold text-bg-primary`} onClick={() => setOpen(false)}>
+                                    <button type="button" className={`${(view_url !== "") ? 'bg-red-500 border-red-500 hover:text-red-500 w-[180px]' : 'w-[200px] bg-text-secondary border-text-secondary hover:text-text-secondary'} hover:bg-bg-primary border-[1px] transition duration-500 outline-none rounded-md py-[5px] font-semibold text-bg-primary`} onClick={() => setOpen(false)}>
                                         {
-                                            t((view_url !== "") ? 'start.message.button_2' : 'contact.validations.message.button')
+                                            t((view_url !== "") ? 'start.message.buttons.b_2' : 'contact.validations.message.button')
                                         }
                                     </button>
                                 </div>

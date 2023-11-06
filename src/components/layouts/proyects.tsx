@@ -5,12 +5,16 @@ import ComponentIcon from '../partials/icon';
 import ComponentItem from "../partials/proyects/item";
 import ComponentNameSection from "../partials/name_section";
 
+import { Use_translation } from "@/i18n/logic/use_translation";
+
 type Props = {
     animate: boolean
 }
 
 export default function ComponentProyects(props: Props) {
     const { animate } = props;
+
+    const t = Use_translation(1);
 
     const [view_datails, setView_datails] = useState<boolean>(true);
 
@@ -31,7 +35,7 @@ export default function ComponentProyects(props: Props) {
             <Link to={view_datails ? '' : 'proyectos'} onClick={() => setView_datails(!view_datails)} spy={true} smooth={true} offset={0} duration={500} rel="noopener noreferrer" className={` ${animate ? 'animate-[presentationLeft_1.2s_ease-in-out]' : 'opacity-0'} group transition duration-500 flex items-center mx-auto pl-[20px] pr-[18px] py-[5px] gap-x-2 rounded-sm bg-text-secondary hover:bg-bg-primary hover:text-text-secondary cursor-pointer text-bg-primary border-[0.1px] border-text-secondary`}>
                 <span className="text-[18px] font-semibold">
                     {
-                        view_datails ? 'Ver más' : 'Ver menos'
+                        t((view_datails) ? 'proyects.buttons.b_1' : 'proyects.buttons.b_2')
                     }
                 </span>
                 <ComponentIcon name={(view_datails) ? 'see-moore' : 'see-less'} size={22} description_class="group-hover:text-text-secondary text-bg-primary" />

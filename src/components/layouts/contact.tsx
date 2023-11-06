@@ -13,11 +13,12 @@ import ComponentNameSection from '../partials/name_section';
 import { Use_translation } from "@/i18n/logic/use_translation";
 
 type Props = {
-    animate: boolean
+    animate: boolean,
+    lenguaje: boolean
 }
 
 export default function ComponentContact(props: Props) {
-    const { animate } = props;
+    const { animate, lenguaje } = props;
 
     const t = Use_translation(1);
 
@@ -134,6 +135,7 @@ export default function ComponentContact(props: Props) {
                     <div className="grid place-items-center">
                         <ReCAPTCHA
                             ref={recaptcha}
+                            hl={lenguaje ? 'es' : 'en'}
                             sitekey={key_recaptcha}
                             onChange={onChange}
                         />

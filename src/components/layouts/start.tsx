@@ -85,7 +85,7 @@ export default function ComponentStart(props: Props) {
                                 {t('start.txt_4')}
                             </span>
                         </a>
-                        <ComponentMessage open={completed} setOpen={setCompleted} view_url={view_url}/>
+                        <ComponentMessage open={completed} setOpen={setCompleted} view_url={view_url} />
                     </div>
                 </article>
                 <article className="grid place-items-center lg:justify-end lg:items-center col-span-full mt-12 lg:mt-0 lg:col-span-1 h-full">

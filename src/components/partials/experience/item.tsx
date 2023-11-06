@@ -21,8 +21,8 @@ export default function ComponentItem(props: Props) {
             <span className={`${animate ? 'animate-[presentationLeft_1.2s_ease-in-out]' : 'opacity-0'} transition duration-500 xl:col-span-1 text-end tracking-wider my-auto font-semibold text-[15px]`}>
                 {t(`experience.data.item_${number}.title`)}
             </span>
-            <div className={`${animate? 'animate-[presentationBottom_1s_ease-in-out]':'opacity-0'} transition duration-500 xl:col-span-4 xl:border-l-[3px] border-text-secondary xl:pt-[20px] xl:pr-[5px] xl:pb-[10px] xl:pl-[50px]`}>
-                <div className={`${animate? 'animate-opacity':'opacity-0'} invisible xl:visible break-before-auto cursor-pointer hover:bg-text-secondary hover:text-bg-primary transition duration-700 absolute w-[40px] h-[40px] bg-bg-primary font-semibold text-text-primary rounded-full border-[3px] border-text-secondary inset-y-1 my-auto translate-x-[-71px] text-[22px] grid place-items-center`}>
+            <div className={`${animate ? 'animate-[presentationBottom_1s_ease-in-out]' : 'opacity-0'} transition duration-500 xl:col-span-4 xl:border-l-[3px] border-text-secondary xl:pt-[20px] xl:pr-[5px] xl:pb-[10px] xl:pl-[50px]`}>
+                <div className={`${animate ? 'animate-opacity' : 'opacity-0'} invisible xl:visible break-before-auto cursor-pointer hover:bg-text-secondary hover:text-bg-primary transition duration-700 absolute w-[40px] h-[40px] bg-bg-primary font-semibold text-text-primary rounded-full border-[3px] border-text-secondary inset-y-1 my-auto translate-x-[-71px] text-[22px] grid place-items-center`}>
                     {
                         "0" + number
                     }

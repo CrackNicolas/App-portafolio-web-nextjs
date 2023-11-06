@@ -7,7 +7,7 @@ type Props = {
 }
 
 export default function ClientOnly({ children }: Props) {
-  const [has_mounted, setHas_mounted] = useState(false);
+  const [has_mounted, setHas_mounted] = useState<boolean>(false);
 
   useEffect(() => {
     setHas_mounted(true);
@@ -15,5 +15,7 @@ export default function ClientOnly({ children }: Props) {
 
   if (!has_mounted) return null;
 
-  return <Fragment>{children}</Fragment>
+  return <Fragment>
+    {children}
+  </Fragment>
 }

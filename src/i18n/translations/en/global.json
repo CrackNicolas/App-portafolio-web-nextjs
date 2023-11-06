@@ -20,8 +20,10 @@
         "message": {
             "title": "¡Successful Download!",
             "description": "If you need more information, do not hesitate to contact me",
-            "button_1": "Open CV",
-            "button_2": "Close"
+            "buttons": {
+                "b_1": "Open CV",
+                "b_2": "Close"
+            }
         }
     },
     "about": {
@@ -98,6 +100,10 @@
                 "description": "I decided to embark on this project to put my skills into practice. Currently, I continue working on improving and perfecting this application.",
                 "imagen": "YouTube App"
             }
+        },
+        "buttons": {
+            "b_1": "See moore",
+            "b_2": "See less"
         }
     },
     "education": {

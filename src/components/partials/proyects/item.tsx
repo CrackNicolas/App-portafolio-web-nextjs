@@ -34,7 +34,7 @@ export default function ComponentItem(props: Props) {
                 <span className="text-[13px] lg:text-[15px] hover:bg-bg-primary hover:text-text-secondary transition duration-500 cursor-pointer border-[0.1px] border-text-secondary text-bg-primary bg-text-secondary rounded-sm px-3 py-2">
                     {t(`proyects.data.p_${number}.description`)}
                 </span>
-                <ComponentTechnologies number={number}/>
+                <ComponentTechnologies number={number} />
                 <div className="absolute px-[3px] bottom-0 w-full flex justify-between items-center">
                     <ComponentImage name={imagen.replace("App ", "")} description_class={`${(direction === "right") ? 'order-1' : "order-3"} w-[25px] h-[25px]`} />
                     <span className="invisible group-hover:visible w-[250px] h-[0.5px] order-2 bg-text-secondary opacity-40"></span>

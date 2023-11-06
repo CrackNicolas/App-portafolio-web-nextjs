@@ -9,7 +9,7 @@ import en from '@/i18n/translations/en/global.json'
 import es from '@/i18n/translations/es/global.json';
 
 import ComponentIntro from "@/components/partials/intro";
-import ComponentNav from "@/components/partials/nav";
+import ComponentNav from "@/components/partials/nav/container";
 import ComponentStart from "@/components/layouts/start";
 import ComponentAbout from "@/components/layouts/about";
 import ComponentServices from "@/components/layouts/services";
@@ -37,6 +37,7 @@ i18next.init({
 export default function Home() {
   const [view, setView] = useState<boolean>(false);
   const [paint_icon, setPaint_icon] = useState<string>('init');
+  const [lenguaje, setLenguaje] = useState<boolean>(true);
 
   const sections = useRef<any>(null);
 
@@ -63,15 +64,15 @@ export default function Home() {
       <I18nextProvider i18n={i18next}>
         <ComponentIntro setView={setView} />
         <section ref={sections} className={`${view ? 'visible ' : 'hidden'}`}>
-          <ComponentNav paint={paint_icon} />
+          <ComponentNav paint={paint_icon} lenguaje={lenguaje} setLenguaje={setLenguaje} />
           <ComponentStart animate={(paint_icon === 'init')} />
           <ComponentAbout animate={(paint_icon === 'about')} />
           <ComponentServices animate={(paint_icon === 'services')} />
           <ComponentExperience animate={(paint_icon === 'experience')} />
           <ComponentProyects animate={(paint_icon === 'proyects')} />
           <ComponentEducacion animate={(paint_icon === 'education')} />
-          <ComponentContact animate={(paint_icon === 'contact')} />
-          <ComponentFooter/>
+          <ComponentContact animate={(paint_icon === 'contact')} lenguaje={lenguaje} />
+          <ComponentFooter />
         </section>
       </I18nextProvider>
     </main>
