@@ -4,7 +4,7 @@ import { Link } from "react-scroll";
 import { useState } from "react";
 
 import ComponentIcon from "../partials/icon";
-import ComponentMessage from "../partials/message";
+import ComponentMessage from "../partials/messages/confirmation";
 
 import { Use_translation } from "@/i18n/logic/use_translation";
 

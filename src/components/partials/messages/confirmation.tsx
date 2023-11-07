@@ -1,7 +1,7 @@
 import { Fragment, useRef } from 'react'
 import { Dialog, Transition } from '@headlessui/react';
 
-import ComponentIcon from './icon';
+import ComponentIcon from '../icon';
 
 import { Use_translation } from "@/i18n/logic/use_translation";
 
@@ -11,7 +11,7 @@ type Props = {
     view_url?: string
 }
 
-export default function ComponentMessage(props: Props) {
+export default function ComponentMessageConfirmation(props: Props) {
     const { open, setOpen, view_url = "" } = props;
 
     const cancelButtonRef = useRef<any>(null)

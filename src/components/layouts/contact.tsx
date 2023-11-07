@@ -1,16 +1,18 @@
 import emailjs from '@emailjs/browser';
-import ReCAPTCHA from "react-google-recaptcha";
 
 import { useForm } from 'react-hook-form';
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
-import { key_global_emailjs, key_service_emailjs, key_template_emaijs, key_recaptcha } from '../../config/credentials';
+import { key_global_emailjs, key_service_emailjs, key_template_emaijs } from '../../config/credentials';
 
 import ComponentIcon from '../partials/icon';
-import ComponentMessage from '../partials/message';
+import ComponentRecaptcha from '../partials/recaptcha';
 import ComponentNameSection from '../partials/name_section';
+import ComponentMessageError from '../partials/messages/error';
+import ComponentMessageConfirmation from '../partials/messages/confirmation';
 
 import { Use_translation } from "@/i18n/logic/use_translation";
+import { Use_window_width } from '@/logic/size';
 
 type Props = {
     animate: boolean,
@@ -21,10 +23,9 @@ export default function ComponentContact(props: Props) {
     const { animate, lenguaje } = props;
 
     const t = Use_translation(1);
+    const width = Use_window_width();
 
-    console.log(lenguaje);
-
-    const { register, formState: { errors }, handleSubmit } = useForm();
+    const { register, formState: { errors }, handleSubmit, watch } = useForm();
 
     const [active_validation, setActive_validation] = useState<boolean>(false)
     const [send_email, setSend_email] = useState<boolean>(false);
@@ -53,8 +54,21 @@ export default function ComponentContact(props: Props) {
         }
     }
 
+    useEffect(() => {
+        const lineHeight = getComputedStyle(ref_form.current.message).lineHeight; // Altura de línea en píxeles
+        const alturaTextarea = ref_form.current.message.scrollHeight; // Altura total del textarea en píxeles
+        const cantidadDeLineas = alturaTextarea / parseFloat(lineHeight);
+        ref_form.current.message.rows = Math.floor(cantidadDeLineas);
+    }, [watch("message"), width])
+
+    useEffect(() => {
+        if (width >= 1100) {
+            ref_form.current.message.rows = 5;
+        }
+    }, [width]);
+
     const onChange = () => {
-        setState_captcha(recaptcha.current.getValue() ? true : false);
+        setState_captcha(recaptcha.current.getValue());
     }
 
     const get_icon = (value: boolean) => {
@@ -64,14 +78,14 @@ export default function ComponentContact(props: Props) {
     const style_input = (input: any) => {
         if (active_validation) {
             return {
-                boxShadow: (input == "required" || input == "maxLength" || input == "pattern") ? '0 0 4px 0.1px red' : '0 0 4px 0.1px var(--text-primary)'
+                boxShadow: (input == "required" || input == "minLength" || input == "maxLength" || input == "pattern") ? '0 0 4px 0.1px red' : '0 0 4px 0.1px var(--text-primary)'
             }
         }
     }
 
     const style_icon = (input: any) => {
         if (active_validation) {
-            return `absolute right-0 pb-0 px-[6px] ${(input == "required" || input == "maxLength" || input == "pattern") ? 'text-red-500' : 'text-text-secondary'}`
+            return `absolute right-0 pb-0 px-[6px] ${(input == "required" || input == "minLength" || input == "maxLength" || input == "pattern") ? 'text-red-500' : 'text-text-secondary'}`
         }
         return 'hidden';
     }
@@ -82,72 +96,83 @@ export default function ComponentContact(props: Props) {
             <form className="grid gap-[40px] px-[5px] mt-[35px]" action="" method="POST" ref={ref_form} onSubmit={handleSubmit(onSubmit)}>
                 <div className='grid grid-cols-1 sm:grid-cols-2 gap-[40px] sm:gap-[10px]'>
                     <div className={`${animate ? 'animate-[presentationLeft_1.1s_ease-in-out]' : 'opacity-0'} transition duration-500 relative grid grid-cols-1 items-center gap-[5px]`}>
-                        {errors.name?.type === "required" && <p className="absolute top-[-27px] text-[15px] font-semibold tracking-widest text-red-500">{t("contact.validations.inputs.j_1.text_1")}</p>}
-                        {errors.name?.type === "maxLength" && <p className="absolute top-[-27px] text-[15px] font-semibold tracking-widest text-red-500">{t("contact.validations.inputs.j_1.text_2")}</p>}
-                        <input className='outline-0 shadow-1xl shadow-text-primary max-h-[20px] min-h-[20px] py-[20px] pr-[35px] pl-[10px] overflow-auto text-[18px] border-none rounded-sm' type="text" style={style_input(errors.name?.type)} placeholder={t('contact.inputs.j_1')} {...register('name', {
+                        <ComponentMessageError order={1} type={errors.name?.type} />
+                        <input className={`outline-0 shadow-1xl shadow-text-primary max-h-[20px] min-h-[20px] py-[20px] ${active_validation ? 'pr-[35px]' : 'pr-[10px]'} pl-[10px] overflow-auto text-[18px] border-none rounded-sm`} type="text" style={style_input(errors.name?.type)} placeholder={t('contact.inputs.j_1')} {...register('name', {
                             required: true,
-                            maxLength: 10
-                        })} />
+                            minLength: 3,
+                            maxLength: 15,
+                            pattern: /^[A-Za-z]+$/i
+                        })}
+                            onInput={() => {
+                                const maxLength = 15;
+                                if (ref_form.current.name.value.length > maxLength + 1) {
+                                    ref_form.current.name.value = ref_form.current.name.value.substring(0, maxLength);
+                                }
+                            }}
+                        />
                         <div className={`${style_icon(errors.name?.type)} `}>
                             {
-                                get_icon(errors.name?.type == undefined)
+                                get_icon(errors.name?.type === undefined)
                             }
                         </div>
                     </div>
                     <div className={`${animate ? 'animate-[presentationRight_1.1s_ease-in-out]' : 'opacity-0'} transition duration-500 relative grid grid-cols-1 items-center gap-[5px]`}>
-                        {errors.last_name?.type === "required" && <p className="absolute top-[-27px] text-[15px] font-semibold tracking-widest text-red-500">{t("contact.validations.inputs.j_2.text_1")}</p>}
-                        {errors.last_name?.type === "maxLength" && <p className="absolute top-[-27px] text-[15px] font-semibold tracking-widest text-red-500">{t("contact.validations.inputs.j_2.text_2")}</p>}
-                        <input className='outline-0 shadow-1xl shadow-text-primary max-h-[20px] min-h-[20px] py-[20px] pr-[35px] pl-[10px] overflow-auto text-[18px] border-none rounded-sm' type="text" style={style_input(errors.last_name?.type)} placeholder={t('contact.inputs.j_2')} {...register('last_name', {
+                        <ComponentMessageError order={2} type={errors.last_name?.type} />
+                        <input className={`outline-0 shadow-1xl shadow-text-primary max-h-[20px] min-h-[20px] py-[20px] ${active_validation ? 'pr-[35px]' : 'pr-[10px]'} pl-[10px] overflow-auto text-[18px] border-none rounded-sm`} type="text" style={style_input(errors.last_name?.type)} placeholder={t('contact.inputs.j_2')} {...register('last_name', {
                             required: true,
-                            maxLength: 10
-                        })} />
+                            minLength: 3,
+                            maxLength: 20,
+                            pattern: /^[A-Za-z]+$/i
+                        })}
+                            onInput={() => {
+                                const maxLength = 20;
+                                if (ref_form.current.last_name.value.length > maxLength + 1) {
+                                    ref_form.current.last_name.value = ref_form.current.last_name.value.substring(0, maxLength);
+                                }
+                            }}
+                        />
                         <div className={`${style_icon(errors.last_name?.type)} `}>
                             {
-                                get_icon(errors.last_name?.type == undefined)
+                                get_icon(errors.last_name?.type === undefined)
                             }
                         </div>
                     </div>
                 </div>
                 <div className={`${animate ? 'animate-[presentationLeft_1.3s_ease-in-out]' : 'opacity-0'} transition duration-500 relative grid grid-cols-1 items-center gap-[5px]`}>
-                    {errors.email?.type === "required" && <p className="absolute top-[-27px] text-[15px] font-semibold tracking-widest text-red-500">{t("contact.validations.inputs.j_3.text_1")}</p>}
-                    {errors.email?.type === "pattern" && <p className="absolute top-[-27px] text-[15px] font-semibold tracking-widest text-red-500">{t("contact.validations.inputs.j_3.text_2")}</p>}
-                    <input className='outline-0 shadow-1xl shadow-text-primary max-h-[20px] min-h-[20px] py-[20px] pr-[35px] pl-[10px] overflow-auto text-[18px] border-none rounded-sm' type="email" style={style_input(errors.email?.type)} placeholder={t('contact.inputs.j_3')} {...register('email', {
+                    <ComponentMessageError order={3} type={errors.email?.type} />
+                    <input className={`outline-0 shadow-1xl shadow-text-primary max-h-[20px] min-h-[20px] py-[20px] ${active_validation ? 'pr-[35px]' : 'pr-[10px]'} pl-[10px] overflow-auto text-[18px] border-none rounded-sm`} type="email" style={style_input(errors.email?.type)} placeholder={t('contact.inputs.j_3')} {...register('email', {
                         required: true,
-                        pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/i
+                        pattern: /^[a-zA-Z0-9]+[\w\.-]*@[a-zA-Z0-9]+(\.[a-zA-Z]+)+$/i
                     })} />
                     <div className={`${style_icon(errors.email?.type)} `}>
                         {
-                            get_icon(errors.email?.type == undefined)
+                            get_icon(errors.email?.type === undefined)
                         }
                     </div>
                 </div>
                 <div className={`${animate ? 'animate-[presentationRight_1.4s_ease-in-out]' : 'opacity-0'} transition duration-500 relative grid grid-cols-1 items-center gap-[5px]`}>
-                    {errors.message?.type === "required" && <p className="absolute top-[-27px] text-[15px] font-semibold tracking-widest text-red-500">{t("contact.validations.inputs.j_4.text_1")}</p>}
-                    {errors.message?.type === "maxLength" && <p className="absolute top-[-27px] text-[15px] font-semibold tracking-widest text-red-500">{t("contact.validations.inputs.j_4.text_2")}</p>}
-                    <textarea className='outline-0 shadow-1xl shadow-text-primary min-h-[50px] max-h-[100px] resize-none py-[10px] pr-[35px] pl-[10px] text-[19.5px]' style={style_input(errors.message?.type)} placeholder={t('contact.inputs.j_4')} {...register('message', {
-                        required: true
-                    })} />
+                    <ComponentMessageError order={4} type={errors.message?.type} />
+                    <textarea rows={2} className={`outline-0 shadow-1xl overflow-hidden shadow-text-primary resize-none py-[10px] ${active_validation ? 'pr-[35px]' : 'pr-[10px]'} pl-[10px] text-[19.5px] rounded-sm`} style={style_input(errors.message?.type)} placeholder={t('contact.inputs.j_4')} {...register('message', {
+                        required: true,
+                        minLength: 10,
+                        maxLength: 500,
+                        pattern: /^[A-Za-z0-9$()+\-*/%=?¿!¡,.:;@" "]+$/i
+                    })}
+                        onInput={() => {
+                            const maxLength = 500;
+                            if (ref_form.current.message.value.length > maxLength + 1) {
+                                ref_form.current.message.value = ref_form.current.message.value.substring(0, maxLength);
+                            }
+                        }}
+                    />
                     <div className={`${style_icon(errors.message?.type)} top-[10px] pb-5 `}>
                         {
-                            get_icon(errors.message?.type == undefined)
+                            get_icon(errors.message?.type === undefined)
                         }
                     </div>
                 </div>
                 <aside className={`${animate ? 'animate-[presentationBottom_1.5s_ease-in-out]' : 'opacity-0'} transition duration-500 overflow-hidden overflow-auto py-0`}>
-                    <div className="grid place-items-center">
-                        <ReCAPTCHA
-                            ref={recaptcha}
-                            hl={lenguaje ? 'es' : 'en'}
-                            sitekey={key_recaptcha}
-                            onChange={onChange}
-                        />
-                        {
-                            (state_captcha === false) &&
-                            <p className='text-[15px] font-semibold tracking-widest text-red-500'>
-                                {t("contact.validations.recaptcha.title")}
-                            </p>
-                        }
-                    </div>
+                    <ComponentRecaptcha ref={recaptcha} lenguaje={lenguaje} onChange={onChange} state_captcha={state_captcha} />
                 </aside>
                 <button className={`${animate ? 'animate-[presentationBottom_1.5s_ease-in-out]' : 'opacity-0'} outline-none group hover:bg-bg-primary flex justify-center items-center transition duration-700 mx-auto mt-[-10px] px-[20px] w-full py-[5px] gap-x-3 rounded-sm bg-text-secondary border-[0.1px] border-text-secondary`} type="submit" onClick={() => setActive_validation(true)}>
                     <ComponentIcon name="send" size={16} description_class="group-hover:rotate-45 group-hover:text-text-secondary text-bg-primary" />
@@ -155,7 +180,7 @@ export default function ComponentContact(props: Props) {
                         {t('menu.i_6')}
                     </span>
                 </button>
-                <ComponentMessage open={send_email} setOpen={setSend_email} />
+                <ComponentMessageConfirmation open={send_email} setOpen={setSend_email} />
             </form>
         </section>
     )

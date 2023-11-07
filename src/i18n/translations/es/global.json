@@ -127,30 +127,35 @@
         }
     },
     "contact": {
-        "subtitle": "Formulario de contacto",
         "inputs": {
             "j_1": "Nombre...",
             "j_2": "Apellido...",
-            "j_3": "Correo...",
-            "j_4": "Consulta..."
+            "j_3": "Correo electrónico...",
+            "j_4": "Mensaje..."
         },
         "validations": {
             "inputs": {
                 "j_1": {
-                    "text_1": "El nombre es requerido",
-                    "text_2": "El nombre debe tener menos de 10 caracteres"
+                    "text_1": "Se requiere un nombre",
+                    "text_2": "El nombre debe tener más de 3 caracteres",
+                    "text_3": "El nombre debe tener menos de 15 caracteres",
+                    "text_4": "El nombre solo debe contener letras"
                 },
                 "j_2": {
-                    "text_1": "El apellido es requerido",
-                    "text_2": "El apellido debe tener menos de 10 caracteres"
+                    "text_1": "Se requiere un apellido",
+                    "text_2": "El apellido debe tener más de 3 caracteres",
+                    "text_3": "El apellido debe tener menos de 20 caracteres",
+                    "text_4": "El apellido solo debe contener letras"
                 },
                 "j_3": {
-                    "text_1": "El email es requerido",
-                    "text_2": "Email incorrecto"
+                    "text_1": "Se requiere un correo electrónico",
+                    "text_4": "El correo electrónico no es válido"
                 },
                 "j_4": {
-                    "text_1": "El mensaje es requerido",
-                    "text_2": "El mensaje debe tener menos de 10 caracteres"
+                    "text_1": "Se requiere un mensaje",
+                    "text_2": "El mensaje debe tener más de 10 caracteres",
+                    "text_3": "El mensaje debe tener menos de 500 caracteres",
+                    "text_4": "El mensaje contiene símbolos no permitidos"
                 }
             },
             "recaptcha": {
