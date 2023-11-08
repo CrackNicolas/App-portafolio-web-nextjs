@@ -20,7 +20,7 @@ export default function ComponentMessageError(props: Props) {
     }
 
     return (type === undefined) ? '' : (
-        <p className="absolute top-[-27px] text-[15px] font-semibold tracking-widest text-red-500">
+        <p className="absolute top-[-27px] text-[13.7px] mg:text-[15px] font-normal tracking-wide text-red-500 max-line">
             {
                 t(`contact.validations.inputs.j_${order}.text_${get_error(type)}`)
             }

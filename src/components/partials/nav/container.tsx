@@ -2,7 +2,7 @@ import ComponentItem from "./item";
 import ComponentIcon from "../icon";
 
 import { Use_translation } from "@/i18n/logic/use_translation";
-import { Media_query } from "@/logic/media_query";
+import { Media_query } from "@/logic/page/media_query";
 
 type Props = {
     paint: string,

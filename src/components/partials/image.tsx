@@ -1,11 +1,10 @@
 type Props = {
     name: string,
-    description_class?: string,
-    focus?: any
+    description_class?: string
 }
 
 export default function ComponentImage(props: Props) {
-    const { name, description_class = "", focus = () => { } } = props;
+    const { name, description_class = "" } = props;
 
     const get_image = (name: string) => {
         switch (name) {
@@ -47,6 +46,6 @@ export default function ComponentImage(props: Props) {
     }
 
     return (
-        <img src={get_image(name)} className={`cursor-pointer transition duration-500 rounded-sm ${description_class}`} alt={`Logo ${name}`} onMouseEnter={() => focus(name)} onMouseLeave={() => focus("Skills")} />
+        <img src={get_image(name)} className={`cursor-pointer transition duration-500 rounded-sm ${description_class}`} alt={`Logo ${name}`} />
     )
 }

@@ -2,7 +2,7 @@ import ComponentIcon from "../icon";
 
 import { Use_translation } from "@/i18n/logic/use_translation";
 
-import { Media_query } from "@/logic/media_query";
+import { Media_query } from "@/logic/page/media_query";
 
 type Props = {
     animate: boolean,
@@ -27,7 +27,7 @@ export default function ComponentItem(props: Props) {
                         "0" + number
                     }
                 </div>
-                <div className={`${animate ? 'animate-[presentationRight_1.2s_ease-in-out]' : 'opacity-0'} xl:mt-[-10px] group cursor-pointer hover:bg-text-secondary hover:text-bg-primary hover:shadow-none transition duration-700 shadow-3xl shadow-text-primary pt-[5px] pb-[10px] px-[10px] sm:px-[15px] rounded-md leading-7 sm:leading-8 border-[1px] border-text-secondary`}>
+                <div className={` ${animate ? 'animate-[presentationRight_1.2s_ease-in-out]' : 'opacity-0'} xl:mt-[-10px] group cursor-pointer hover:bg-text-secondary hover:text-bg-primary hover:shadow-none transition duration-700 shadow-3xl shadow-text-primary pt-[5px] pb-[10px] px-[10px] sm:px-[15px] rounded-md leading-7 sm:leading-8 border-[1px] border-text-secondary`}>
                     <div className="flex justify-between items-center">
                         <span className="font-bold">
                             {t(`experience.data.item_${number}.description.title`)}

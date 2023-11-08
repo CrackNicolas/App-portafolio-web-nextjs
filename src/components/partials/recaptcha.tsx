@@ -27,7 +27,7 @@ const ComponentRecaptcha = forwardRef((props: Props, ref: any) => {
             />
             {
                 (state_captcha === false) &&
-                <p className='text-[15px] font-semibold tracking-widest text-red-500'>
+                <p className='text-[13.7px] mg:text-[15px] font-normal text-red-500'>
                     {t("contact.validations.recaptcha.title")}
                 </p>
             }

@@ -35,3 +35,10 @@ body::-webkit-scrollbar-thumb:hover {
     background-repeat: no-repeat;
     background-position: -190px -200px;
 }
+
+.max-line{
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}

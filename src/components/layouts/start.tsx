@@ -73,13 +73,13 @@ export default function ComponentStart(props: Props) {
                         <span className={`${animate ? 'animate-[presentationRight_1.6s_ease-in-out] opacity-40' : 'opacity-0'} w-full h-[0.1px] bg-text-secondary`}></span>
                     </div>
                     <div className="flex gap-x-[10px] sm:gap-x-[15px] w-[309.5px] sm:w-[376.1px]">
-                        <Link to="contact" spy={true} smooth={true} offset={0} duration={500} rel="noopener noreferrer" className={`${animate ? 'animate-[presentationBottom_1.6s_ease-in-out]' : 'opacity-0'} flex items-center min-w-[145px] sm:min-w-[171px] min-w-[145px] sm:max-w-[171px] gap-x-[8px] rounded-md py-[10px] px-[20px] cursor-pointer text-bg-primary bg-text-secondary hover:opacity-90 border-[1px] border-text-secondary transition duration-500`}>
+                        <Link to="contact" spy={true} smooth={true} offset={0} duration={500} rel="noopener noreferrer" className={` bg-gradient-to-r from-bg-secondary to-blue-500 ${animate ? 'animate-[presentationBottom_1.6s_ease-in-out]' : 'opacity-0'} flex items-center min-w-[145px] sm:min-w-[171px] min-w-[145px] sm:max-w-[171px] gap-x-[8px] rounded-md py-[10px] px-[20px] cursor-pointer text-bg-primary bg-text-secondary hover:opacity-90 border-[1px] border-text-secondary transition duration-500`}>
                             <ComponentIcon name="contact" size={16} description_class="text-bg-primary w-[14px] h-[14px] sm:w-[16px] sm:h-[16px]" />
                             <span className="text-[15px] sm:text-[20px] font-semibold">
                                 {t('start.txt_3')}
                             </span>
                         </Link>
-                        <a onClick={handle_download} href={`${domain}/pdf/Curriculum Beltran Alejo.pdf`} rel="noopener noreferrer" download="Curriculum Beltran Alejo.pdf" className={`${animate ? 'animate-[presentationBottom_1.6s_ease-in-out]' : 'opacity-0'} group flex items-center min-w-[156px] sm:min-w-[189px] min-w-[156px] sm:max-w-[189px] gap-x-[8px] rounded-md py-[10px] px-[20px] cursor-pointer hover:text-bg-primary hover:bg-text-secondary bg-bg-primary text-text-primary border-[1px] border-text-secondary transition duration-500`}>
+                        <a onClick={handle_download} href={`${domain}/pdf/Curriculum Beltran Alejo.pdf`} rel="noopener noreferrer" download="Curriculum Beltran Alejo.pdf" className={`${animate ? 'animate-[presentationBottom_1.6s_ease-in-out]' : 'opacity-0'} group flex items-center min-w-[156px] sm:min-w-[189px] min-w-[156px] sm:max-w-[189px] gap-x-[8px] rounded-md py-[10px] px-[20px] cursor-pointer ease-in duration-500 hover:bg-gradient-to-r hover:from-bg-secondary hover:to-blue-500 hover:text-bg-primary  bg-bg-primary text-text-primary border-[1px] border-text-secondary transition duration-500`}>
                             <ComponentIcon name="dowload" size={16} description_class="group-hover:text-bg-primary text-text-primary w-[14px] h-[14px] sm:w-[16px] sm:h-[16px]" />
                             <span className="text-[15px] sm:text-[20px] font-semibold">
                                 {t('start.txt_4')}

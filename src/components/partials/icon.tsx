@@ -2,12 +2,11 @@ type Props = {
     name: string
     size?: number,
     description_class?: string,
-    view_box?: string,
-    focus?: any
+    view_box?: string
 }
 
 export default function ComponentIcon(props: Props) {
-    const { name, size = 0, description_class = "", view_box = "0 0 16 16", focus = () => { } } = props;
+    const { name, size = 0, description_class = "", view_box = "0 0 16 16"} = props;
 
     const get_icon = (name: string) => {
         switch (name) {
@@ -83,7 +82,7 @@ export default function ComponentIcon(props: Props) {
     }
 
     return (
-        <svg onMouseEnter={() => focus(name)} onMouseLeave={() => focus("Skills")} xmlns="http://www.w3.org/2000/svg" width={size} height={size} className={`cursor-pointer ${description_class} transition duration-500`} fill="currentColor" viewBox={view_box}>
+        <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} className={`cursor-pointer ${description_class} transition duration-500`} fill="currentColor" viewBox={view_box}>
             {get_icon(name)}
         </svg>
     )
