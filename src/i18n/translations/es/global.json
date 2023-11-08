@@ -162,9 +162,16 @@
                 "title": "Valida que no sos un robot"
             },
             "message": {
-                "title": "Mensaje exitoso",
-                "description": "Tu mensaje ha sido enviado con éxito. ¡Gracias por ponerte en contacto! Te responderé lo antes posible.",
-                "button": "Aceptar"
+                "success": {
+                    "title": "Mensaje exitoso",
+                    "description": "Tu mensaje ha sido enviado con éxito. ¡Gracias por ponerte en contacto! Te responderé lo antes posible.",
+                    "button": "Aceptar"
+                },
+                "warning": {
+                    "title": "Comunicación respetuosa",
+                    "description": "Su lenguaje ofensivo no es apropiado. Por favor, formule su pregunta o inquietud de manera respetuosa.",
+                    "button": "Aceptar"
+                }
             }
         }
     },

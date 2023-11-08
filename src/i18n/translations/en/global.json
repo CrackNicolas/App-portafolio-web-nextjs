@@ -162,9 +162,16 @@
                 "title": "Validate that you are not a robot"
             },
             "message": {
-                "title": "Successful message",
-                "description": "Your message has been sent successfully. Thank you for contacting! I will answer you as soon as possible.",
-                "button": "Accept"
+                "success": {
+                    "title": "Successful message",
+                    "description": "Your message has been sent successfully. Thank you for contacting! I will answer you as soon as possible.",
+                    "button": "Accept"
+                },
+                "warning": {
+                    "title": "Respectful communication",
+                    "description": "Your offensive language is not appropriate. Please ask your question or concern in a respectful manner.",
+                    "button": "Accept"
+                }
             }
         }
     },

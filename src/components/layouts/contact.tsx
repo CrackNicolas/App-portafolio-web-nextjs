@@ -1,9 +1,5 @@
-import emailjs from '@emailjs/browser';
-
 import { useForm } from 'react-hook-form';
 import { useEffect, useRef, useState } from "react";
-
-import { key_global_emailjs, key_service_emailjs, key_template_emaijs } from '../../config/credentials';
 
 import ComponentIcon from '../partials/icon';
 import ComponentRecaptcha from '../partials/recaptcha';
@@ -13,7 +9,12 @@ import ComponentMessageConfirmation from '../partials/messages/confirmation';
 
 import { Use_translation } from "@/i18n/logic/use_translation";
 import { Use_window_width } from '@/logic/page/size';
+import { Style_icon } from '@/logic/style/icon';
+import { Style_input } from '@/logic/style/input';
 import { Insulting_message } from '@/logic/restrictions/insulting_message';
+import { Send_email } from '@/logic/services/send_email';
+import { Amount_lines_input } from '@/logic/style/amount_lines_input';
+import ComponentMessageWarning from '../partials/messages/warning';
 
 type Props = {
     animate: boolean,
@@ -30,36 +31,31 @@ export default function ComponentContact(props: Props) {
 
     const [active_validation, setActive_validation] = useState<boolean>(false)
     const [send_email, setSend_email] = useState<boolean>(false);
+    const [error_email, setError_email] = useState<boolean>(false);
     const [state_captcha, setState_captcha] = useState<any>(null);
 
     const ref_form = useRef<any>(null);
     const recaptcha = useRef<any>(null);
 
     const onSubmit = () => {
-        if (recaptcha.current.getValue() && Insulting_message(ref_form.current.message)) {
+        if (Insulting_message(ref_form.current.message.value)) {
+            setError_email(true);
+        }
+        if (!recaptcha.current.getValue()) {
+            setState_captcha(false);
+        }
+        if (recaptcha.current.getValue() && !Insulting_message(ref_form.current.message.value)) {
             setState_captcha(true);
             ref_form.current.reset();
             recaptcha.current.reset();
             setSend_email(true);
             setActive_validation(false);
-
-            /*emailjs.sendForm(
-                key_service_emailjs,
-                key_template_emaijs,
-                ref_form.current,
-                key_global_emailjs
-            ).then(result => console.log(result.text)).catch(error => console.log(error))
-            */
-        } else {
-            setState_captcha(false);
+            //Send_email(ref_form.current);
         }
     }
 
     useEffect(() => {
-        const lineHeight = getComputedStyle(ref_form.current.message).lineHeight; // Altura de línea en píxeles
-        const alturaTextarea = ref_form.current.message.scrollHeight; // Altura total del textarea en píxeles
-        const cantidadDeLineas = alturaTextarea / parseFloat(lineHeight);
-        ref_form.current.message.rows = Math.floor(cantidadDeLineas);
+        ref_form.current.message.rows = Amount_lines_input(ref_form.current.message);
     }, [watch("message"), width])
 
     useEffect(() => {
@@ -76,21 +72,6 @@ export default function ComponentContact(props: Props) {
         return <ComponentIcon name={value ? 'check' : 'error'} size={22} />
     }
 
-    const style_input = (input: any) => {
-        if (active_validation) {
-            return {
-                boxShadow: (input == "required" || input == "minLength" || input == "maxLength" || input == "pattern") ? '0 0 4px 0.1px red' : '0 0 4px 0.1px var(--text-primary)'
-            }
-        }
-    }
-
-    const style_icon = (input: any) => {
-        if (active_validation) {
-            return `absolute right-0 pb-0 px-[6px] ${(input == "required" || input == "minLength" || input == "maxLength" || input == "pattern") ? 'text-red-500' : 'text-text-secondary'}`
-        }
-        return 'hidden';
-    }
-
     return (
         <section id="contact" className="px-[10px] sm:px-[30px] lg:pl-[70px] flex flex-col gap-[20px] m-auto max-w-[1200px] pt-[65px] lg:pt-[80px]">
             <ComponentNameSection animate={animate} name="start.txt_3" icon="contact" />
@@ -98,7 +79,7 @@ export default function ComponentContact(props: Props) {
                 <div className='grid grid-cols-1 sm:grid-cols-2 gap-[40px] sm:gap-[10px]'>
                     <div className={`${animate ? 'animate-[presentationLeft_1.1s_ease-in-out]' : 'opacity-0'} transition duration-500 relative grid grid-cols-1 items-center gap-[5px]`}>
                         <ComponentMessageError order={1} type={errors.name?.type} />
-                        <input className={`outline-0 shadow-1xl shadow-text-primary max-h-[20px] min-h-[20px] py-[20px] ${active_validation ? 'pr-[35px]' : 'pr-[10px]'} pl-[10px] overflow-auto text-[18px] border-none rounded-sm`} type="text" style={style_input(errors.name?.type)} placeholder={t('contact.inputs.j_1')} {...register('name', {
+                        <input className={`outline-0 shadow-1xl shadow-text-primary max-h-[20px] min-h-[20px] py-[20px] ${active_validation ? 'pr-[35px]' : 'pr-[10px]'} pl-[10px] overflow-auto text-[18px] border-none rounded-sm`} type="text" style={Style_input(active_validation, errors.name?.type)} placeholder={t('contact.inputs.j_1')} {...register('name', {
                             required: true,
                             minLength: 3,
                             maxLength: 15,
@@ -111,7 +92,7 @@ export default function ComponentContact(props: Props) {
                                 }
                             }}
                         />
-                        <div className={`${style_icon(errors.name?.type)} `}>
+                        <div className={`${Style_icon(active_validation, errors.name?.type)} `}>
                             {
                                 get_icon(errors.name?.type === undefined)
                             }
@@ -119,7 +100,7 @@ export default function ComponentContact(props: Props) {
                     </div>
                     <div className={`${animate ? 'animate-[presentationRight_1.1s_ease-in-out]' : 'opacity-0'} transition duration-500 relative grid grid-cols-1 items-center gap-[5px]`}>
                         <ComponentMessageError order={2} type={errors.last_name?.type} />
-                        <input className={`outline-0 shadow-1xl shadow-text-primary max-h-[20px] min-h-[20px] py-[20px] ${active_validation ? 'pr-[35px]' : 'pr-[10px]'} pl-[10px] overflow-auto text-[18px] border-none rounded-sm`} type="text" style={style_input(errors.last_name?.type)} placeholder={t('contact.inputs.j_2')} {...register('last_name', {
+                        <input className={`outline-0 shadow-1xl shadow-text-primary max-h-[20px] min-h-[20px] py-[20px] ${active_validation ? 'pr-[35px]' : 'pr-[10px]'} pl-[10px] overflow-auto text-[18px] border-none rounded-sm`} type="text" style={Style_input(active_validation, errors.last_name?.type)} placeholder={t('contact.inputs.j_2')} {...register('last_name', {
                             required: true,
                             minLength: 3,
                             maxLength: 20,
@@ -132,7 +113,7 @@ export default function ComponentContact(props: Props) {
                                 }
                             }}
                         />
-                        <div className={`${style_icon(errors.last_name?.type)} `}>
+                        <div className={`${Style_icon(active_validation, errors.last_name?.type)} `}>
                             {
                                 get_icon(errors.last_name?.type === undefined)
                             }
@@ -141,11 +122,11 @@ export default function ComponentContact(props: Props) {
                 </div>
                 <div className={`${animate ? 'animate-[presentationLeft_1.3s_ease-in-out]' : 'opacity-0'} transition duration-500 relative grid grid-cols-1 items-center gap-[5px]`}>
                     <ComponentMessageError order={3} type={errors.email?.type} />
-                    <input className={`outline-0 shadow-1xl shadow-text-primary max-h-[20px] min-h-[20px] py-[20px] ${active_validation ? 'pr-[35px]' : 'pr-[10px]'} pl-[10px] overflow-auto text-[18px] border-none rounded-sm`} type="email" style={style_input(errors.email?.type)} placeholder={t('contact.inputs.j_3')} {...register('email', {
+                    <input className={`outline-0 shadow-1xl shadow-text-primary max-h-[20px] min-h-[20px] py-[20px] ${active_validation ? 'pr-[35px]' : 'pr-[10px]'} pl-[10px] overflow-auto text-[18px] border-none rounded-sm`} type="email" style={Style_input(active_validation, errors.email?.type)} placeholder={t('contact.inputs.j_3')} {...register('email', {
                         required: true,
                         pattern: /^[a-zA-Z0-9]+[\w\.-]*@[a-zA-Z0-9]+(\.[a-zA-Z]+)+$/i
                     })} />
-                    <div className={`${style_icon(errors.email?.type)} `}>
+                    <div className={`${Style_icon(active_validation, errors.email?.type)} `}>
                         {
                             get_icon(errors.email?.type === undefined)
                         }
@@ -153,7 +134,7 @@ export default function ComponentContact(props: Props) {
                 </div>
                 <div className={`${animate ? 'animate-[presentationRight_1.4s_ease-in-out]' : 'opacity-0'} transition duration-500 relative grid grid-cols-1 items-center gap-[5px]`}>
                     <ComponentMessageError order={4} type={errors.message?.type} />
-                    <textarea rows={2} className={`outline-0 shadow-1xl overflow-hidden shadow-text-primary resize-none py-[10px] ${active_validation ? 'pr-[35px]' : 'pr-[10px]'} pl-[10px] text-[19.5px] rounded-sm`} style={style_input(errors.message?.type)} placeholder={t('contact.inputs.j_4')} {...register('message', {
+                    <textarea rows={2} className={`outline-0 shadow-1xl overflow-hidden shadow-text-primary resize-none py-[10px] ${active_validation ? 'pr-[35px]' : 'pr-[10px]'} pl-[10px] text-[19.5px] rounded-sm`} style={Style_input(active_validation, errors.message?.type)} placeholder={t('contact.inputs.j_4')} {...register('message', {
                         required: true,
                         minLength: 10,
                         maxLength: 500,
@@ -166,7 +147,7 @@ export default function ComponentContact(props: Props) {
                             }
                         }}
                     />
-                    <div className={`${style_icon(errors.message?.type)} top-[10px] pb-5 `}>
+                    <div className={`${Style_icon(active_validation, errors.message?.type)} top-[10px] pb-5 `}>
                         {
                             get_icon(errors.message?.type === undefined)
                         }
@@ -175,12 +156,13 @@ export default function ComponentContact(props: Props) {
                 <aside className={`${animate ? 'animate-[presentationBottom_1.5s_ease-in-out]' : 'opacity-0'} transition duration-500 overflow-hidden overflow-auto py-0`}>
                     <ComponentRecaptcha ref={recaptcha} lenguaje={lenguaje} onChange={onChange} state_captcha={state_captcha} />
                 </aside>
-                <button className={`${animate ? 'animate-[presentationBottom_1.5s_ease-in-out]' : 'opacity-0'} bg-gradient-to-r from-bg-secondary to-blue-500 hover:from-blue-500 hover:to-bg-secondary outline-none group flex justify-center items-center transition duration-700 mx-auto mt-[-10px] px-[20px] w-full py-[5px] gap-x-3 rounded-sm bg-text-secondary border-[0.1px] border-text-secondary`} type="submit" onClick={() => setActive_validation(true)}>
-                    <ComponentIcon name="send" size={16} description_class="group-hover:rotate-45 text-bg-primary" />
-                    <span className='text-bg-primary text-[18px] font-bold'>
+                <button className={`${animate ? 'animate-[presentationBottom_1.5s_ease-in-out]' : 'opacity-0'} outline-none group hover:bg-bg-primary flex justify-center items-center transition duration-700 mx-auto mt-[-10px] px-[20px] w-full py-[5px] gap-x-3 rounded-sm bg-text-secondary border-[0.1px] border-text-secondary`} type="submit" onClick={() => setActive_validation(true)}>
+                    <ComponentIcon name="send" size={16} description_class="group-hover:rotate-45 group-hover:text-text-secondary text-bg-primary" />
+                    <span className='group-hover:text-text-secondary text-bg-primary text-[18px] font-bold'>
                         {t('menu.i_6')}
                     </span>
                 </button>
+                <ComponentMessageWarning open={error_email} setOpen={setError_email}/>
                 <ComponentMessageConfirmation open={send_email} setOpen={setSend_email} />
             </form>
         </section>
