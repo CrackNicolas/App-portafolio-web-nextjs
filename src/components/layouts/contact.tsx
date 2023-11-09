@@ -147,7 +147,7 @@ export default function ComponentContact(props: Props) {
                 </div>
                 <div className={`${animate ? 'animate-[presentationRight_1.4s_ease-in-out]' : 'opacity-0'} transition duration-500 relative grid grid-cols-1 items-center gap-[5px]`}>
                     <ComponentMessageError order={4} type={errors.message?.type} />
-                    <textarea rows={2} className={`outline-0 shadow-1xl overflow-hidden shadow-text-primary resize-none py-[10px] ${active_validation ? 'pr-[35px]' : 'pr-[10px]'} pl-[10px] text-[19.5px] rounded-sm`} style={style_input(errors.message?.type)} placeholder={t('contact.inputs.j_4')} {...register('message', {
+                    <textarea rows={2} className={`outline-0 shadow-1xl overflow-hidden shadow-text-primary resize-none py-[8px] ${active_validation ? 'pr-[35px]' : 'pr-[10px]'} pl-[10px] text-[19.5px] rounded-sm`} style={style_input(errors.message?.type)} placeholder={t('contact.inputs.j_4')} {...register('message', {
                         required: true,
                         minLength: 10,
                         maxLength: 500,
