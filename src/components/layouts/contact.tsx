@@ -10,8 +10,6 @@ import ComponentMessageConfirmation from '../partials/messages/confirmation';
 
 import { Use_translation } from "@/i18n/logic/use_translation";
 import { Use_window_width } from '@/logic/page/size';
-import { Style_icon } from '@/components/partials/contact/icon';
-import { Style_input } from '@/logic/style/input';
 import { Insulting_message } from '@/logic/restrictions/insulting_message';
 import { Send_email } from '@/logic/services/send_email';
 import { Amount_lines_input } from '@/logic/style/amount_lines_input';
@@ -68,6 +66,21 @@ export default function ComponentContact(props: Props) {
         setState_captcha(recaptcha.current.getValue());
     }
 
+    const style_icon = (input: any) => {
+        if (active_validation) {
+            return `absolute right-0 pb-0 px-[6px] ${(input == "required" || input == "minLength" || input == "maxLength" || input == "pattern") ? 'text-red-500' : 'text-text-secondary'}`
+        }
+        return 'hidden';
+    }
+
+    const style_input = (input: any) => {
+        if (active_validation) {
+            return {
+                boxShadow: (input == "required" || input == "minLength" || input == "maxLength" || input == "pattern") ? '0 0 4px 0.1px red' : '0 0 4px 0.1px var(--text-primary)'
+            }
+        }
+    }
+
     const get_icon = (value: boolean) => {
         return <ComponentIcon name={value ? 'check' : 'error'} size={22} />
     }
@@ -79,7 +92,7 @@ export default function ComponentContact(props: Props) {
                 <div className='grid grid-cols-1 sm:grid-cols-2 gap-[40px] sm:gap-[10px]'>
                     <div className={`${animate ? 'animate-[presentationLeft_1.1s_ease-in-out]' : 'opacity-0'} transition duration-500 relative grid grid-cols-1 items-center gap-[5px]`}>
                         <ComponentMessageError order={1} type={errors.name?.type} />
-                        <input className={`outline-0 shadow-1xl shadow-text-primary max-h-[20px] min-h-[20px] py-[20px] ${active_validation ? 'pr-[35px]' : 'pr-[10px]'} pl-[10px] overflow-auto text-[18px] border-none rounded-sm`} type="text" style={Style_input(active_validation, errors.name?.type)} placeholder={t('contact.inputs.j_1')} {...register('name', {
+                        <input className={`outline-0 shadow-1xl shadow-text-primary max-h-[20px] min-h-[20px] py-[20px] ${active_validation ? 'pr-[35px]' : 'pr-[10px]'} pl-[10px] overflow-auto text-[18px] border-none rounded-sm`} type="text" style={style_input(errors.name?.type)} placeholder={t('contact.inputs.j_1')} {...register('name', {
                             required: true,
                             minLength: 3,
                             maxLength: 15,
@@ -92,7 +105,7 @@ export default function ComponentContact(props: Props) {
                                 }
                             }}
                         />
-                        <div className={`${Style_icon(active_validation, errors.name?.type)} `}>
+                        <div className={`${style_icon(errors.name?.type)} `}>
                             {
                                 get_icon(errors.name?.type === undefined)
                             }
@@ -100,7 +113,7 @@ export default function ComponentContact(props: Props) {
                     </div>
                     <div className={`${animate ? 'animate-[presentationRight_1.1s_ease-in-out]' : 'opacity-0'} transition duration-500 relative grid grid-cols-1 items-center gap-[5px]`}>
                         <ComponentMessageError order={2} type={errors.last_name?.type} />
-                        <input className={`outline-0 shadow-1xl shadow-text-primary max-h-[20px] min-h-[20px] py-[20px] ${active_validation ? 'pr-[35px]' : 'pr-[10px]'} pl-[10px] overflow-auto text-[18px] border-none rounded-sm`} type="text" style={Style_input(active_validation, errors.last_name?.type)} placeholder={t('contact.inputs.j_2')} {...register('last_name', {
+                        <input className={`outline-0 shadow-1xl shadow-text-primary max-h-[20px] min-h-[20px] py-[20px] ${active_validation ? 'pr-[35px]' : 'pr-[10px]'} pl-[10px] overflow-auto text-[18px] border-none rounded-sm`} type="text" style={style_input(errors.last_name?.type)} placeholder={t('contact.inputs.j_2')} {...register('last_name', {
                             required: true,
                             minLength: 3,
                             maxLength: 20,
@@ -113,7 +126,7 @@ export default function ComponentContact(props: Props) {
                                 }
                             }}
                         />
-                        <div className={`${Style_icon(active_validation, errors.last_name?.type)} `}>
+                        <div className={`${style_icon(errors.last_name?.type)} `}>
                             {
                                 get_icon(errors.last_name?.type === undefined)
                             }
@@ -122,11 +135,11 @@ export default function ComponentContact(props: Props) {
                 </div>
                 <div className={`${animate ? 'animate-[presentationLeft_1.3s_ease-in-out]' : 'opacity-0'} transition duration-500 relative grid grid-cols-1 items-center gap-[5px]`}>
                     <ComponentMessageError order={3} type={errors.email?.type} />
-                    <input className={`outline-0 shadow-1xl shadow-text-primary max-h-[20px] min-h-[20px] py-[20px] ${active_validation ? 'pr-[35px]' : 'pr-[10px]'} pl-[10px] overflow-auto text-[18px] border-none rounded-sm`} type="email" style={Style_input(active_validation, errors.email?.type)} placeholder={t('contact.inputs.j_3')} {...register('email', {
+                    <input className={`outline-0 shadow-1xl shadow-text-primary max-h-[20px] min-h-[20px] py-[20px] ${active_validation ? 'pr-[35px]' : 'pr-[10px]'} pl-[10px] overflow-auto text-[18px] border-none rounded-sm`} type="email" style={style_input(errors.email?.type)} placeholder={t('contact.inputs.j_3')} {...register('email', {
                         required: true,
                         pattern: /^[a-zA-Z0-9]+[\w\.-]*@[a-zA-Z0-9]+(\.[a-zA-Z]+)+$/i
                     })} />
-                    <div className={`${Style_icon(active_validation, errors.email?.type)} `}>
+                    <div className={`${style_icon(errors.email?.type)} `}>
                         {
                             get_icon(errors.email?.type === undefined)
                         }
@@ -134,7 +147,7 @@ export default function ComponentContact(props: Props) {
                 </div>
                 <div className={`${animate ? 'animate-[presentationRight_1.4s_ease-in-out]' : 'opacity-0'} transition duration-500 relative grid grid-cols-1 items-center gap-[5px]`}>
                     <ComponentMessageError order={4} type={errors.message?.type} />
-                    <textarea rows={2} className={`outline-0 shadow-1xl overflow-hidden shadow-text-primary resize-none py-[10px] ${active_validation ? 'pr-[35px]' : 'pr-[10px]'} pl-[10px] text-[19.5px] rounded-sm`} style={Style_input(active_validation, errors.message?.type)} placeholder={t('contact.inputs.j_4')} {...register('message', {
+                    <textarea rows={2} className={`outline-0 shadow-1xl overflow-hidden shadow-text-primary resize-none py-[10px] ${active_validation ? 'pr-[35px]' : 'pr-[10px]'} pl-[10px] text-[19.5px] rounded-sm`} style={style_input(errors.message?.type)} placeholder={t('contact.inputs.j_4')} {...register('message', {
                         required: true,
                         minLength: 10,
                         maxLength: 500,
@@ -147,7 +160,7 @@ export default function ComponentContact(props: Props) {
                             }
                         }}
                     />
-                    <div className={`${Style_icon(active_validation, errors.message?.type)} top-[10px] pb-5 `}>
+                    <div className={`${style_icon(errors.message?.type)} top-[10px] pb-5 `}>
                         {
                             get_icon(errors.message?.type === undefined)
                         }
