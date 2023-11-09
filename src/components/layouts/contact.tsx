@@ -5,16 +5,16 @@ import ComponentIcon from '../partials/icon';
 import ComponentRecaptcha from '../partials/recaptcha';
 import ComponentNameSection from '../partials/name_section';
 import ComponentMessageError from '../partials/messages/error';
+import ComponentMessageWarning from '../partials/messages/warning';
 import ComponentMessageConfirmation from '../partials/messages/confirmation';
 
 import { Use_translation } from "@/i18n/logic/use_translation";
 import { Use_window_width } from '@/logic/page/size';
-import { Style_icon } from '@/logic/style/icon';
+import { Style_icon } from '@/components/partials/contact/icon';
 import { Style_input } from '@/logic/style/input';
 import { Insulting_message } from '@/logic/restrictions/insulting_message';
 import { Send_email } from '@/logic/services/send_email';
 import { Amount_lines_input } from '@/logic/style/amount_lines_input';
-import ComponentMessageWarning from '../partials/messages/warning';
 
 type Props = {
     animate: boolean,
