@@ -11,8 +11,9 @@ import ComponentMessageConfirmation from '../partials/messages/confirmation';
 import { Use_translation } from "@/i18n/logic/use_translation";
 import { Use_window_width } from '@/logic/page/size';
 import { Insulting_message } from '@/logic/restrictions/insulting_message';
-import { Send_email } from '@/logic/services/send_email';
 import { Amount_lines_input } from '@/logic/style/amount_lines_input';
+import { Send_email } from '@/logic/services/email';
+import ComponentMessageWait from '../partials/messages/wait';
 
 type Props = {
     animate: boolean,
@@ -29,6 +30,7 @@ export default function ComponentContact(props: Props) {
 
     const [active_validation, setActive_validation] = useState<boolean>(false)
     const [send_email, setSend_email] = useState<boolean>(false);
+    const [wait_email, setWait_email] = useState<boolean>(false);
     const [error_email, setError_email] = useState<boolean>(false);
     const [state_captcha, setState_captcha] = useState<any>(null);
 
@@ -43,13 +45,28 @@ export default function ComponentContact(props: Props) {
             setState_captcha(false);
         }
         if (recaptcha.current.getValue() && !Insulting_message(ref_form.current.message.value)) {
-            setState_captcha(true);
-            ref_form.current.reset();
-            recaptcha.current.reset();
-            setSend_email(true);
-            setActive_validation(false);
-            //Send_email(ref_form.current);
+            post_email();
         }
+    }
+
+    const post_email = async () => {
+        setWait_email(true);
+        try {
+            const { data } = await Send_email(ref_form.current);
+            setWait_email(false);
+            setSend_email(data);
+        } catch (error) {
+            setError_email(true);
+        } finally {
+            data_reset();
+        }
+    }
+
+    const data_reset = () => {
+        ref_form.current.reset();
+        recaptcha.current.reset();
+        setState_captcha(true);
+        setActive_validation(false);
     }
 
     useEffect(() => {
@@ -175,7 +192,8 @@ export default function ComponentContact(props: Props) {
                         {t('menu.i_6')}
                     </span>
                 </button>
-                <ComponentMessageWarning open={error_email} setOpen={setError_email}/>
+                <ComponentMessageWait open={true} setOpen={setWait_email} />
+                <ComponentMessageWarning open={error_email} setOpen={setError_email} />
                 <ComponentMessageConfirmation open={send_email} setOpen={setSend_email} />
             </form>
         </section>

@@ -4,8 +4,6 @@ import ReCAPTCHA from "react-google-recaptcha";
 
 import { Use_translation } from "@/i18n/logic/use_translation";
 
-import { key_recaptcha } from '../../config/credentials';
-
 type Props = {
     lenguaje: boolean,
     state_captcha: boolean,
@@ -22,7 +20,7 @@ const ComponentRecaptcha = forwardRef((props: Props, ref: any) => {
             <ReCAPTCHA
                 ref={ref}
                 hl={lenguaje ? 'es' : 'en'}
-                sitekey={key_recaptcha}
+                sitekey={`${process.env.KEY_RECAPTCHA}`}
                 onChange={onChange}
             />
             {

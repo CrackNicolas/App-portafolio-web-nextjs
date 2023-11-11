@@ -1,3 +1,16 @@
+/**
+  CAMBIOS NECESARIOS A CUMPLIR
+
+  1 - Analizar rendimiento.
+  2 - Analizar cuales son componentes del lado del cliente con 'use client' y 
+      cuales son de servidor usando 'use server'
+  3 - Analizar seguridad
+  4 - Analizar uso de memoria RAM.
+  5 - Ver toda la configuracion de NEXT.JS
+  
+**/
+
+
 import { ReactNode } from 'react'
 
 import type { Metadata } from 'next'

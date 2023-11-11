@@ -9,8 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@emailjs/browser": "^3.11.0",
     "@headlessui/react": "^1.7.17",
+    "axios": "^1.6.1",
     "next": "13.4.12",
     "react": "^18",
     "react-dom": "^18",
@@ -18,7 +18,8 @@
     "react-hook-form": "^7.47.0",
     "react-i18next": "^13.2.2",
     "react-responsive": "^9.0.2",
-    "react-scroll": "^1.9.0"
+    "react-scroll": "^1.9.0",
+    "resend": "^2.0.0"
   },
   "devDependencies": {
     "@types/node": "^20",

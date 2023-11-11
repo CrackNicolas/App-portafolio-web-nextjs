@@ -30,3 +30,9 @@
         <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="30" height="30"/> 
     </a> 
 </p>
+<p>
+    <h3>Adicionales</h3>
+    <span>
+        https://resend.com/
+    </span>
+</p>
