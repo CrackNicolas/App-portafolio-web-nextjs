@@ -25,27 +25,23 @@ export default function ComponentMessageWait(props: Props) {
                     <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
                         <Transition.Child as={Fragment} enter="ease-out duration-300" enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" enterTo="opacity-100 translate-y-0 sm:scale-100" leave="ease-in duration-200" leaveFrom="opacity-100 translate-y-0 sm:scale-100" leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95">
                             <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-bg-primary shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
-                                <div className="flex flex-col items-center gap-y-3 px-3 sm:px-7 py-7">
-                                    <div className="flex h-12 w-12 place-items-center justify-center rounded-full bg-red-100">
-                                        <ComponentIcon name='warning' description_class='cursor-default mt-1 text-red-500' size={25} />
+                                <div className="flex flex-col items-center gap-y-5 px-3 sm:px-7 py-7">
+                                    <div className="flex h-12 w-12 place-items-center justify-center rounded-full bg-gray-100">
+                                        <ComponentIcon name='wait' description_class='cursor-wait text-gray-500' size={24} />
                                     </div>
-                                    <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
-                                        <Dialog.Title as="h3" className="text-center font-semibold leading-6 text-red-500">
-                                            Esperar
+                                    <div className="mt-3 text-center sm:mt-0 sm:text-left">
+                                        <Dialog.Title as="h3" className="text-center font-semibold leading-6 text-gray-500">
+                                            Enviando tu mensaje
                                         </Dialog.Title>
                                         <p className="text-center text-sm text-gray-500">
-                                            {
-                                                t('contact.validations.message.warning.description')
-                                            }
+                                            Tu mensaje se está enviando. Por favor, espera un momento...
                                         </p>
                                     </div>
-                                </div>
-                                <div className="flex gap-x-1 py-3 px-3 sm:px-7 justify-center">
-                                    <button type="button" className="w-[200px] bg-red-500 border-red-500 hover:text-red-500 hover:bg-bg-primary border-[1px] transition duration-500 outline-none rounded-md py-[5px] font-semibold text-bg-primary" onClick={() => setOpen(false)}>
-                                        {
-                                            t("contact.validations.message.warning.button")
-                                        }
-                                    </button>
+                                    <div className="mt-1 flex gap-x-4 place-items-center justify-center">
+                                        <div className="w-3 h-3 bg-gray-500 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                                        <div className="w-3 h-3 bg-gray-500 rounded-full animate-bounce" style={{ animationDelay: '0.4s' }}></div>
+                                        <div className="w-3 h-3 bg-gray-500 rounded-full animate-bounce" style={{ animationDelay: '0.6s' }}></div>
+                                    </div>
                                 </div>
                             </Dialog.Panel>
                         </Transition.Child>

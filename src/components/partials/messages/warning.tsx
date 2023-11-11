@@ -27,9 +27,9 @@ export default function ComponentMessageWarning(props: Props) {
                             <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-bg-primary shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
                                 <div className="flex flex-col items-center gap-y-3 px-3 sm:px-7 py-7">
                                     <div className="flex h-12 w-12 place-items-center justify-center rounded-full bg-red-100">
-                                        <ComponentIcon name='warning' description_class='cursor-default mt-1 text-red-500' size={25} />
+                                        <ComponentIcon name='warning' description_class='cursor-not-allowed mt-1 text-red-500' size={25} />
                                     </div>
-                                    <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
+                                    <div className="mt-3 text-center sm:mt-0 sm:text-left">
                                         <Dialog.Title as="h3" className="text-center font-semibold leading-6 text-red-500">
                                             {
                                                 t("contact.validations.message.warning.title")

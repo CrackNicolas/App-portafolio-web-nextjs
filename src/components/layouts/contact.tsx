@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import ComponentIcon from '../partials/icon';
 import ComponentRecaptcha from '../partials/recaptcha';
 import ComponentNameSection from '../partials/name_section';
-import ComponentMessageError from '../partials/messages/error';
+import ComponentMessageError from '../partials/messages/validations/error';
 import ComponentMessageWarning from '../partials/messages/warning';
 import ComponentMessageConfirmation from '../partials/messages/confirmation';
 
@@ -193,8 +193,8 @@ export default function ComponentContact(props: Props) {
                     </span>
                 </button>
                 <ComponentMessageWait open={true} setOpen={setWait_email} />
-                <ComponentMessageWarning open={error_email} setOpen={setError_email} />
-                <ComponentMessageConfirmation open={send_email} setOpen={setSend_email} />
+                <ComponentMessageWarning open={false} setOpen={setError_email} />
+                <ComponentMessageConfirmation open={false} setOpen={setSend_email} />
             </form>
         </section>
     )
