@@ -162,16 +162,25 @@
                 "title": "Validate that you are not a robot"
             },
             "message": {
-                "success": {
-                    "title": "Successful message",
-                    "description": "Your message has been sent successfully. Thank you for contacting! I will answer you as soon as possible.",
-                    "button": "Accept"
+                "type": {
+                    "confirmation": {
+                        "title": "Successful message",
+                        "description": "Your message has been sent successfully. Thank you for contacting! I will answer you as soon as possible."
+                    },
+                    "warning": {
+                        "title": "Respectful communication",
+                        "description": "Your offensive language is not appropriate. Please ask your question or concern in a respectful manner."
+                    },
+                    "wait": {
+                        "title": "Sending your message",
+                        "description": "Your message is being sent. Please wait a moment..."
+                    },
+                    "error": {
+                        "title": "A little setback!",
+                        "description": "We're sorry, there was an error sending your message. Please try again later. Thanks for your understanding."
+                    }
                 },
-                "warning": {
-                    "title": "Respectful communication",
-                    "description": "Your offensive language is not appropriate. Please ask your question or concern in a respectful manner.",
-                    "button": "Accept"
-                }
+                "button": "Accept"
             }
         }
     },

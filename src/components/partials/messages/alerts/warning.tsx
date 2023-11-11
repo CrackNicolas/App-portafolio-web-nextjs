@@ -32,12 +32,12 @@ export default function ComponentMessageWarning(props: Props) {
                                     <div className="mt-3 text-center sm:mt-0 sm:text-left">
                                         <Dialog.Title as="h3" className="text-center font-semibold leading-6 text-yellow-500">
                                             {
-                                                t("contact.validations.message.warning.title")
+                                                t("contact.validations.message.type.warning.title")
                                             }
                                         </Dialog.Title>
                                         <p className="text-center text-sm text-gray-500">
                                             {
-                                                t('contact.validations.message.warning.description')
+                                                t('contact.validations.message.type.warning.description')
                                             }
                                         </p>
                                     </div>
@@ -45,7 +45,7 @@ export default function ComponentMessageWarning(props: Props) {
                                 <div className="flex gap-x-1 py-3 px-3 sm:px-7 justify-center">
                                     <button type="button" className="w-[200px] bg-yellow-500 border-yellow-500 hover:text-yellow-500 hover:bg-bg-primary border-[1px] transition duration-500 outline-none rounded-md py-[5px] font-semibold text-text-primary" onClick={() => setOpen(false)}>
                                         {
-                                            t("contact.validations.message.warning.button")
+                                            t("contact.validations.message.button")
                                         }
                                     </button>
                                 </div>

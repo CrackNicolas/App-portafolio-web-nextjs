@@ -33,12 +33,12 @@ export default function ComponentMessageConfirmation(props: Props) {
                                     <div className="mt-3 text-center sm:mt-0 sm:text-left">
                                         <Dialog.Title as="h3" className="text-center font-semibold leading-6 text-text-secondary">
                                             {
-                                                t((view_url !== "") ? 'start.message.title' : 'contact.validations.message.success.title')
+                                                t((view_url !== "") ? 'start.message.title' : 'contact.validations.message.type.confirmation.title')
                                             }
                                         </Dialog.Title>
                                         <p className="text-center text-sm text-gray-500">
                                             {
-                                                t((view_url !== "") ? 'start.message.description' : 'contact.validations.message.success.description')
+                                                t((view_url !== "") ? 'start.message.description' : 'contact.validations.message.type.confirmation.description')
                                             }
                                         </p>
                                     </div>
@@ -54,7 +54,7 @@ export default function ComponentMessageConfirmation(props: Props) {
                                     }
                                     <button type="button" className={`${(view_url !== "") ? 'bg-red-500 border-red-500 hover:text-red-500 w-[180px]' : 'w-[200px] bg-text-secondary border-text-secondary hover:text-text-secondary'} hover:bg-bg-primary border-[1px] transition duration-500 outline-none rounded-md py-[5px] font-semibold text-bg-primary`} onClick={() => setOpen(false)}>
                                         {
-                                            t((view_url !== "") ? 'start.message.buttons.b_2' : 'contact.validations.message.success.button')
+                                            t((view_url !== "") ? 'start.message.buttons.b_2' : 'contact.validations.message.button')
                                         }
                                     </button>
                                 </div>

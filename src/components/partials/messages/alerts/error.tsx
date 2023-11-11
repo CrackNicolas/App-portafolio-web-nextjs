@@ -31,17 +31,21 @@ export default function ComponentMessageError(props: Props) {
                                     </div>
                                     <div className="mt-3 text-center sm:mt-0 sm:text-left">
                                         <Dialog.Title as="h3" className="text-center font-semibold leading-6 text-red-500">
-                                            ¡Un pequeño contratiempo!
+                                        {
+                                                t("contact.validations.message.type.error.title")
+                                            }
                                         </Dialog.Title>
                                         <p className="text-center text-sm text-gray-500">
-                                            Lo sentimos, se produjo un error en el envío del mensaje. Por favor, inténtalo de nuevo más tarde. Gracias por tu comprensión.
+                                        {
+                                                t('contact.validations.message.type.error.description')
+                                            }
                                         </p>
                                     </div>
                                 </div>
                                 <div className="flex gap-x-1 py-3 px-3 sm:px-7 justify-center">
                                     <button type="button" className="w-[200px] bg-red-500 border-red-500 hover:text-red-500 hover:bg-bg-primary border-[1px] transition duration-500 outline-none rounded-md py-[5px] font-semibold text-bg-primary" onClick={() => setOpen(false)}>
                                         {
-                                            t("contact.validations.message.warning.button")
+                                            t("contact.validations.message.button")
                                         }
                                     </button>
                                 </div>

@@ -31,10 +31,14 @@ export default function ComponentMessageWait(props: Props) {
                                     </div>
                                     <div className="mt-3 text-center sm:mt-0 sm:text-left">
                                         <Dialog.Title as="h3" className="text-center font-semibold leading-6 text-gray-500">
-                                            Enviando tu mensaje
+                                            {
+                                                t("contact.validations.message.type.wait.title")
+                                            }
                                         </Dialog.Title>
                                         <p className="text-center text-sm text-gray-500">
-                                            Tu mensaje se está enviando. Por favor, espera un momento...
+                                            {
+                                                t('contact.validations.message.type.wait.description')
+                                            }
                                         </p>
                                     </div>
                                     <div className="mt-1 flex gap-x-4 place-items-center justify-center">

@@ -162,16 +162,25 @@
                 "title": "Valida que no sos un robot"
             },
             "message": {
-                "success": {
-                    "title": "Mensaje exitoso",
-                    "description": "Tu mensaje ha sido enviado con éxito. ¡Gracias por ponerte en contacto! Te responderé lo antes posible.",
-                    "button": "Aceptar"
+                "type": {
+                    "confirmation": {
+                        "title": "Mensaje exitoso",
+                        "description": "Tu mensaje ha sido enviado con éxito. ¡Gracias por ponerte en contacto! Te responderé lo antes posible."
+                    },
+                    "warning": {
+                        "title": "Comunicación respetuosa",
+                        "description": "Su lenguaje ofensivo no es apropiado. Por favor, formule su pregunta o inquietud de manera respetuosa."
+                    },
+                    "wait": {
+                        "title": "Enviando tu mensaje",
+                        "description": "Tu mensaje se está enviando. Por favor, espera un momento..."
+                    },
+                    "error": {
+                        "title": "¡Un pequeño contratiempo!",
+                        "description": "Lo sentimos, se produjo un error en el envío del mensaje. Por favor, inténtalo de nuevo más tarde. Gracias por tu comprensión."
+                    }
                 },
-                "warning": {
-                    "title": "Comunicación respetuosa",
-                    "description": "Su lenguaje ofensivo no es apropiado. Por favor, formule su pregunta o inquietud de manera respetuosa.",
-                    "button": "Aceptar"
-                }
+                "button": "Aceptar"
             }
         }
     },
