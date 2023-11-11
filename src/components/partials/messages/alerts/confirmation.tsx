@@ -1,7 +1,7 @@
 import { Fragment } from 'react'
 import { Dialog, Transition } from '@headlessui/react';
 
-import ComponentIcon from '../icon';
+import ComponentIcon from '../../icon';
 
 import { Use_translation } from "@/i18n/logic/use_translation";
 

@@ -4,16 +4,17 @@ import { useEffect, useRef, useState } from "react";
 import ComponentIcon from '../partials/icon';
 import ComponentRecaptcha from '../partials/recaptcha';
 import ComponentNameSection from '../partials/name_section';
-import ComponentMessageError from '../partials/messages/validations/error';
-import ComponentMessageWarning from '../partials/messages/warning';
-import ComponentMessageConfirmation from '../partials/messages/confirmation';
+import ComponentMessageWait from '../partials/messages/alerts/wait';
+import ComponentMessageError from '../partials/messages/alerts/error';
+import ComponentMessageWarning from '../partials/messages/alerts/warning';
+import ComponentMessageErrorInput from '../partials/messages/validations/error';
+import ComponentMessageConfirmation from '../partials/messages/alerts/confirmation';
 
 import { Use_translation } from "@/i18n/logic/use_translation";
 import { Use_window_width } from '@/logic/page/size';
 import { Insulting_message } from '@/logic/restrictions/insulting_message';
 import { Amount_lines_input } from '@/logic/style/amount_lines_input';
 import { Send_email } from '@/logic/services/email';
-import ComponentMessageWait from '../partials/messages/wait';
 
 type Props = {
     animate: boolean,
@@ -31,6 +32,7 @@ export default function ComponentContact(props: Props) {
     const [active_validation, setActive_validation] = useState<boolean>(false)
     const [send_email, setSend_email] = useState<boolean>(false);
     const [wait_email, setWait_email] = useState<boolean>(false);
+    const [warning_email, setWarning_email] = useState<boolean>(false);
     const [error_email, setError_email] = useState<boolean>(false);
     const [state_captcha, setState_captcha] = useState<any>(null);
 
@@ -39,7 +41,7 @@ export default function ComponentContact(props: Props) {
 
     const onSubmit = () => {
         if (Insulting_message(ref_form.current.message.value)) {
-            setError_email(true);
+            setWarning_email(true);
         }
         if (!recaptcha.current.getValue()) {
             setState_captcha(false);
@@ -108,7 +110,7 @@ export default function ComponentContact(props: Props) {
             <form className="grid gap-[40px] px-[5px] mt-[35px]" action="" method="POST" ref={ref_form} onSubmit={handleSubmit(onSubmit)}>
                 <div className='grid grid-cols-1 sm:grid-cols-2 gap-[40px] sm:gap-[10px]'>
                     <div className={`${animate ? 'animate-[presentationLeft_1.1s_ease-in-out]' : 'opacity-0'} transition duration-500 relative grid grid-cols-1 items-center gap-[5px]`}>
-                        <ComponentMessageError order={1} type={errors.name?.type} />
+                        <ComponentMessageErrorInput order={1} type={errors.name?.type} />
                         <input className={`outline-0 shadow-1xl shadow-text-primary max-h-[20px] min-h-[20px] py-[20px] ${active_validation ? 'pr-[35px]' : 'pr-[10px]'} pl-[10px] overflow-auto text-[18px] border-none rounded-sm`} type="text" style={style_input(errors.name?.type)} placeholder={t('contact.inputs.j_1')} {...register('name', {
                             required: true,
                             minLength: 3,
@@ -129,7 +131,7 @@ export default function ComponentContact(props: Props) {
                         </div>
                     </div>
                     <div className={`${animate ? 'animate-[presentationRight_1.1s_ease-in-out]' : 'opacity-0'} transition duration-500 relative grid grid-cols-1 items-center gap-[5px]`}>
-                        <ComponentMessageError order={2} type={errors.last_name?.type} />
+                        <ComponentMessageErrorInput order={2} type={errors.last_name?.type} />
                         <input className={`outline-0 shadow-1xl shadow-text-primary max-h-[20px] min-h-[20px] py-[20px] ${active_validation ? 'pr-[35px]' : 'pr-[10px]'} pl-[10px] overflow-auto text-[18px] border-none rounded-sm`} type="text" style={style_input(errors.last_name?.type)} placeholder={t('contact.inputs.j_2')} {...register('last_name', {
                             required: true,
                             minLength: 3,
@@ -151,7 +153,7 @@ export default function ComponentContact(props: Props) {
                     </div>
                 </div>
                 <div className={`${animate ? 'animate-[presentationLeft_1.3s_ease-in-out]' : 'opacity-0'} transition duration-500 relative grid grid-cols-1 items-center gap-[5px]`}>
-                    <ComponentMessageError order={3} type={errors.email?.type} />
+                    <ComponentMessageErrorInput order={3} type={errors.email?.type} />
                     <input className={`outline-0 shadow-1xl shadow-text-primary max-h-[20px] min-h-[20px] py-[20px] ${active_validation ? 'pr-[35px]' : 'pr-[10px]'} pl-[10px] overflow-auto text-[18px] border-none rounded-sm`} type="email" style={style_input(errors.email?.type)} placeholder={t('contact.inputs.j_3')} {...register('email', {
                         required: true,
                         pattern: /^[a-zA-Z0-9]+[\w\.-]*@[a-zA-Z0-9]+(\.[a-zA-Z]+)+$/i
@@ -163,7 +165,7 @@ export default function ComponentContact(props: Props) {
                     </div>
                 </div>
                 <div className={`${animate ? 'animate-[presentationRight_1.4s_ease-in-out]' : 'opacity-0'} transition duration-500 relative grid grid-cols-1 items-center gap-[5px]`}>
-                    <ComponentMessageError order={4} type={errors.message?.type} />
+                    <ComponentMessageErrorInput order={4} type={errors.message?.type} />
                     <textarea rows={2} className={`outline-0 shadow-1xl overflow-hidden shadow-text-primary resize-none py-[8px] ${active_validation ? 'pr-[35px]' : 'pr-[10px]'} pl-[10px] text-[19.5px] rounded-sm`} style={style_input(errors.message?.type)} placeholder={t('contact.inputs.j_4')} {...register('message', {
                         required: true,
                         minLength: 10,
@@ -192,9 +194,10 @@ export default function ComponentContact(props: Props) {
                         {t('menu.i_6')}
                     </span>
                 </button>
-                <ComponentMessageWait open={true} setOpen={setWait_email} />
-                <ComponentMessageWarning open={false} setOpen={setError_email} />
-                <ComponentMessageConfirmation open={false} setOpen={setSend_email} />
+                <ComponentMessageError open={error_email} setOpen={setError_email} />
+                <ComponentMessageWait open={wait_email} setOpen={setWait_email} />
+                <ComponentMessageWarning open={warning_email} setOpen={setWarning_email} />
+                <ComponentMessageConfirmation open={send_email} setOpen={setSend_email} />
             </form>
         </section>
     )
