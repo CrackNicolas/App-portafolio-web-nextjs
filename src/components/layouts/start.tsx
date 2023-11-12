@@ -89,7 +89,7 @@ export default function ComponentStart(props: Props) {
                     </div>
                 </article>
                 <article className="grid place-items-center lg:justify-end lg:items-center col-span-full mt-12 lg:mt-0 lg:col-span-1 h-full">
-                    <img className={`${animate ? 'animate-[presentationRight_1.6s_ease-in-out]' : 'opacity-0'} transition duration-500 w-[300px] h-[300px] sm:w-[320px] sm:h-[320px] rounded-md cursor-pointer`} src="/images/perfil.jpg" />
+                    <img className={`${animate ? 'animate-[presentationRight_1.6s_ease-in-out]' : 'opacity-0'} transition duration-500 w-[300px] h-[300px] sm:w-[320px] sm:h-[320px] rounded-md`} src="/images/perfil.jpg" />
                 </article>
             </article>
         </section>

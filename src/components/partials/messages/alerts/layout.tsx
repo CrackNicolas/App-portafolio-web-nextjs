@@ -3,9 +3,9 @@ import { ReactNode, Fragment } from 'react'
 import { Dialog, Transition } from '@headlessui/react';
 
 type Props = {
-    children: ReactNode,
     open: boolean,
-    setOpen: any
+    setOpen: any,
+    children: ReactNode
 }
 
 export default function ComponentLayout(props: Props) {

@@ -14,7 +14,9 @@ export default function ComponentFooter() {
                 <span className="text-[13px] mx-auto text-center text-text-secondary">
                     {t('footer.title')}
                 </span>
-                <span className="text-[13px] mx-auto w-[180px] text-text-secondary cursor-pointer">beltrannicolasalejo@gmail.com</span>
+                <span className="text-[13px] mx-auto w-[180px] text-text-secondary cursor-pointer hover:font-semibold" title="Correo">
+                    beltrannicolasalejo@gmail.com
+                </span>
             </article>
         </section>
     )

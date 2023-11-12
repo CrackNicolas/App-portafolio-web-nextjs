@@ -1,6 +1,8 @@
+import { Fragment } from 'react';
+
 import ComponentIcon from '../partials/icon';
 import ComponentImage from '../partials/image';
-import ComponentNameSection from '../partials/name_section';
+import ComponentLayout from './layout';
 
 import { Use_translation } from "@/i18n/logic/use_translation";
 
@@ -14,13 +16,12 @@ export default function ComponentAbout(props: Props) {
     const t = Use_translation(1);
 
     return (
-        <section id="about" className="px-[10px] sm:px-[30px] lg:pl-[70px] flex flex-col gap-[20px] m-auto max-w-[1200px] pt-[65px] lg:pt-[80px]">
-            <article className="flex flex-col">
-                <ComponentNameSection animate={animate} name="about.title" icon="user" />
-                <h4 className={`${animate ? 'animate-[presentationLeft_1.1s_ease-in-out]' : 'opacity-0'} text-text-primary font-bold text-[22px] ml:text-[30px] sm:text-[38px] pt-[8px] tracking-widest`}>
+        <ComponentLayout {...props} id="about" children={
+            <Fragment>
+                <h4 className={`${animate ? 'animate-[presentationLeft_1.1s_ease-in-out]' : 'opacity-0'} text-text-primary font-bold text-[22px] ml:text-[30px] sm:text-[38px] tracking-widest mb-[-5px]`}>
                     {t('about.subtitle')}
                 </h4>
-                <p className={`${animate ? 'animate-[presentationLeft_1.3s_ease-in-out] opacity-80' : 'opacity-0'} mt-2 text-text-primary ml:text-[18px] sm:text-[20px] mb-[50px] leading-6`}>
+                <p className={`${animate ? 'animate-[presentationLeft_1.3s_ease-in-out] opacity-80' : 'opacity-0'} text-text-primary ml:text-[18px] sm:text-[20px] mb-[45px] leading-6`}>
                     {t('about.description')}
                 </p>
                 <article className={`${animate ? 'animate-[presentationBottom_1.5s_ease-in-out]' : 'opacity-0'} relative hover:shadow-md hover:shadow-text-primary cursor-pointer transition duration-500 border-[1px] border-text-secondary rounded-md rounded-tr-none w-full mb-[100px] grid px-3 py-8 grid-cols-4 ml:px-4 ml:py-8 ml:grid-cols-6 sm:py-8 sm:grid-cols-7 md:grid-cols-8 lg:px-5 lg:py-11 lg:grid-cols-9 gap-[15px] ml:gap-[35px] items-center`}>
@@ -100,7 +101,7 @@ export default function ComponentAbout(props: Props) {
                         Skills
                     </div>
                 </article>
-            </article>
-        </section>
+            </Fragment>
+        } />
     )
 }

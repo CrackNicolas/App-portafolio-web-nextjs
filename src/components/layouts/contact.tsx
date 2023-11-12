@@ -15,6 +15,7 @@ import { Use_window_width } from '@/logic/page/size';
 import { Insulting_message } from '@/logic/restrictions/insulting_message';
 import { Amount_lines_input } from '@/logic/style/amount_lines_input';
 import { Send_email } from '@/logic/services/email';
+import ComponentLayout from './layout';
 
 type Props = {
     animate: boolean,
@@ -105,9 +106,8 @@ export default function ComponentContact(props: Props) {
     }
 
     return (
-        <section id="contact" className="px-[10px] sm:px-[30px] lg:pl-[70px] flex flex-col gap-[20px] m-auto max-w-[1200px] pt-[65px] lg:pt-[80px]">
-            <ComponentNameSection animate={animate} name="start.txt_3" icon="contact" />
-            <form className="grid gap-[40px] px-[5px] mt-[35px]" action="" method="POST" ref={ref_form} onSubmit={handleSubmit(onSubmit)}>
+        <ComponentLayout id="contact" animate={animate} children={
+            <form className="grid gap-[40px] px-[5px] mt-[35px]" method="POST" ref={ref_form} onSubmit={handleSubmit(onSubmit)}>
                 <div className='grid grid-cols-1 sm:grid-cols-2 gap-[40px] sm:gap-[10px]'>
                     <div className={`${animate ? 'animate-[presentationLeft_1.1s_ease-in-out]' : 'opacity-0'} transition duration-500 relative grid grid-cols-1 items-center gap-[5px]`}>
                         <ComponentMessageErrorInput order={1} type={errors.name?.type} />
@@ -199,6 +199,6 @@ export default function ComponentContact(props: Props) {
                 <ComponentMessageWarning open={warning_email} setOpen={setWarning_email} />
                 <ComponentMessageConfirmation open={send_email} setOpen={setSend_email} />
             </form>
-        </section>
+        } />
     )
 }
