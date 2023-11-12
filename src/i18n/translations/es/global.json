@@ -1,5 +1,9 @@
 {
-    "translator":"Traductor",
+    "focus":{
+        "translator":"Traductor",
+        "copy":"Copiar",
+        "email":"Correo"
+    },
     "button_view": {
         "txt_1": "Ver más",
         "txt_2": "Ver menos"
@@ -180,6 +184,9 @@
                     "error": {
                         "title": "¡Un pequeño contratiempo!",
                         "description": "Lo sentimos, se produjo un error en el envío del mensaje. Por favor, inténtalo de nuevo más tarde. Gracias por tu comprensión."
+                    },
+                    "copy":{
+                        "title":"Correo electrónico copiado con exito"
                     }
                 },
                 "button": "Aceptar"

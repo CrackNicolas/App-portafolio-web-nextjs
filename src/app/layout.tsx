@@ -8,7 +8,6 @@
   4 - Analizar uso de memoria RAM.
   5 - Ver toda la configuracion de NEXT.JS
   6 - Analizar si se puede no usar el type any
-  7 - Permitir que solo se pueda copiar el correo
   
 **/
 

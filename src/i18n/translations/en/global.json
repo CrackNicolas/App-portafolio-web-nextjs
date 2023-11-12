@@ -1,5 +1,9 @@
 {
-    "translator":"Translator",
+    "focus":{
+        "translator":"Translator",
+        "copy":"Copy",
+        "email":"Mail"
+    },
     "button_view": {
         "txt_1": "See more",
         "txt_2": "See less"
@@ -180,6 +184,9 @@
                     "error": {
                         "title": "A little setback!",
                         "description": "We're sorry, there was an error sending your message. Please try again later. Thanks for your understanding."
+                    },
+                    "copy":{
+                        "title":"Email successfully copied"
                     }
                 },
                 "button": "Accept"

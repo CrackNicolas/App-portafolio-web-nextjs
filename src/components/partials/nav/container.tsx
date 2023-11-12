@@ -36,7 +36,7 @@ export default function ComponentNav(props: Props) {
                     <ComponentItem name="contact" number={7} icon={(paint === 'contact') ? 'contact-fill' : 'contact'} />
                 </article>
                 <article className={`grid place-items-center pr-2 sm:pr-[10px] h-full ${isWidth ? 'col-span-1 justify-end' : ' row-span-1 items-end'}`}>
-                    <button type="button" onClick={() => update_lenguaje(!lenguaje)} className="outline-none grid place-items-center ml:min-w-[45px] ml:max-w-[45px] cursor-pointer rounded-sm" title={t('translator')}>
+                    <button type="button" onClick={() => update_lenguaje(!lenguaje)} className="outline-none grid place-items-center ml:min-w-[45px] ml:max-w-[45px] cursor-pointer rounded-sm" title={t('focus.translator')}>
                         <ComponentIcon name="language" size={18} description_class={`${isWidth ? 'w-[15.1px] h-[15.1px]' : 'w-auto h-auto'} ${!lenguaje && 'text-text-secondary'}`} />
                         <span className={` hidden sm:grid place-items-center font-semibold rounded-sm transition duration-700 w-full h-[13px] text-[10.2px]`}>
                             {

@@ -8,9 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      screens:{
-        'ml':'450px',
-        'mg':'800px'
+      screens: {
+        'ml': '450px',
+        'mg': '800px'
       },
       colors: {
         'bg-primary': '#ffffff',
@@ -37,34 +37,34 @@ const config: Config = {
           '0%': { translate: '0px 0px' },
           '100%': { translate: '-220px 0px' }
         },
-        presentationLeft:{
-          '0%': { 
+        presentationLeft: {
+          '0%': {
             translate: '-150px 0px',
-            opacity:'0'
+            opacity: '0'
           },
-          '100%': { 
-            translate: '0px 0px' ,
-            opacity:'1'
+          '100%': {
+            translate: '0px 0px',
+            opacity: '1'
           }
         },
-        presentationRight:{
-          '0%': { 
+        presentationRight: {
+          '0%': {
             translate: '150px 0px',
-            opacity:'0'
+            opacity: '0'
           },
-          '100%': { 
+          '100%': {
             translate: '0px 0px',
-            opacity:'1'
+            opacity: '1'
           }
         },
-        presentationBottom:{
-          '0%': { 
+        presentationBottom: {
+          '0%': {
             translate: '0px 150px',
-            opacity:'0'
+            opacity: '0'
           },
-          '100%': { 
+          '100%': {
             translate: '0px 0px',
-            opacity:'1'
+            opacity: '1'
           }
         }
       },
@@ -73,8 +73,8 @@ const config: Config = {
         translateY: 'translateY 1s ease-in-out',
         message: 'translateX 2.5s ease-in-out'
       }
-    },
+    }
   },
-  plugins: [],
+  plugins: []
 }
 export default config

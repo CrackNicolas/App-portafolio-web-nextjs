@@ -1,9 +1,28 @@
+import { useRef, useState } from "react";
+
 import ComponentIcon from "../partials/icon";
 
 import { Use_translation } from "@/i18n/logic/use_translation";
+import ComponentMessageCopyText from "../partials/messages/alerts/copy_text";
 
 export default function ComponentFooter() {
     const t = Use_translation(1);
+
+    const [visible, setVisible] = useState<boolean>(false);
+
+    const ref_text = useRef<any>(null);
+
+    const copyToClipboard = () => {
+        if (ref_text.current) {
+            const copied_text = ref_text.current.innerText;
+            navigator.clipboard.writeText(copied_text).then(() => {
+                setVisible(true);
+                setTimeout(() => {
+                    setVisible(false);
+                }, 1500);
+            })
+        }
+    }
 
     return (
         <section id="contact" className="px-[10px] sm:px-[30px] lg:pl-[70px] flex flex-col gap-[10px] py-12 m-auto max-w-[1200px] pt-[80px]">
@@ -14,9 +33,15 @@ export default function ComponentFooter() {
                 <span className="text-[13px] mx-auto text-center text-text-secondary">
                     {t('footer.title')}
                 </span>
-                <span className="text-[13px] mx-auto w-[180px] text-text-secondary cursor-pointer hover:font-semibold" title="Correo">
-                    beltrannicolasalejo@gmail.com
-                </span>
+                <div className="relative flex justify-between mx-auto w-[205px] ">
+                    <span ref={ref_text} className="w-full text-[13px] mx-auto w-[180px] text-text-secondary" title={t("focus.email")}>
+                        beltrannicolasalejo@gmail.com
+                    </span>
+                    <button onClick={copyToClipboard} className="min-w-[20px] max-w-[20px] outline-none" title={t("focus.copy")}>
+                        <ComponentIcon name="copy" size={15} description_class="text-text-secondary mx-auto" />
+                    </button>
+                    <ComponentMessageCopyText open={visible} setOpen={setVisible} />
+                </div>
             </article>
         </section>
     )
