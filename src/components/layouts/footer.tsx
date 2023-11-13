@@ -1,9 +1,9 @@
 import { useRef, useState } from "react";
 
 import ComponentIcon from "../partials/icon";
+import ComponentMessageCopyText from "../partials/messages/alerts/copy_text";
 
 import { Use_translation } from "@/i18n/logic/use_translation";
-import ComponentMessageCopyText from "../partials/messages/alerts/copy_text";
 
 export default function ComponentFooter() {
     const t = Use_translation(1);
@@ -40,8 +40,9 @@ export default function ComponentFooter() {
                     <button onClick={copyToClipboard} className="min-w-[20px] max-w-[20px] outline-none" title={t("focus.copy")}>
                         <ComponentIcon name="copy" size={15} description_class="text-text-secondary mx-auto" />
                     </button>
-                    <ComponentMessageCopyText open={visible} setOpen={setVisible} />
+
                 </div>
+                <ComponentMessageCopyText open={visible} setOpen={setVisible} />
             </article>
         </section>
     )

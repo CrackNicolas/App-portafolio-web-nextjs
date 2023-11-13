@@ -2,20 +2,19 @@ import { useForm } from 'react-hook-form';
 import { useEffect, useRef, useState } from "react";
 
 import ComponentIcon from '../partials/icon';
+import ComponentLayout from './layout';
 import ComponentRecaptcha from '../partials/recaptcha';
-import ComponentNameSection from '../partials/name_section';
 import ComponentMessageWait from '../partials/messages/alerts/wait';
 import ComponentMessageError from '../partials/messages/alerts/error';
 import ComponentMessageWarning from '../partials/messages/alerts/warning';
 import ComponentMessageErrorInput from '../partials/messages/validations/error';
 import ComponentMessageConfirmation from '../partials/messages/alerts/confirmation';
 
+import { Send_email } from '@/logic/services/email';
 import { Use_translation } from "@/i18n/logic/use_translation";
 import { Use_window_width } from '@/logic/page/size';
 import { Insulting_message } from '@/logic/restrictions/insulting_message';
 import { Amount_lines_input } from '@/logic/style/amount_lines_input';
-import { Send_email } from '@/logic/services/email';
-import ComponentLayout from './layout';
 
 type Props = {
     animate: boolean,

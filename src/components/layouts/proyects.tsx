@@ -22,12 +22,12 @@ export default function ComponentProyects(props: Props) {
         <ComponentLayout {...props} id="proyects" children={
             <Fragment>
                 <article className={`${animate ? 'animate-[presentationBottom_1s_ease-in-out]' : 'opacity-0'} ${view_datails && 'h-[400px] ml:h-[470px] sm:h-[520px] md:h-[530px] mg:h-[520px] lg:h-[582px] overflow-hidden'} mt-3 mb-[20px] gap-8 flex flex-col transition duration-500`}>
-                    <ComponentItem number={1} imagen="App YouTube" direction="right" links={{
+                    <ComponentItem number={1} image="Aplicacion YouTube" links={{
                         git: "a",
                         linkedin: "b"
                     }} />
                     <span className="w-full h-[0.1px] bg-text-secondary opacity-40"></span>
-                    <ComponentItem number={2} imagen="App YouTube" direction="left" links={{
+                    <ComponentItem number={2} image="Aplicacion YouTube" links={{
                         git: "aa",
                         linkedin: "bb"
                     }} />

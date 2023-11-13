@@ -1,8 +1,8 @@
 {
-    "focus":{
-        "translator":"Traductor",
-        "copy":"Copiar",
-        "email":"Correo"
+    "focus": {
+        "translator": "Traductor",
+        "copy": "Copiar",
+        "email": "Correo"
     },
     "button_view": {
         "txt_1": "Ver más",
@@ -29,12 +29,16 @@
                 "b_1": "Abrir CV",
                 "b_2": "Cerrar"
             }
+        },
+        "image": {
+            "alt": "Imagen de perfil"
         }
     },
     "about": {
         "title": "Sobre mí",
         "subtitle": "¿Por qué me contratan?",
-        "description": "Profesional comprometido con la excelencia en mis proyectos, proporcionando recomendaciones de tecnologías y estrategias adecuadas a cada caso específico."
+        "description": "Profesional comprometido con la excelencia en mis proyectos, proporcionando recomendaciones de tecnologías y estrategias adecuadas a cada caso específico.",
+        "skills": "Habilidades"
     },
     "services": {
         "title": "Servicios",
@@ -98,12 +102,18 @@
             "p_1": {
                 "title": "Clon YouTube",
                 "description": "Decidí embarcarme en este proyecto para poner en práctica mis habilidades. Actualmente, continúo trabajando en la mejora y el perfeccionamiento de esta aplicación.",
-                "imagen": "App YouTube"
+                "images": {
+                    "main": "Aplicacion YouTube",
+                    "logo": "YouTube"
+                }
             },
             "p_2": {
                 "title": "Clon YouTube",
                 "description": "Desarrollé este proyecto, con el objetivo de aprender más sobre el desarrollo de aplicaciones y mejorar mis habilidades como programador.",
-                "imagen": "App YouTube"
+                "images": {
+                    "main": "Aplicacion YouTube",
+                    "logo": "YouTube"
+                }
             }
         },
         "buttons": {
@@ -185,8 +195,8 @@
                         "title": "¡Un pequeño contratiempo!",
                         "description": "Lo sentimos, se produjo un error en el envío del mensaje. Por favor, inténtalo de nuevo más tarde. Gracias por tu comprensión."
                     },
-                    "copy":{
-                        "title":"Correo electrónico copiado con exito"
+                    "copy": {
+                        "title": "Correo electrónico copiado con exito"
                     }
                 },
                 "button": "Aceptar"

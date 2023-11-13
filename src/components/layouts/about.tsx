@@ -98,7 +98,9 @@ export default function ComponentAbout(props: Props) {
                         <span className='mt-[2px] hover:font-semibold font-normal transition duration-500 text-text-secondary text-[14px]'>Trello</span>
                     </div>
                     <div className="break-before absolute py-[2px] right-[-0.5px] rounded-t-md top-[-29.5px] w-[130px] text-center border-[1px] border-text-secondary bg-gradient-to-r from-bg-secondary to-blue-500 text-bg-primary font-bold tracking-wider">
-                        Skills
+                        {
+                            t("about.skills")
+                        }
                     </div>
                 </article>
             </Fragment>

@@ -1,8 +1,8 @@
 {
-    "focus":{
-        "translator":"Translator",
-        "copy":"Copy",
-        "email":"Mail"
+    "focus": {
+        "translator": "Translator",
+        "copy": "Copy",
+        "email": "Mail"
     },
     "button_view": {
         "txt_1": "See more",
@@ -29,12 +29,16 @@
                 "b_1": "Open CV",
                 "b_2": "Close"
             }
+        },
+        "image": {
+            "alt": "Profile picture"
         }
     },
     "about": {
         "title": "About me",
         "subtitle": "Why do they hire me?",
-        "description": "Professional committed to excellence in my projects, providing recommendations of technologies and strategies appropriate to each specific case."
+        "description": "Professional committed to excellence in my projects, providing recommendations of technologies and strategies appropriate to each specific case.",
+        "skills": "Skills"
     },
     "services": {
         "title": "Services",
@@ -98,12 +102,18 @@
             "p_1": {
                 "title": "YouTube Clone",
                 "description": "I decided to embark on this project to put my skills into practice. Currently, I continue working on improving and perfecting this application.",
-                "imagen": "YouTube App"
+                "images": {
+                    "main": "YouTube Application",
+                    "logo": "YouTube"
+                }
             },
             "p_2": {
                 "title": "YouTube Clone",
                 "description": "I decided to embark on this project to put my skills into practice. Currently, I continue working on improving and perfecting this application.",
-                "imagen": "YouTube App"
+                "images": {
+                    "main": "YouTube Application",
+                    "logo": "YouTube"
+                }
             }
         },
         "buttons": {
@@ -185,8 +195,8 @@
                         "title": "A little setback!",
                         "description": "We're sorry, there was an error sending your message. Please try again later. Thanks for your understanding."
                     },
-                    "copy":{
-                        "title":"Email successfully copied"
+                    "copy": {
+                        "title": "Email successfully copied"
                     }
                 },
                 "button": "Accept"

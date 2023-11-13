@@ -1,14 +1,19 @@
+import { Use_translation } from "@/i18n/logic/use_translation";
+
 type Props = {
     name: string,
-    description_class?: string
+    description_class?: string,
+    alt?: string
 }
 
 export default function ComponentImage(props: Props) {
-    const { name, description_class = "" } = props;
+    const { name, description_class = "", alt = `Logo ${name}` } = props;
+
+    const t = Use_translation(1);
 
     const get_image = (name: string) => {
         switch (name) {
-            case 'App YouTube':
+            case 'Aplicacion YouTube':
                 return "/images/youtube/app.png";
             case 'YouTube':
                 return '/images/youtube/logo.png';
@@ -46,6 +51,6 @@ export default function ComponentImage(props: Props) {
     }
 
     return (
-        <img src={get_image(name)} className={`cursor-pointer transition duration-500 rounded-sm ${description_class}`} alt={`Logo ${name}`} />
+        <img src={get_image(name)} className={`cursor-pointer transition duration-500 rounded-sm ${description_class}`} alt={alt ? t(alt) : alt} />
     )
 }
