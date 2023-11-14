@@ -72,7 +72,7 @@ export default function Home() {
           <ComponentProyects animate={(paint_icon === 'proyects')} />
           <ComponentEducacion animate={(paint_icon === 'education')} />
           <ComponentContact animate={(paint_icon === 'contact')} lenguaje={lenguaje} />
-          <ComponentFooter />
+          <ComponentFooter animate={(paint_icon === 'contact')} />
         </section>
       </I18nextProvider>
     </main>
