@@ -18,7 +18,7 @@ export default function ComponentNameSection(props: Props) {
             <span className={`gradiente-text ${animate ? 'animate-[presentationLeft_0.9s_ease-in-out]' : 'opacity-0'}  font-bold text-[20px] tracking-wider text-text-secondary transition duration-500`}>
                 {t(name)}
             </span>
-            <ComponentIcon name={icon} size={24} description_class={`${animate ? 'animate-[presentationRight_0.9s_ease-in-out]' : 'opacity-0'} hover:translate-y-[-3px] transition duration-500 text-text-secondary`} />
+            <ComponentIcon name={icon + "-fill"} size={24} description_class={`${animate ? 'animate-[presentationRight_0.9s_ease-in-out]' : 'opacity-0'} hover:translate-y-[-3px] transition duration-500 text-text-secondary`} />
         </h2>
     )
 }
