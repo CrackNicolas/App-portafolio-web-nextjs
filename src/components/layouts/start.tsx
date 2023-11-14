@@ -59,10 +59,10 @@ export default function ComponentStart(props: Props) {
                 <h1 className={`gradiente-text  ${animate ? 'animate-[presentationLeft_1s_ease-in-out]' : 'opacity-0'} text-[40px] ml:text-[50px] sm:text-[58px] font-bold mb-[10px] sm:mb-[13px] tracking-wider text-text-secondary`}>
                     Alejo Beltran
                 </h1>
-                <h4 className={`${animate ? 'animate-[presentationLeft_1.2s_ease-in-out]' : 'opacity-0'} text-[18px] sm:text-[20px] font-semibold`}>
+                <h4 className={`${animate ? 'animate-[presentationLeft_1.2s_ease-in-out]' : 'opacity-0'} text-text-primary text-[18px] sm:text-[20px] font-semibold`}>
                     Full Stack Development
                 </h4>
-                <p className={`${animate ? 'animate-[presentationLeft_1.4s_ease-in-out] opacity-60' : 'opacity-0'} text-[15px] sm:text-[15px] mb-[10px] sm:mb-[20px] min-w-[200px] max-w-[460px]`}>
+                <p className={`${animate ? 'animate-[presentationLeft_1.4s_ease-in-out] opacity-60' : 'opacity-0'} text-[15px] text-text-primary sm:text-[15px] mb-[10px] sm:mb-[20px] min-w-[200px] max-w-[460px]`}>
                     {t('start.txt_2')}
                 </p>
                 <div className="flex items-center gap-x-5 mb-[13px] sm:mb-[23px] w-[309.5px] sm:w-[376.1px]">
