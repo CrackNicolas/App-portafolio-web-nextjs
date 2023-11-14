@@ -187,9 +187,9 @@ export default function ComponentContact(props: Props) {
                 <aside className={`${animate ? 'animate-[presentationBottom_1.5s_ease-in-out]' : 'opacity-0'} transition duration-500 overflow-hidden overflow-auto py-0`}>
                     <ComponentRecaptcha ref={recaptcha} lenguaje={lenguaje} onChange={onChange} state_captcha={state_captcha} />
                 </aside>
-                <button className={`${animate ? 'animate-[presentationBottom_1.5s_ease-in-out]' : 'opacity-0'} outline-none group hover:bg-bg-primary flex justify-center items-center transition duration-700 mx-auto mt-[-10px] px-[20px] w-full py-[5px] gap-x-3 rounded-sm bg-text-secondary border-[0.1px] border-text-secondary`} type="submit" onClick={() => setActive_validation(true)}>
-                    <ComponentIcon name="send" size={16} description_class="group-hover:rotate-45 group-hover:text-text-secondary text-bg-primary" />
-                    <span className='group-hover:text-text-secondary text-bg-primary text-[18px] font-bold'>
+                <button className={`bg-gradient-to-r from-bg-secondary to-text-secondary ${animate ? 'animate-[presentationBottom_1.5s_ease-in-out]' : 'opacity-0'} outline-none group hover:bg-bg-primary flex justify-center items-center transition duration-700 mx-auto mt-[-10px] px-[20px] w-full py-[5px] gap-x-3 rounded-sm bg-text-secondary border-[0.1px] border-text-secondary`} type="submit" onClick={() => setActive_validation(true)}>
+                    <ComponentIcon name="send" size={16} description_class="group-hover:rotate-45 text-bg-primary" />
+                    <span className='text-bg-primary text-[18px] font-bold'>
                         {t('menu.i_6')}
                     </span>
                 </button>

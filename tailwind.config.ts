@@ -17,8 +17,8 @@ const config: Config = {
         'bg-secondary': '#083156',
         'bg-tertiary': '#715d5d',
         'bg-room': '#6a67673c',
-        'text-primary': '#343a40',
-        'text-secondary': '#194C87'
+        'text-primary': '#000000',
+        'text-secondary': '#2020ab'
       },
       boxShadow: {
         '1xl': '0 0 2px 0.1px',

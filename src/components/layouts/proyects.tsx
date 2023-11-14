@@ -32,7 +32,7 @@ export default function ComponentProyects(props: Props) {
                         linkedin: "bb"
                     }} />
                 </article>
-                <Link to={view_datails ? '' : 'proyects'} onClick={() => setView_datails(!view_datails)} spy={true} smooth={true} offset={0} duration={500} rel="noopener noreferrer" className={` ${animate ? 'animate-[presentationLeft_1.2s_ease-in-out]' : 'opacity-0'} bg-gradient-to-r from-bg-secondary to-blue-500 hover:from-blue-500 hover:to-bg-secondary group flex items-center mx-auto pl-[20px] pr-[18px] py-[5px] gap-x-2 rounded-sm cursor-pointer text-bg-primary border-[0.1px] border-text-secondary`}>
+                <Link to={view_datails ? '' : 'proyects'} onClick={() => setView_datails(!view_datails)} spy={true} smooth={true} offset={0} duration={500} rel="noopener noreferrer" className={` ${animate ? 'animate-[presentationLeft_1.2s_ease-in-out]' : 'opacity-0'} bg-gradient-to-r from-bg-secondary to-text-secondary hover:from-text-secondary hover:to-bg-secondary group flex items-center mx-auto pl-[20px] pr-[18px] py-[5px] gap-x-2 rounded-sm cursor-pointer text-bg-primary border-[0.1px] border-text-secondary`}>
                     <span className="text-[18px] font-semibold">
                         {
                             t((view_datails) ? 'proyects.buttons.b_1' : 'proyects.buttons.b_2')

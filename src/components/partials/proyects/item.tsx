@@ -28,11 +28,11 @@ export default function ComponentItem(props: Props) {
                 <ComponentImage name={image} alt={`proyects.data.p_${number}.images.main`} />
                 <div className="break-before absolute w-full h-full hover:bg-none bg-gradient-to-tr from-text-secondary cursor-pointer"></div>
             </div>
-            <div className={`group relative ${(number % 2 !== 0) ? 'order-2 items-end' : "order-1 items-start"} flex flex-col gap-1 lg:gap-2 cursor-pointer`}>
+            <div className={` group relative ${(number % 2 !== 0) ? 'order-2 items-end' : "order-1 items-start"} flex flex-col gap-1 lg:gap-2 cursor-pointer`}>
                 <span className="font-bold text-[20px] lg:text-[25px] text-text-secondary">
                     {t(`proyects.data.p_${number}.title`)}
                 </span>
-                <span className="text-[13px] lg:text-[15px] hover:bg-bg-primary hover:text-text-secondary transition duration-500 cursor-pointer border-[0.1px] border-text-secondary text-bg-primary bg-text-secondary rounded-sm px-3 py-2">
+                <span className="bg-gradient-to-r from-bg-secondary to-text-secondary text-[13px] lg:text-[15px] shadow shadow-blue-600 transition duration-500 cursor-pointer border-[0.1px] border-text-secondary text-bg-primary bg-text-secondary rounded-sm px-3 py-2">
                     {t(`proyects.data.p_${number}.description`)}
                 </span>
                 <ComponentTechnologies number={number} />
