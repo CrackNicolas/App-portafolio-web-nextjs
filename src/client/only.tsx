@@ -1,6 +1,6 @@
 'use client'
 
-import { Fragment, useEffect, useState, ReactNode } from 'react';
+import { useEffect, useState, ReactNode } from 'react';
 
 type Props = {
   children: ReactNode;
@@ -15,7 +15,5 @@ export default function ClientOnly({ children }: Props) {
 
   if (!has_mounted) return null;
 
-  return <Fragment>
-    {children}
-  </Fragment>
+  return children;
 }

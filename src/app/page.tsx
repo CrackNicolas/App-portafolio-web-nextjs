@@ -19,6 +19,8 @@ import ComponentContact from "@/components/layouts/contact";
 import ComponentFooter from "@/components/layouts/footer";
 import ComponentEducacion from "@/components/layouts/education";
 
+import { Detect_theme } from "@/logic/style/detect_theme";
+
 i18next.init({
   interpolation: {
     escapeValue: false
@@ -37,6 +39,7 @@ i18next.init({
 export default function Home() {
   const [view, setView] = useState<boolean>(false);
   const [paint_icon, setPaint_icon] = useState<string>('init');
+  const [theme, setTheme] = useState<string>(Detect_theme());
   const [lenguaje, setLenguaje] = useState<boolean>(true);
 
   const sections = useRef<any>(null);
@@ -59,12 +62,21 @@ export default function Home() {
     return () => window.removeEventListener('scroll', handle_scroll);
   }, [])
 
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.querySelector('main')?.classList.add('dark')
+    }
+    if (theme === 'light') {
+      document.querySelector('main')?.classList.remove('dark')
+    }
+  }, [theme]);
+
   return (
     <main>
       <I18nextProvider i18n={i18next}>
         <ComponentIntro setView={setView} />
         <section ref={sections} className={`${view ? 'visible ' : 'hidden'}`}>
-          <ComponentNav paint={paint_icon} lenguaje={lenguaje} setLenguaje={setLenguaje} />
+          <ComponentNav paint={paint_icon} lenguaje={lenguaje} setLenguaje={setLenguaje} theme={theme} setTheme={setTheme} />
           <ComponentStart animate={(paint_icon === 'init')} />
           <ComponentAbout animate={(paint_icon === 'about')} />
           <ComponentServices animate={(paint_icon === 'services')} />

@@ -2,20 +2,22 @@
     "focus": {
         "translator": "Translator",
         "copy": "Copy",
-        "email": "Mail"
+        "email": "Mail",
+        "theme": "Theme"
     },
     "button_view": {
         "txt_1": "See more",
         "txt_2": "See less"
     },
     "menu": {
-        "i_1": "Start",
-        "i_2": "About me",
-        "i_3": "Services",
-        "i_4": "Experience",
-        "i_5": "Proyects",
-        "i_6": "Education",
-        "i_7": "Contact"
+        "button_1": "Start",
+        "button_2": "About me",
+        "button_3": "Services",
+        "button_4": "Experience",
+        "button_5": "Proyects",
+        "button_6": "Education",
+        "button_7": "Contact",
+        "button_8": "Theme"
     },
     "start": {
         "txt_1": "Hi I am",

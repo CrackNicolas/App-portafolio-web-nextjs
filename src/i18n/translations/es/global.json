@@ -2,20 +2,22 @@
     "focus": {
         "translator": "Traductor",
         "copy": "Copiar",
-        "email": "Correo"
+        "email": "Correo",
+        "theme": "Tema"
     },
     "button_view": {
         "txt_1": "Ver más",
         "txt_2": "Ver menos"
     },
     "menu": {
-        "i_1": "Inicio",
-        "i_2": "Sobre mí",
-        "i_3": "Servicios",
-        "i_4": "Experiencia",
-        "i_5": "Proyectos",
-        "i_6": "Educacion",
-        "i_7": "Contactar"
+        "button_1": "Inicio",
+        "button_2": "Sobre mí",
+        "button_3": "Servicios",
+        "button_4": "Experiencia",
+        "button_5": "Proyectos",
+        "button_6": "Educacion",
+        "button_7": "Contactar",
+        "button_8": "Tema"
     },
     "start": {
         "txt_1": "Hola soy",
