@@ -37,7 +37,7 @@ export default function ComponentMessageWarning(props: Props) {
                     </div>
                 </div>
                 <div className="flex gap-x-1 py-3 px-3 sm:px-7 justify-center">
-                    <button type="button" className="w-[200px] bg-yellow-500 border-yellow-500 hover:text-yellow-500 hover:bg-tertiary border-[1px] transition duration-500 outline-none rounded-md py-[5px] font-semibold text-text-primary" onClick={() => setOpen(false)}>
+                    <button type="button" className="w-[200px] bg-yellow-500 dark:border-transparent border-yellow-500 dark:hover:text-primary hover:text-yellow-500 hover:bg-tertiary border-[1px] transition duration-500 outline-none rounded-md py-[5px] font-semibold text-text-primary" onClick={() => setOpen(false)}>
                         {
                             t("contact.validations.message.button")
                         }

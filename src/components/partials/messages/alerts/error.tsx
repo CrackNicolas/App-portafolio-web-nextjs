@@ -20,8 +20,8 @@ export default function ComponentMessageError(props: Props) {
         <ComponentLayout open={open} setOpen={setOpen} children={
             <Fragment>
                 <div className="flex flex-col items-center gap-y-3 px-3 sm:px-7 py-7">
-                    <div className="flex h-12 w-12 place-items-center justify-center rounded-full bg-red-100">
-                        <ComponentIcon name='bug' description_class='cursor-not-allowed mt-1 text-red-500' size={25} />
+                    <div className="group cursor-pointer flex h-12 w-12 place-items-center justify-center rounded-full dark:border-[0.1px] dark:border-red-500 dark:bg-transparent bg-red-100">
+                        <ComponentIcon name='bug' description_class='group-hover:translate-y-[-2px] dark:group-hover:text-tertiary mt-[1px] text-red-500' size={25} />
                     </div>
                     <div className="mt-3 text-center sm:mt-0 sm:text-left">
                         <Dialog.Title as="h3" className="text-center font-semibold leading-6 text-red-500">
@@ -37,7 +37,7 @@ export default function ComponentMessageError(props: Props) {
                     </div>
                 </div>
                 <div className="flex gap-x-1 py-3 px-3 sm:px-7 justify-center">
-                    <button type="button" className="w-[200px] bg-red-500 border-red-500 hover:text-red-500 hover:bg-tertiary border-[1px] transition duration-500 outline-none rounded-md py-[5px] font-semibold text-bg-primary" onClick={() => setOpen(false)}>
+                    <button type="button" className="w-[200px] bg-red-500 dark:border-transparent border-red-500 hover:text-red-500 hover:bg-tertiary border-[1px] transition duration-500 outline-none rounded-md py-[5px] font-semibold text-tertiary" onClick={() => setOpen(false)}>
                         {
                             t("contact.validations.message.button")
                         }
