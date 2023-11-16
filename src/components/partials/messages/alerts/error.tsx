@@ -37,7 +37,7 @@ export default function ComponentMessageError(props: Props) {
                     </div>
                 </div>
                 <div className="flex gap-x-1 py-3 px-3 sm:px-7 justify-center">
-                    <button type="button" className="w-[200px] bg-red-500 border-red-500 hover:text-red-500 hover:bg-bg-primary border-[1px] transition duration-500 outline-none rounded-md py-[5px] font-semibold text-bg-primary" onClick={() => setOpen(false)}>
+                    <button type="button" className="w-[200px] bg-red-500 border-red-500 hover:text-red-500 hover:bg-tertiary border-[1px] transition duration-500 outline-none rounded-md py-[5px] font-semibold text-bg-primary" onClick={() => setOpen(false)}>
                         {
                             t("contact.validations.message.button")
                         }

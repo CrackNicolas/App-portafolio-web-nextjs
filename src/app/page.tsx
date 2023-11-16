@@ -64,10 +64,10 @@ export default function Home() {
 
   useEffect(() => {
     if (theme === 'dark') {
-      document.querySelector('main')?.classList.add('dark')
+      document.querySelector('html')?.classList.add('dark')
     }
     if (theme === 'light') {
-      document.querySelector('main')?.classList.remove('dark')
+      document.querySelector('html')?.classList.remove('dark')
     }
   }, [theme]);
 
@@ -77,7 +77,7 @@ export default function Home() {
         <ComponentIntro setView={setView} />
         <section ref={sections} className={`${view ? 'visible ' : 'hidden'}`}>
           <ComponentNav paint={paint_icon} lenguaje={lenguaje} setLenguaje={setLenguaje} theme={theme} setTheme={setTheme} />
-          <ComponentStart animate={(paint_icon === 'init')} />
+          <ComponentStart animate={(paint_icon === 'init')} theme={theme} />
           <ComponentAbout animate={(paint_icon === 'about')} />
           <ComponentServices animate={(paint_icon === 'services')} />
           <ComponentExperience animate={(paint_icon === 'experience')} />

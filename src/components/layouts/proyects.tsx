@@ -26,19 +26,19 @@ export default function ComponentProyects(props: Props) {
                         git: "a",
                         linkedin: "b"
                     }} />
-                    <span className="w-full h-[0.1px] bg-text-secondary opacity-40"></span>
+                    <span className="w-full h-[0.1px] bg-secondary opacity-40"></span>
                     <ComponentItem number={2} image="Aplicacion YouTube" links={{
                         git: "aa",
                         linkedin: "bb"
                     }} />
                 </article>
-                <Link to={view_datails ? '' : 'proyects'} onClick={() => setView_datails(!view_datails)} spy={true} smooth={true} offset={0} duration={500} rel="noopener noreferrer" className={` ${animate ? 'animate-[presentationLeft_1.2s_ease-in-out]' : 'opacity-0'} bg-gradient-to-r from-bg-secondary to-text-secondary hover:from-text-secondary hover:to-bg-secondary group flex items-center mx-auto pl-[20px] pr-[18px] py-[5px] gap-x-2 rounded-sm cursor-pointer text-bg-primary border-[0.1px] border-text-secondary`}>
+                <Link to={view_datails ? '' : 'proyects'} onClick={() => setView_datails(!view_datails)} spy={true} smooth={true} offset={0} duration={500} rel="noopener noreferrer" className={` ${animate ? 'animate-[presentationLeft_1.2s_ease-in-out]' : 'opacity-0'} bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-primary group flex items-center mx-auto pl-[20px] pr-[18px] py-[5px] gap-x-2 rounded-md cursor-pointer text-tertiary border-[0.1px] border-text-secondary`}>
                     <span className="text-[18px] font-semibold">
                         {
                             t((view_datails) ? 'proyects.buttons.b_1' : 'proyects.buttons.b_2')
                         }
                     </span>
-                    <ComponentIcon name={(view_datails) ? 'see-moore' : 'see-less'} size={22} description_class="text-bg-primary" />
+                    <ComponentIcon name={(view_datails) ? 'see-moore' : 'see-less'} size={22} description_class="text-tertiary" />
                 </Link>
             </Fragment>
         } />

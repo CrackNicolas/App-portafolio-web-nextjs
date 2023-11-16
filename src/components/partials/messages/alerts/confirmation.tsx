@@ -21,11 +21,11 @@ export default function ComponentMessageConfirmation(props: Props) {
         <ComponentLayout open={open} setOpen={setOpen} children={
             <Fragment>
                 <div className="flex flex-col items-center gap-y-3 px-3 sm:px-7 py-7">
-                    <div className="flex h-12 w-12 place-items-center justify-center rounded-full bg-blue-100">
-                        <ComponentIcon name='check-2' description_class='cursor-not-allowed mt-1 text-text-secondary' size={25} />
+                    <div className="flex h-12 w-12 place-items-center justify-center rounded-full bg-secondary">
+                        <ComponentIcon name='check-2' description_class='cursor-not-allowed mt-1 text-tertiary' size={25} />
                     </div>
                     <div className="mt-3 text-center sm:mt-0 sm:text-left">
-                        <Dialog.Title as="h3" className="text-center font-semibold leading-6 text-text-secondary">
+                        <Dialog.Title as="h3" className="text-center font-semibold leading-6 text-secondary">
                             {
                                 t((view_url !== "") ? 'start.message.title' : 'contact.validations.message.type.confirmation.title')
                             }
@@ -40,13 +40,13 @@ export default function ComponentMessageConfirmation(props: Props) {
                 <div className={`flex gap-x-1 py-3 px-3 sm:px-7 ${(view_url !== "") ? 'justify-between' : 'justify-center'} `}>
                     {
                         (view_url !== "") &&
-                        <a href={view_url} target="_blank" rel="noopener noreferrer" className="hover:bg-bg-primary hover:text-text-secondary border-[1px] border-text-secondary transition duration-500 outline-none w-[180px] rounded-md bg-text-secondary py-[5px] font-semibold text-bg-primary">
+                        <a href={view_url} target="_blank" rel="noopener noreferrer" className="bg-tertiary text-secondary border-[1px] border-secondary transition duration-500 outline-none w-[180px] rounded-md hover:bg-secondary py-[5px] font-semibold hover:text-tertiary">
                             {
                                 t('start.message.buttons.b_1')
                             }
                         </a>
                     }
-                    <button type="button" className={`${(view_url !== "") ? 'bg-red-500 border-red-500 hover:text-red-500 w-[180px]' : 'w-[200px] bg-text-secondary border-text-secondary hover:text-text-secondary'} hover:bg-bg-primary border-[1px] transition duration-500 outline-none rounded-md py-[5px] font-semibold text-bg-primary`} onClick={() => setOpen(false)}>
+                    <button type="button" className={`${(view_url !== "") ? 'border-red-500 text-red-500 hover:text-tertiary w-[180px] hover:bg-red-500' : 'w-[200px] border-secondary text-secondary hover:bg-secondary hover:text-tertiary'} bg-tertiary border-[1px] transition duration-500 outline-none rounded-md py-[5px] font-semibold`} onClick={() => setOpen(false)}>
                         {
                             t((view_url !== "") ? 'start.message.buttons.b_2' : 'contact.validations.message.button')
                         }

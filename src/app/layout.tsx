@@ -34,7 +34,7 @@ type Props = {
 export default function RootLayout(props: Props) {
   return (
     <html lang="en">
-      <body>
+      <body className="bg-tertiary dark:bg-primary">
         <ClientOnly>
           {props.children}
         </ClientOnly>
