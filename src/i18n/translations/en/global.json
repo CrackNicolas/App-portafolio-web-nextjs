@@ -156,13 +156,11 @@
                 "j_1": {
                     "text_1": "A name is required",
                     "text_2": "Name must be more than 3 characters",
-                    "text_3": "The name must be less than 15 characters",
                     "text_4": "The name must only contain letters"
                 },
                 "j_2": {
                     "text_1": "A last name is required",
                     "text_2": "Last name must be more than 3 characters",
-                    "text_3": "Last name must be less than 20 characters",
                     "text_4": "The last name should only contain letters"
                 },
                 "j_3": {
@@ -172,7 +170,6 @@
                 "j_4": {
                     "text_1": "Message required",
                     "text_2": "Message must be more than 10 characters",
-                    "text_3": "The message must be less than 500 characters",
                     "text_4": "The message contains illegal symbols"
                 }
             },

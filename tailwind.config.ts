@@ -16,11 +16,11 @@ const config: Config = {
       colors: {
         primary: "#000000",
         secondary: "#2020ab",
-        tertiary: "#ffffff"
+        tertiary: "#ffffff",
       },
       boxShadow: {
         "1xl": "0 0 2px 0.1px",
-        "3xl": "0 0 10px 0.5px",
+        "3xl": "0 0 10px 0.5px"
       },
       keyframes: {
         opacity: {
