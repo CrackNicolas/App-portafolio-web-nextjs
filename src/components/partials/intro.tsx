@@ -33,18 +33,18 @@ export default function ComponentIntro(props: Props) {
             <article className="grid place-items-center gap-0">
                 <img src="/images/Logo.png" className="animate-opacity mt-[70px] w-[240px] h-[240px]" alt="My Logo personal" />
                 <h1 ref={ref_logo} className="mt-[-20px] text-[2.5rem] font-semibold tracking-widest">
-                    <span className="relative bottom-[-20px] opacity-0">F</span>
-                    <span className="relative bottom-[-20px] opacity-0">U</span>
-                    <span className="relative bottom-[-20px] opacity-0">L</span>
-                    <span className="relative bottom-[-20px] opacity-0">L</span>
-                    <span className="relative bottom-[-20px] opacity-0">&nbsp;</span>
-                    <span className="relative bottom-[-20px] opacity-0">S</span>
-                    <span className="relative bottom-[-20px] opacity-0">T</span>
-                    <span className="relative bottom-[-20px] opacity-0">A</span>
-                    <span className="relative bottom-[-20px] opacity-0">C</span>
-                    <span className="relative bottom-[-20px] opacity-0">K</span>
+                    <span className="relative bottom-[-20px] opacity-0 text-tertiary">F</span>
+                    <span className="relative bottom-[-20px] opacity-0 text-tertiary">U</span>
+                    <span className="relative bottom-[-20px] opacity-0 text-tertiary">L</span>
+                    <span className="relative bottom-[-20px] opacity-0 text-tertiary">L</span>
+                    <span className="relative bottom-[-20px] opacity-0 text-tertiary">&nbsp;</span>
+                    <span className="relative bottom-[-20px] opacity-0 text-tertiary">S</span>
+                    <span className="relative bottom-[-20px] opacity-0 text-tertiary">T</span>
+                    <span className="relative bottom-[-20px] opacity-0 text-tertiary">A</span>
+                    <span className="relative bottom-[-20px] opacity-0 text-tertiary">C</span>
+                    <span className="relative bottom-[-20px] opacity-0 text-tertiary">K</span>
                 </h1>
-                <p className="animate-translateY font-semibold text-text-secondary opacity-70 mt-[10px] text-[1.3rem] tracking-wider">
+                <p className="animate-translateY font-semibold text-secondary opacity-70 mt-[10px] text-[1.3rem] tracking-wider">
                     Development
                 </p>
             </article>
