@@ -1,5 +1,8 @@
+import { useState } from "react";
+
 import ComponentItem from "./item";
 import ComponentIcon from "../icon";
+import ComponentToggle from "./toggle";
 
 import { Use_translation } from "@/i18n/logic/use_translation";
 import { Media_query } from "@/logic/page/media_query";
@@ -14,6 +17,8 @@ type Props = {
 
 export default function ComponentNav(props: Props) {
     const { paint, lenguaje, setLenguaje, theme, setTheme } = props;
+
+    const [visible_options, setVisible_options] = useState<boolean>(false);
 
     const i18n = Use_translation(2);
     const t = Use_translation(1);
@@ -43,7 +48,7 @@ export default function ComponentNav(props: Props) {
                 </article>
                 <article className={`col-span-2 flex ${isWidth ? 'justify-end' : 'items-end'}`}>
                     <div className={`flex items-center gap-y-3 ${isWidth ? 'h-full' : 'flex-col w-full'}`}>
-                        <button type="button" onClick={() => update_theme(theme)} className="ml:hidden outline-none grid gap-y-1 place-items-center min-w-[30px] max-w-[30px] cursor-pointer text-primary dark:text-tertiary" title={t('focus.theme')}>
+                        <button type="button" onClick={() => setVisible_options(!visible_options)} className="ml:hidden outline-none grid gap-y-1 place-items-center min-w-[30px] max-w-[30px] cursor-pointer text-primary dark:text-tertiary" title={t('focus.theme')}>
                             <ComponentIcon name="settings" size={19} description_class={`${isWidth ? 'w-[17px] h-[17px]' : 'w-auto h-auto'}`} />
                         </button>
                         <button type="button" onClick={() => update_theme(theme)} className="hidden outline-none group ml:grid gap-y-1 place-items-center sm:min-w-[45px] sm:max-w-[45px] ml:min-w-[35px] ml:max-w-[35px] cursor-pointer" title={t('focus.theme')}>
@@ -63,6 +68,7 @@ export default function ComponentNav(props: Props) {
                             </span>
                         </button>
                     </div>
+                    <ComponentToggle open={visible_options} setOpen={setVisible_options} theme={theme} update_theme={update_theme} lenguaje={lenguaje} update_lenguaje={update_lenguaje}/>
                 </article>
             </article>
         </section>

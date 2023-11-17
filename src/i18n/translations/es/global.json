@@ -1,4 +1,14 @@
 {
+    "toggle": {
+        "title": {
+            "theme": "Modificar tema",
+            "lenguaje": "Modificar lenguaje"
+        },
+        "lenguaje": {
+            "l_1": "Español",
+            "l_2": "Ingles"
+        }
+    },
     "focus": {
         "translator": "Traductor",
         "copy": "Copiar",
