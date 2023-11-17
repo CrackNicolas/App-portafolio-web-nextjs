@@ -31,7 +31,7 @@ export default function ComponentIntro(props: Props) {
     return (
         <section ref={ref_intro} className="fixed top-0 left-0 w-full h-screen z-40 transition">
             <article className="grid place-items-center gap-0">
-                <img src="/images/Logo.png" className="animate-opacity mt-[70px] w-[240px] h-[240px]" alt="My Logo personal" />
+                <img src="/images/logo/logo.png" className="animate-opacity mt-[70px] w-[240px] h-[240px]" alt="My Logo personal" />
                 <h1 ref={ref_logo} className="mt-[-50px] text-[2.5rem] font-semibold tracking-widest">
                     <span className="relative bottom-[-20px] opacity-0 text-primary dark:text-tertiary">F</span>
                     <span className="relative bottom-[-20px] opacity-0 text-primary dark:text-tertiary">U</span>

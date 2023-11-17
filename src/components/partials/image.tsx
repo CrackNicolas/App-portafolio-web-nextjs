@@ -14,9 +14,9 @@ export default function ComponentImage(props: Props) {
     const get_image = (name: string) => {
         switch (name) {
             case 'Aplicacion YouTube':
-                return "/images/youtube/app.png";
+                return "/images/proyects/youtube/app.png";
             case 'YouTube':
-                return '/images/youtube/logo.png';
+                return '/images/proyects/youtube/logo.png';
             case 'Angular':
                 return "https://docs.angular.lat/assets/images/logos/angular/angular.svg";
             case 'TypeScript':
@@ -38,7 +38,7 @@ export default function ComponentImage(props: Props) {
             case 'C/C++':
                 return "https://img.icons8.com/fluency/48/null/c-plus-plus-logo.png";
             case 'MongoDB':
-                return "https://1000marcas.net/wp-content/uploads/2021/06/MongoDB-Emblem-768x480.jpg";
+                return "/images/icons/mongodb.png";
             case 'MySql':
                 return "https://img.icons8.com/fluency/48/null/mysql-logo.png";
             case 'Scrum':
@@ -46,7 +46,7 @@ export default function ComponentImage(props: Props) {
             case 'Jira':
                 return "https://clipground.com/images/jira-logo-clipart-2.png";
             case 'Trello':
-                return "https://s3.amazonaws.com/urgeio-versus/trello.front.variety.1576684641045.jpg";
+                return "/images/icons/trello.png";
         }
     }
 

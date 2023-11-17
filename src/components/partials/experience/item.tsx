@@ -27,7 +27,7 @@ export default function ComponentItem(props: Props) {
                         "0" + number
                     }
                 </div>
-                <div className={`hover:bg-gradient-to-r from-primary to-secondary ${animate ? 'animate-[presentationRight_1.2s_ease-in-out]' : 'opacity-0'} text-primary dark:text-tertiary xl:mt-[-10px] group cursor-pointer hover:bg-secondary hover:text-tertiary hover:shadow-none transition duration-700 shadow-3xl shadow-primary dark:shadow-secondary pt-[5px] pb-[10px] px-[10px] sm:px-[15px] rounded-md leading-7 sm:leading-8 border-[1px] border-secondary`}>
+                <div className={`hover:bg-gradient-to-r from-primary to-secondary ${animate ? 'animate-[presentationRight_1.2s_ease-in-out]' : 'opacity-0'} text-primary dark:text-tertiary xl:mt-[-10px] group cursor-pointer hover:bg-secondary hover:text-tertiary hover:shadow-none transition duration-700 shadow-3xl shadow-primary dark:shadow-secondary pt-[5px] pb-[10px] px-[10px] sm:px-[15px] rounded-md leading-6 sm:leading-8 border-[1px] border-secondary`}>
                     <div className="flex justify-between items-center">
                         <span className="font-bold">
                             {t(`experience.data.item_${number}.description.title`)}
@@ -43,7 +43,9 @@ export default function ComponentItem(props: Props) {
                             <ComponentIcon name="isi" description_class="w-[17px] h-[17px] sm:w-[20px] sm:h-[20px] text-blue-500" />
                         </div>
                     </div>
-                    {t(`experience.data.item_${number}.description.datails`)}
+                   <span>
+                   {t(`experience.data.item_${number}.description.datails`)}
+                   </span>
                 </div>
             </div>
         </div>

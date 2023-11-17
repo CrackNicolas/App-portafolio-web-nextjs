@@ -92,7 +92,7 @@ export default function ComponentStart(props: Props) {
                 </div>
             </article>
             <article className={`${(isWidth) ? 'sandwich-background-dark' : 'pr-5'} ${animate ? 'animate-[presentationRight_1.6s_ease-in-out]' : 'opacity-0'} relative grid place-items-center lg:justify-end lg:items-center col-span-full mt-16 lg:mt-0 lg:col-span-1 h-full`}>
-                <img className={`${animate ? 'animate-[presentationRight_1.6s_ease-in-out]' : 'opacity-0'} transition duration-500 w-[300px] h-[300px] sm:w-[320px] sm:h-[320px] rounded-md`} src="/images/perfil.jpg" alt={t("start.image.alt")} />
+                <img className={`${animate ? 'animate-[presentationRight_1.6s_ease-in-out]' : 'opacity-0'} transition duration-500 w-[300px] h-[300px] sm:w-[320px] sm:h-[320px] rounded-md`} src="/images/main/perfil.jpg" alt={t("start.image.alt")} />
             </article>
         </section>
     )

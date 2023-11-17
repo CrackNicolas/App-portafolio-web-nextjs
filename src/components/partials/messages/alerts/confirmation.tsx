@@ -40,13 +40,13 @@ export default function ComponentMessageConfirmation(props: Props) {
                 <div className={`flex gap-x-1 py-3 px-3 sm:px-7 ${(view_url !== "") ? 'justify-between' : 'justify-center'} `}>
                     {
                         (view_url !== "") &&
-                        <a href={view_url} target="_blank" rel="noopener noreferrer" className="bg-tertiary text-secondary border-[1px] dark:border-transparent border-secondary transition duration-500 outline-none w-[180px] rounded-md hover:bg-secondary py-[5px] font-semibold hover:text-tertiary">
+                        <a href={view_url} target="_blank" rel="noopener noreferrer" className="bg-tertiary text-secondary dark:bg-secondary dark:text-tertiary dark:hover:bg-tertiary dark:hover:text-secondary border-[1px] dark:border-transparent border-secondary transition duration-500 outline-none w-[180px] rounded-md hover:bg-secondary py-[5px] font-semibold hover:text-tertiary">
                             {
                                 t('start.message.buttons.b_1')
                             }
                         </a>
                     }
-                    <button type="button" className={`${(view_url !== "") ? 'dark:border-transparent border-red-500 text-red-500 hover:text-tertiary w-[180px] hover:bg-red-500' : 'w-[200px] dark:border-transparent border-secondary text-secondary hover:bg-secondary hover:text-tertiary'} bg-tertiary border-[1px] transition duration-500 outline-none rounded-md py-[5px] font-semibold`} onClick={() => setOpen(false)}>
+                    <button type="button" className={`${(view_url !== "") ? 'dark:border-transparent border-red-500 dark:bg-red-500 dark:text-tertiary dark:hover:bg-tertiary dark:hover:text-red-500 text-red-500 hover:text-tertiary w-[180px] hover:bg-red-500' : 'w-[200px] dark:border-transparent border-secondary text-secondary hover:bg-secondary hover:text-tertiary'} bg-tertiary border-[1px] transition duration-500 outline-none rounded-md py-[5px] font-semibold`} onClick={() => setOpen(false)}>
                         {
                             t((view_url !== "") ? 'start.message.buttons.b_2' : 'contact.validations.message.button')
                         }
