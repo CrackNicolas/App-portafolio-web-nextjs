@@ -57,7 +57,7 @@ export default function ComponentStart(props: Props) {
                 <h2 className={`${animate ? 'animate-[presentationLeft_0.8s_ease-in-out]' : 'opacity-0'} dark:text-tertiary text-primary tracking-wider text-[20px] ml:text-[25px] sm:text-[30px] font-semibold`}>
                     {t('start.txt_1')}
                 </h2>
-                <h1 className={`text-transparent bg-clip-text bg-gradient-to-r from-secondary to-primary ${animate ? 'animate-[presentationLeft_1s_ease-in-out]' : 'opacity-0'} text-[40px] ml:text-[50px] sm:text-[58px] font-bold mb-[10px] sm:mb-[13px] tracking-wider text-secondary`}>
+                <h1 className={`text-transparent bg-clip-text bg-gradient-to-r from-secondary to-primary dark:from-secondary dark:via-tertiary ${animate ? 'animate-[presentationLeft_1s_ease-in-out]' : 'opacity-0'} text-[40px] ml:text-[50px] sm:text-[58px] font-bold mb-[10px] sm:mb-[13px] tracking-wider text-secondary`}>
                     Alejo Beltran
                 </h1>
                 <h4 className={`${animate ? 'animate-[presentationLeft_1.2s_ease-in-out]' : 'opacity-0'} dark:text-tertiary text-primary text-[18px] sm:text-[20px] font-semibold`}>
@@ -73,7 +73,7 @@ export default function ComponentStart(props: Props) {
                     <Next_link href="https://github.com/CrackNicolas" target="_blank" rel="noopener noreferrer" className={`${animate ? 'animate-[presentationLeft_1.6s_ease-in-out]' : 'opacity-0'} group p-2 rounded-full cursor-pointer border-[0.1px] hover:border-secondary transition duration-500`}>
                         <ComponentIcon name="git" size={20} description_class="group-hover:text-secondary dark:text-tertiary text-primary" />
                     </Next_link>
-                    <span className={`${animate ? 'animate-[presentationRight_1.6s_ease-in-out] opacity-40' : 'opacity-0'} w-full h-[0.1px] bg-primary`}></span>
+                    <span className={`${animate ? 'animate-[presentationRight_1.6s_ease-in-out] opacity-40' : 'opacity-0'} w-full h-[0.1px] bg-primary dark:bg-tertiary`}></span>
                 </div>
                 <div className="flex gap-x-[10px] sm:gap-x-[15px] w-[309.5px] sm:w-[376.1px]">
                     <Link to="contact" spy={true} smooth={true} offset={0} duration={500} rel="noopener noreferrer" className={` bg-gradient-to-r from-primary to-secondary ${animate ? 'animate-[presentationBottom_1.6s_ease-in-out]' : 'opacity-0'} flex items-center min-w-[145px] sm:min-w-[171px] min-w-[145px] sm:max-w-[171px] gap-x-[8px] rounded-md py-[10px] px-[20px] cursor-pointer text-tertiary bg-secondary hover:opacity-90 border-[1px] border-secondary transition duration-500`}>
