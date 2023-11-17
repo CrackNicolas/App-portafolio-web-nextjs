@@ -47,7 +47,7 @@ export default function ComponentFooter(props: Props) {
                         <ComponentIcon name="copy" size={15} description_class="text-secondary mx-auto" />
                     </button>
                 </div>
-                <ComponentMessageCopyText open={true} setOpen={setVisible} />
+                <ComponentMessageCopyText open={visible} setOpen={setVisible} />
             </article>
         </section>
     )
