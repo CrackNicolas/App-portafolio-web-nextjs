@@ -60,9 +60,17 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 @media (max-width: 1215px) {
-    .sandwich-background-light::before  {
+    .sandwich-background-light::before{
         background: linear-gradient(55deg,
                 theme("colors.tertiary") 55%,
+                theme("colors.secondary") 50%,
+                theme("colors.primary") 100%,
+                theme("colors.secondary") 100%,
+                theme("colors.primary") 100%);
+    }
+    .sandwich-background-dark::before {
+        background: linear-gradient(55deg,
+                theme("colors.primary") 55%,
                 theme("colors.secondary") 50%,
                 theme("colors.primary") 100%,
                 theme("colors.secondary") 100%,
