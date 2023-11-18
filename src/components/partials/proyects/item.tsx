@@ -7,6 +7,7 @@ import ComponentTechnologies from "./technologies";
 import { Use_translation } from "@/i18n/logic/use_translation";
 
 type Props = {
+    animate: boolean,
     number: number,
     image: string,
     links: {
@@ -16,15 +17,15 @@ type Props = {
 }
 
 export default function ComponentItem(props: Props) {
-    const { number, image, links } = props;
+    const { animate, number, image, links } = props;
 
     const t = Use_translation(1);
 
     const logo = image.split(' ')[image.split(' ').length - 1]
 
     return (
-        <div className="group grid grid-cols-1 mg:grid-cols-2 gap-3 lg:gap-5">
-            <div className={`relative ${(number % 2 !== 0) ? 'order-1' : "order-2"} flex items-center`}>
+        <div className={`${animate ? 'animate-[presentationBottom_1s_ease-in-out]' : 'opacity-0'}  group grid grid-cols-1 mg:grid-cols-2 gap-3 lg:gap-5`}>
+            <div className={`relative ${(number % 2 !== 0) ? 'order-1' : "order-1 mg:order-2"} flex items-center`}>
                 <ComponentImage name={image} alt={`proyects.data.p_${number}.images.main`} />
                 <div className="break-before absolute w-full h-full group-hover:bg-none bg-gradient-to-tr from-primary dark:from-secondary cursor-pointer"></div>
             </div>

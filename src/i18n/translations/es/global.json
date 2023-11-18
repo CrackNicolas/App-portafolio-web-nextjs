@@ -126,6 +126,22 @@
                     "main": "Aplicacion YouTube",
                     "logo": "YouTube"
                 }
+            },
+            "p_3": {
+                "title": "Clon YouTube",
+                "description": "Desarrollé este proyecto, con el objetivo de aprender más sobre el desarrollo de aplicaciones y mejorar mis habilidades como programador.",
+                "images": {
+                    "main": "Aplicacion YouTube",
+                    "logo": "YouTube"
+                }
+            },
+            "p_4": {
+                "title": "Clon YouTube",
+                "description": "Desarrollé este proyecto, con el objetivo de aprender más sobre el desarrollo de aplicaciones y mejorar mis habilidades como programador.",
+                "images": {
+                    "main": "Aplicacion YouTube",
+                    "logo": "YouTube"
+                }
             }
         },
         "buttons": {

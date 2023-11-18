@@ -126,6 +126,22 @@
                     "main": "YouTube Application",
                     "logo": "YouTube"
                 }
+            },
+            "p_3": {
+                "title": "YouTube Clone",
+                "description": "I decided to embark on this project to put my skills into practice. Currently, I continue working on improving and perfecting this application.",
+                "images": {
+                    "main": "YouTube Application",
+                    "logo": "YouTube"
+                }
+            },
+            "p_4": {
+                "title": "YouTube Clone",
+                "description": "I decided to embark on this project to put my skills into practice. Currently, I continue working on improving and perfecting this application.",
+                "images": {
+                    "main": "YouTube Application",
+                    "logo": "YouTube"
+                }
             }
         },
         "buttons": {
