@@ -52,7 +52,7 @@ export default function ComponentStart(props: Props) {
     };
 
     return (
-        <section id="init" className={`pb-[80px] lg:pb-[178px] relative grid px-[10px] sm:px-[22px] items-center grid-cols-2 lg:grid-cols-3 lg:pl-[80px] max-w-[1275px] m-auto pt-[65px] lg:pt-[80px]`}>
+        <section id="init" className={`relative grid items-center grid-cols-2 pb-[80px] pt-[65px] px-[10px] sm:px-[22px] lg:grid-cols-3 lg:pl-[80px] lg:pb-[178px] lg:pt-[80px] max-w-[1275px] m-auto`}>
             <article className={`${(!isWidth && animate) && `${(theme === 'dark') ? 'sandwich-background-dark' : 'sandwich-background-light'}`} ${!animate && 'opacity-0'} flex flex-col col-span-2 h-full`}>
                 <h2 className={`${animate ? 'animate-[presentationLeft_0.8s_ease-in-out]' : 'opacity-0'} dark:text-tertiary text-primary tracking-wider text-[20px] ml:text-[25px] sm:text-[30px] font-semibold`}>
                     {t('start.txt_1')}
@@ -91,7 +91,7 @@ export default function ComponentStart(props: Props) {
                     <ComponentMessage open={completed} setOpen={setCompleted} view_url={view_url} />
                 </div>
             </article>
-            <article className={`${(isWidth) ? 'sandwich-background-dark' : 'pr-5'} ${animate ? 'animate-[presentationRight_1.6s_ease-in-out]' : 'opacity-0'} relative grid place-items-center lg:justify-end lg:items-center col-span-full mt-16 lg:mt-0 lg:col-span-1 h-full`}>
+            <article className={`${(isWidth) ? 'sandwich-background-dark' : 'pr-5'} ${animate ? 'animate-[presentationRight_1.6s_ease-in-out]' : 'opacity-0'} relative grid place-items-center col-span-full mt-16 lg:justify-end lg:items-center lg:mt-0 lg:col-span-1 h-full`}>
                 <img className={`${animate ? 'animate-[presentationRight_1.6s_ease-in-out]' : 'opacity-0'} transition duration-500 w-[300px] h-[300px] sm:w-[320px] sm:h-[320px] rounded-md`} src="/images/main/perfil.jpg" alt={t("start.image.alt")} />
             </article>
         </section>

@@ -6,7 +6,6 @@ import ComponentItem from "../partials/proyects/item";
 import ComponentLayout from "./layout";
 
 import { Use_translation } from "@/i18n/logic/use_translation";
-import { Media_query } from "@/logic/page/media_query";
 
 type Props = {
     animate: boolean
@@ -19,8 +18,6 @@ export default function ComponentProyects(props: Props) {
 
     const [view_datails, setView_datails] = useState<boolean>(true);
 
-    const isWidth = Media_query("800");
-
     return (
         <ComponentLayout {...props} id="proyects" children={
             <Fragment>
@@ -29,24 +26,14 @@ export default function ComponentProyects(props: Props) {
                         git: "a",
                         linkedin: "b"
                     }} />
-                    {
-                        (view_datails && !isWidth) &&
-                        <Fragment>
-                            <span className={`${animate ? 'animate-[presentationBottom_1s_ease-in-out]' : 'opacity-0'} w-full h-[0.1px] bg-secondary opacity-50`}></span>
-                            <ComponentItem animate={animate} number={2} image="Aplicacion YouTube" links={{
-                                git: "aa",
-                                linkedin: "bb"
-                            }} />
-                        </Fragment>
-                    }
+                    <span className={`${animate ? 'animate-[presentationBottom_1s_ease-in-out]' : 'opacity-0'} w-full h-[0.1px] bg-secondary opacity-50`}></span>
+                    <ComponentItem animate={animate} number={2} image="Aplicacion YouTube" links={{
+                        git: "aa",
+                        linkedin: "bb"
+                    }} />
                     {
                         !view_datails &&
                         <Fragment>
-                            <span className={`${animate ? 'animate-[presentationBottom_1s_ease-in-out]' : 'opacity-0'} w-full h-[0.1px] bg-secondary opacity-50`}></span>
-                            <ComponentItem animate={animate} number={2} image="Aplicacion YouTube" links={{
-                                git: "aa",
-                                linkedin: "bb"
-                            }} />
                             <span className={`${animate ? 'animate-[presentationBottom_1s_ease-in-out]' : 'opacity-0'} w-full h-[0.1px] bg-secondary opacity-50`}></span>
                             <ComponentItem animate={animate} number={3} image="Aplicacion YouTube" links={{
                                 git: "a",

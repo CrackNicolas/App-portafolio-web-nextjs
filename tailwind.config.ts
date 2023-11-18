@@ -10,6 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       screens: {
+        lg: "1025px", //El original es 1024 pero al usar max-width en algunas secciones se produce un error de 1px y esta es la solucion
         ml: "450px",
         mg: "800px",
       },
@@ -20,7 +21,7 @@ const config: Config = {
       },
       boxShadow: {
         "1xl": "0 0 2px 0.1px",
-        "3xl": "0 0 10px 0.5px"
+        "3xl": "0 0 10px 0.5px",
       },
       keyframes: {
         opacity: {
