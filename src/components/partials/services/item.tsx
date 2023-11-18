@@ -13,7 +13,7 @@ export default function ComponentItem(props: Props) {
     const t = Use_translation(1);
 
     return (
-        <div className="group transition duration-500 p-[10px] sm:p-[20px] col-span-full lg:col-span-1 rounded-md border-[0.1px] border-primary dark:border-secondary hover:border-transparent bg-tertiary dark:bg-primary cursor-pointer hover:shadow-3xl hover:shadow-primary dark:hover:shadow-secondary">
+        <div className={`group transition duration-500 p-[10px] sm:p-[20px] ${(number === 3) ? 'md:col-span-full lg:col-span-1' : 'md:col-span-1'} rounded-md border-[0.1px] border-primary dark:border-secondary hover:border-transparent bg-tertiary dark:bg-primary cursor-pointer hover:shadow-3xl hover:shadow-primary dark:hover:shadow-secondary`}>
             <div className="bg-gradient-to-r from-primary to-secondary group-hover:from-secondary group-hover:to-primary w-[80px] h-[80px] sm:w-[90px] sm:h-[90px] grid place-items-center mx-auto mb-[10px] sm:mb-[15px] transition duration-500 text-bg-primary rounded-tr-[50%] rounded-bl-[50%] border-[1px] border-secondary">
                 <ComponentIcon name={name} size={50} description_class="text-tertiary" />
             </div>
