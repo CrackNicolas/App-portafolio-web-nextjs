@@ -3,6 +3,7 @@ import { ReactNode } from "react"
 import ComponentNameSection from "../partials/name_section"
 
 import { Media_query } from "@/logic/page/media_query";
+import ComponentIcon from "../partials/icon";
 
 type Props = {
     id: string,
@@ -16,10 +17,33 @@ export default function ComponentLayout(props: Props) {
 
     const isWidth_1 = Media_query("1300");
 
+    const view_line = (id: string) => {
+        switch (id) {
+            case 'education': return true;
+            default: return false;
+        }
+    }
+
     return (
         <section id={id} className={` ${padding} ${isWidth_1 ? 'px-[10px] sm:px-[22px]' : 'pl-[10px] sm:pl-[22px]'} lg:pl-[80px] flex flex-col gap-[20px] m-auto max-w-[1275px] pt-[65px] lg:pt-[50px]`}>
             <ComponentNameSection animate={animate} name={`${id}.title`} icon={id} />
             {children}
+            {
+                view_line(id) &&
+                <article className="mt-[70px] flex justify-between items-center">
+                    <div className="flex flex-col gap-y-6 ">
+                        <span className={` ${animate ? 'animate-[presentationLeft_0.9s_ease-in-out]' : 'opacity-0'}  bg-gradient-to-r from-primary to-secondary via-red-secondary w-[20px] h-[3px] bg-secondary rounded-full`}></span>
+                        <span className={` ${animate ? 'animate-[presentationLeft_1.1s_ease-in-out]' : 'opacity-0'}  bg-gradient-to-r from-primary to-secondary via-red-secondary w-[50px] h-[3px] bg-secondary rounded-full`}></span>
+                        <span className={` ${animate ? 'animate-[presentationLeft_1.3s_ease-in-out]' : 'opacity-0'}  bg-gradient-to-r from-primary to-secondary via-red-secondary w-[100px] h-[3px] bg-secondary rounded-full`}></span>
+                        <span className={` ${animate ? 'animate-[presentationLeft_1.5s_ease-in-out]' : 'opacity-0'}  bg-gradient-to-r from-primary to-secondary via-red-secondary w-[150px] h-[3px] bg-secondary rounded-full`}></span>
+                        <span className={` ${animate ? 'animate-[presentationLeft_1.7s_ease-in-out]' : 'opacity-0'}  bg-gradient-to-r from-primary to-secondary via-red-secondary w-[200px] h-[3px] bg-secondary rounded-full`}></span>
+                        <span className={` ${animate ? 'animate-[presentationLeft_1.9s_ease-in-out]' : 'opacity-0'}  bg-gradient-to-r from-primary to-secondary via-red-secondary w-[250px] h-[3px] bg-secondary rounded-full`}></span>
+                    </div>
+                    <div className={` ${animate ? 'animate-[presentationRight_2s_ease-in-out]' : 'opacity-0'}`} >
+                        <ComponentIcon name="award" size={50} description_class="text-secondary" />
+                    </div>
+                </article>
+            }
         </section>
     )
 }

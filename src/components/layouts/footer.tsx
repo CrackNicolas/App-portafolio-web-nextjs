@@ -31,7 +31,7 @@ export default function ComponentFooter(props: Props) {
     }
 
     return (
-        <section id="contact" className={`px-[10px] sm:px-[30px] lg:pl-[70px] flex flex-col gap-[10px] py-12 m-auto max-w-[1200px] pt-[80px]`}>
+        <section id="contact" className={`px-[10px] sm:px-[30px] lg:pl-[70px] flex flex-col gap-[10px] py-12 m-auto max-w-[1200px] pt-[200px]`}>
             <div className="animate-bounce w-6 h-6 mx-auto">
                 <ComponentIcon name="footer" size={24} description_class="bi bi-chat-square-quote-fill text-secondary" />
             </div>

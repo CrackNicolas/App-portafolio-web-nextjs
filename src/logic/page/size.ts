@@ -6,12 +6,12 @@ export function Use_window_width() {
     useLayoutEffect(() => {
         const update_window_width = () => {
             setWindow_width(window.innerWidth);
-        }
+        };
         window.addEventListener("resize", update_window_width);
 
         return () => {
             window.removeEventListener("resize", update_window_width);
-        }
+        };
     }, []);
 
     return window_width;
