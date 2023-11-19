@@ -102,8 +102,8 @@ export default function ComponentContact(props: Props) {
 
     return (
         <ComponentLayout id="contact" animate={animate} children={
-            <form className="grid gap-[40px] px-[5px] mt-[35px]" method="POST" ref={ref_form} onSubmit={handleSubmit(onSubmit)}>
-                <div className='grid grid-cols-1 sm:grid-cols-2 gap-[40px] sm:gap-[10px]'>
+            <form className="grid gap-[35px] sm:gap-[40px] px-[5px] mt-[35px]" method="POST" ref={ref_form} onSubmit={handleSubmit(onSubmit)}>
+                <div className='grid grid-cols-1 sm:grid-cols-2 gap-y-[35px] sm:gap-x-[10px]'>
                     <div className={`${animate ? 'animate-[presentationLeft_1.1s_ease-in-out]' : 'opacity-0'} transition duration-500 relative grid grid-cols-1 items-center gap-[5px]`}>
                         <ComponentMessageErrorInput order={1} type={errors.name?.type} />
                         <input className={`outline-0 border-[1px] bg-tertiary dark:bg-primary text-primary dark:text-tertiary max-h-[20px] min-h-[20px] py-[20px] ${active_validation ? `${style_input(errors.name?.type)} pr-[35px]` : 'border-primary dark:border-secondary pr-[10px]'} pl-[10px] overflow-auto text-[18px] rounded-sm`} type="text" placeholder={t('contact.inputs.j_1')} {...register('name', {

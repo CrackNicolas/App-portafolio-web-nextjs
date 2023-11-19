@@ -52,7 +52,7 @@ export default function ComponentStart(props: Props) {
     };
 
     return (
-        <section id="init" className={`relative grid items-center grid-cols-2 pb-[80px] pt-[65px] px-[10px] sm:px-[22px] lg:grid-cols-3 lg:pl-[80px] lg:pb-[178px] lg:pt-[80px] max-w-[1275px] m-auto`}>
+        <section id="init" className={`relative grid items-center grid-cols-2 pb-[80px] pt-[65px] px-[10px] sm:px-[22px] lg:grid-cols-3 lg:pl-[80px] lg:pb-[160px] lg:pt-[80px] max-w-[1275px] m-auto`}>
             <article className={`${(!isWidth && animate) && `${(theme === 'dark') ? 'sandwich-background-dark' : 'sandwich-background-light'}`} ${!animate && 'opacity-0'} flex flex-col col-span-2 h-full`}>
                 <h2 className={`${animate ? 'animate-[presentationLeft_0.8s_ease-in-out]' : 'opacity-0'} dark:text-tertiary text-primary tracking-wider text-[20px] ml:text-[25px] sm:text-[30px] font-semibold`}>
                     {t('start.txt_1')}
@@ -63,15 +63,15 @@ export default function ComponentStart(props: Props) {
                 <h4 className={`${animate ? 'animate-[presentationLeft_1.2s_ease-in-out]' : 'opacity-0'} dark:text-tertiary text-primary text-[18px] sm:text-[20px] font-semibold`}>
                     Full Stack Development
                 </h4>
-                <p className={`${animate ? 'animate-[presentationLeft_1.4s_ease-in-out] opacity-60' : 'opacity-0'} text-[15px] dark:text-tertiary text-primary sm:text-[15px] mb-[10px] sm:mb-[20px] min-w-[200px] max-w-[460px]`}>
+                <p className={`${animate ? 'animate-[presentationLeft_1.4s_ease-in-out] opacity-60' : 'opacity-0'} text-[15px] dark:text-tertiary text-primary sm:text-[15px] mb-[20px] sm:mb-[30px] min-w-[200px] max-w-[460px]`}>
                     {t('start.txt_2')}
                 </p>
-                <div className="flex items-center gap-x-5 mb-[13px] sm:mb-[23px] w-[309.5px] sm:w-[376.1px]">
-                    <Next_link href="https://www.linkedin.com/in/nicolas-alejo-beltran/" target="_blank" rel="noopener noreferrer" className={`${animate ? 'animate-[presentationLeft_1.5s_ease-in-out]' : 'opacity-0'} group p-2 rounded-full cursor-pointer border-[0.1px] hover:border-secondary transition duration-500`}>
-                        <ComponentIcon name="linkedin" size={20} description_class="group-hover:text-secondary dark:text-tertiary text-primary" />
+                <div className="flex items-center gap-x-6 mb-[22px] sm:mb-[30px] w-[309.5px] sm:w-[376.1px]">
+                    <Next_link href="https://www.linkedin.com/in/nicolas-alejo-beltran/" target="_blank" rel="noopener noreferrer" className={`${animate ? 'animate-[presentationLeft_1.5s_ease-in-out]' : 'opacity-0'} group dark:hover:opacity-100 dark:opacity-50 rounded-full cursor-pointer transition duration-500`}>
+                        <ComponentIcon name="linkedin" size={18} description_class="dark:text-tertiary hover:text-secondary text-primary" />
                     </Next_link>
-                    <Next_link href="https://github.com/CrackNicolas" target="_blank" rel="noopener noreferrer" className={`${animate ? 'animate-[presentationLeft_1.6s_ease-in-out]' : 'opacity-0'} group p-2 rounded-full cursor-pointer border-[0.1px] hover:border-secondary transition duration-500`}>
-                        <ComponentIcon name="git" size={20} description_class="group-hover:text-secondary dark:text-tertiary text-primary" />
+                    <Next_link href="https://github.com/CrackNicolas" target="_blank" rel="noopener noreferrer" className={`${animate ? 'animate-[presentationLeft_1.6s_ease-in-out]' : 'opacity-0'} group dark:hover:opacity-100 dark:opacity-50 rounded-full cursor-pointer transition duration-500`}>
+                        <ComponentIcon name="git" size={20} description_class="dark:text-tertiary hover:text-secondary text-primary" />
                     </Next_link>
                     <span className={`${animate ? 'animate-[presentationRight_1.6s_ease-in-out] opacity-40' : 'opacity-0'} w-full h-[0.1px] bg-primary dark:bg-tertiary`}></span>
                 </div>

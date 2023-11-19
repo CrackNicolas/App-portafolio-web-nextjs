@@ -17,7 +17,7 @@ export default function ComponentLayout(props: Props) {
     const isWidth_1 = Media_query("1300");
 
     return (
-        <section id={id} className={` ${padding} ${isWidth_1 ? 'px-[10px] sm:px-[22px]' : 'pl-[10px] sm:pl-[22px]'} lg:pl-[80px] flex flex-col gap-[20px] m-auto max-w-[1275px] pt-[65px] lg:pt-[80px]`}>
+        <section id={id} className={` ${padding} ${isWidth_1 ? 'px-[10px] sm:px-[22px]' : 'pl-[10px] sm:pl-[22px]'} lg:pl-[80px] flex flex-col gap-[20px] m-auto max-w-[1275px] pt-[65px] lg:pt-[50px]`}>
             <ComponentNameSection animate={animate} name={`${id}.title`} icon={id} />
             {children}
         </section>
