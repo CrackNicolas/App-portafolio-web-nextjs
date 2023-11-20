@@ -1,4 +1,4 @@
-import { ReactNode } from "react"
+import { Fragment, ReactNode } from "react"
 
 import ComponentNameSection from "../partials/name_section"
 
@@ -18,6 +18,7 @@ export default function ComponentLayout(props: Props) {
 
     const view_line = (id: string) => {
         switch (id) {
+            case 'about':
             case 'education':
             case 'services':
                 return true;
@@ -31,13 +32,23 @@ export default function ComponentLayout(props: Props) {
             {children}
             {
                 view_line(id) &&
-                <article className="mt-[50px] flex flex-col gap-y-6">
+                <article className={` ${(id !== "about") ? 'mt-[50px]' : 'mt-[20px]'} flex flex-col gap-y-6`}>
                     <span className={` ${animate ? 'animate-[presentationLeft_0.9s_ease-in-out]' : 'opacity-0'}  bg-gradient-to-r from-primary to-secondary via-red-secondary w-[20px] h-[3px] bg-secondary transition duration-600 rounded-full`}></span>
                     <span className={` ${animate ? 'animate-[presentationLeft_1.1s_ease-in-out]' : 'opacity-0'}  bg-gradient-to-r from-primary to-secondary via-red-secondary w-[50px] h-[3px] bg-secondary transition duration-600 rounded-full`}></span>
-                    <span className={` ${animate ? 'animate-[presentationLeft_1.3s_ease-in-out]' : 'opacity-0'}  bg-gradient-to-r from-primary to-secondary via-red-secondary w-[100px] h-[3px] bg-secondary transition duration-600 rounded-full`}></span>
-                    <span className={` ${animate ? 'animate-[presentationLeft_1.5s_ease-in-out]' : 'opacity-0'}  bg-gradient-to-r from-primary to-secondary via-red-secondary w-[150px] h-[3px] bg-secondary transition duration-600 rounded-full`}></span>
-                    <span className={` ${animate ? 'animate-[presentationLeft_1.7s_ease-in-out]' : 'opacity-0'}  bg-gradient-to-r from-primary to-secondary via-red-secondary w-[200px] h-[3px] bg-secondary transition duration-600 rounded-full`}></span>
-                    <span className={` ${animate ? 'animate-[presentationLeft_1.9s_ease-in-out]' : 'opacity-0'}  bg-gradient-to-r from-primary to-secondary via-red-secondary w-[250px] h-[3px] bg-secondary transition duration-600 rounded-full`}></span>
+                    {
+                        (id !== "about") &&
+                        <Fragment>
+                            <span className={` ${animate ? 'animate-[presentationLeft_1.3s_ease-in-out]' : 'opacity-0'}  bg-gradient-to-r from-primary to-secondary via-red-secondary w-[100px] h-[3px] bg-secondary transition duration-600 rounded-full`}></span>
+                            <span className={` ${animate ? 'animate-[presentationLeft_1.5s_ease-in-out]' : 'opacity-0'}  bg-gradient-to-r from-primary to-secondary via-red-secondary w-[150px] h-[3px] bg-secondary transition duration-600 rounded-full`}></span>
+                            {
+                                (id !== "services" && id !== "about") &&
+                                <Fragment>
+                                    <span className={` ${animate ? 'animate-[presentationLeft_1.7s_ease-in-out]' : 'opacity-0'}  bg-gradient-to-r from-primary to-secondary via-red-secondary w-[200px] h-[3px] bg-secondary transition duration-600 rounded-full`}></span>
+                                    <span className={` ${animate ? 'animate-[presentationLeft_1.9s_ease-in-out]' : 'opacity-0'}  bg-gradient-to-r from-primary to-secondary via-red-secondary w-[250px] h-[3px] bg-secondary transition duration-600 rounded-full`}></span>
+                                </Fragment>
+                            }
+                        </Fragment>
+                    }
                 </article>
             }
         </section>
