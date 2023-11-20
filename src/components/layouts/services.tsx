@@ -1,9 +1,7 @@
 import ComponentItem from "../partials/services/item";
 import ComponentLayout from "./layout";
 
-type Props = {
-    animate: boolean
-}
+import { type Props } from '@/types/props';
 
 export default function ComponentServices(props: Props) {
     const { animate } = props;

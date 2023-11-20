@@ -15,6 +15,7 @@ body {
 }
 
 body::-webkit-scrollbar {
+    overflow-y: scroll;
     width: 5px;
 }
 
