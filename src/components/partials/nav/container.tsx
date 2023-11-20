@@ -68,7 +68,7 @@ export default function ComponentNav(props: Props) {
                             </span>
                         </button>
                     </div>
-                    <ComponentToggle open={visible_options} setOpen={setVisible_options} theme={theme} update_theme={update_theme} lenguaje={lenguaje} update_lenguaje={update_lenguaje}/>
+                    <ComponentToggle open={visible_options} setOpen={setVisible_options} theme={theme} update_theme={update_theme} lenguaje={lenguaje} update_lenguaje={update_lenguaje} />
                 </article>
             </article>
         </section>

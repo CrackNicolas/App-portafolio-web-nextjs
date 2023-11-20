@@ -1,9 +1,9 @@
 import ComponentItem from "../partials/education/item";
 import ComponentLayout from "./layout";
 
-import { type Props } from '@/types/props';
+import { type Props_section } from '@/types/props';
 
-export default function ComponentEducacion(props: Props) {
+export default function ComponentEducacion(props: Props_section) {
     const { animate } = props;
 
     return (

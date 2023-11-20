@@ -3,14 +3,10 @@ import { Fragment, useState } from "react";
 import ComponentItem from "../partials/experience/item";
 import ComponentLayout from "./layout";
 
-import { Use_translation } from "@/i18n/logic/use_translation";
+import { type Props_section } from '@/types/props';
 
-import { type Props } from '@/types/props';
-
-export default function ComponentExperience(props: Props) {
+export default function ComponentExperience(props: Props_section) {
     const { animate } = props;
-
-    const t = Use_translation(1);
 
     const [view_datails, setView_datails] = useState<boolean>(true);
 

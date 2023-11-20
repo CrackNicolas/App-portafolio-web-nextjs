@@ -14,7 +14,7 @@ type Props = {
 export default function ComponentLayout(props: Props) {
     const { id, children, animate, padding = "" } = props;
 
-    const isWidth_1 = Media_query("1300");
+    const isWidth = Media_query("1300");
 
     const view_line = (id: string) => {
         switch (id) {
@@ -26,7 +26,7 @@ export default function ComponentLayout(props: Props) {
     }
 
     return (
-        <section id={id} className={` ${padding} ${isWidth_1 ? 'px-[10px] sm:px-[22px]' : 'pl-[10px] sm:pl-[22px]'} lg:pl-[80px] flex flex-col gap-[20px] m-auto max-w-[1275px] pt-0`}>
+        <section id={id} className={` ${padding} ${isWidth ? 'px-[10px] sm:px-[22px]' : 'pl-[10px] sm:pl-[22px]'} lg:pl-[80px] flex flex-col gap-[20px] m-auto max-w-[1275px] pt-0`}>
             <ComponentNameSection animate={animate} name={`${id}.title`} icon={id} />
             {children}
             {

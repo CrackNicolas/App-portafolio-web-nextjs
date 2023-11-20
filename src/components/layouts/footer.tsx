@@ -5,9 +5,9 @@ import ComponentMessageCopyText from "../partials/messages/alerts/copy_text";
 
 import { Use_translation } from "@/i18n/logic/use_translation";
 
-import { type Props } from '@/types/props';
+import { type Props_section } from '@/types/props';
 
-export default function ComponentFooter(props: Props) {
+export default function ComponentFooter(props: Props_section) {
     const { animate } = props;
 
     const t = Use_translation(1);

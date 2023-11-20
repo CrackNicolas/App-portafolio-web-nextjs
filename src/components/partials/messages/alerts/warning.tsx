@@ -6,12 +6,9 @@ import ComponentLayout from './layout';
 
 import { Use_translation } from "@/i18n/logic/use_translation";
 
-type Props = {
-    open: boolean,
-    setOpen: any
-}
+import { type Props_modal } from '@/types/props';
 
-export default function ComponentMessageWarning(props: Props) {
+export default function ComponentMessageWarning(props: Props_modal) {
     const { open, setOpen } = props;
 
     const t = Use_translation(1);

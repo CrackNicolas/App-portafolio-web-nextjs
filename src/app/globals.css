@@ -61,7 +61,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 @media (max-width: 1215px) {
-    .sandwich-background-light::before{
+    .sandwich-background-light::before {
         background: linear-gradient(55deg,
                 theme("colors.tertiary") 55%,
                 theme("colors.secondary") 50%,
@@ -69,6 +69,7 @@ body::-webkit-scrollbar-thumb:hover {
                 theme("colors.secondary") 100%,
                 theme("colors.primary") 100%);
     }
+
     .sandwich-background-dark::before {
         background: linear-gradient(55deg,
                 theme("colors.primary") 55%,
@@ -80,7 +81,9 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 @media (max-width: 1024px) {
-    .sandwich-background-light::before, .sandwich-background-dark::before  {
+
+    .sandwich-background-light::before,
+    .sandwich-background-dark::before {
         background: linear-gradient(-110deg,
                 theme("colors.secondary") 30%,
                 theme("colors.primary") 100%,

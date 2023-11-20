@@ -7,9 +7,9 @@ import ComponentLayout from "./layout";
 
 import { Use_translation } from "@/i18n/logic/use_translation";
 
-import { type Props } from '@/types/props';
+import { type Props_section } from '@/types/props';
 
-export default function ComponentProyects(props: Props) {
+export default function ComponentProyects(props: Props_section) {
     const { animate } = props;
 
     const t = Use_translation(1);

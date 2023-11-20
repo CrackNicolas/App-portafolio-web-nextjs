@@ -1,9 +1,9 @@
 import ComponentItem from "../partials/services/item";
 import ComponentLayout from "./layout";
 
-import { type Props } from '@/types/props';
+import { type Props_section } from '@/types/props';
 
-export default function ComponentServices(props: Props) {
+export default function ComponentServices(props: Props_section) {
     const { animate } = props;
 
     return (

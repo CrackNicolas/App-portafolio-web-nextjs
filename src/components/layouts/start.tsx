@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Next_link from "next/link";
 
 import { Link } from "react-scroll";
@@ -92,7 +93,7 @@ export default function ComponentStart(props: Props) {
                 </div>
             </article>
             <article className={`${(isWidth) ? 'sandwich-background-dark' : 'pr-5'} ${animate ? 'animate-[presentationRight_1.6s_ease-in-out]' : 'opacity-0'} relative grid place-items-center col-span-full mt-16 lg:justify-end lg:items-center lg:mt-0 lg:col-span-1 h-full`}>
-                <img className={`${animate ? 'animate-[presentationRight_1.6s_ease-in-out]' : 'opacity-0'} rounded-full transition duration-500 min-w-[230px] min-h-[230px] max-w-[230px] max-h-[230px] sm:min-w-[320px] sm:min-h-[320px] sm:max-w-[320px] sm:max-h-[320px]`} src="/images/main/perfil.jpg" alt={t("start.image.alt")} />
+                <Image width={230} height={230} className={`${animate ? 'animate-[presentationRight_1.6s_ease-in-out]' : 'opacity-0'} rounded-full transition duration-500 min-w-[230px] min-h-[230px] max-w-[230px] max-h-[230px] sm:min-w-[320px] sm:min-h-[320px] sm:max-w-[320px] sm:max-h-[320px]`} src="/images/main/perfil.jpg" alt={t("start.image.alt")} />
             </article>
         </section>
     )
