@@ -103,52 +103,29 @@ export default function ComponentContact(props: Props) {
     return (
         <ComponentLayout id="contact" animate={animate} children={
             <form className="grid gap-[35px] sm:gap-[40px] px-[5px] mt-[35px]" method="POST" ref={ref_form} onSubmit={handleSubmit(onSubmit)}>
-                <div className='grid grid-cols-1 sm:grid-cols-2 gap-y-[35px] sm:gap-x-[10px]'>
-                    <div className={`${animate ? 'animate-[presentationLeft_1.1s_ease-in-out]' : 'opacity-0'} transition duration-500 relative grid grid-cols-1 items-center gap-[5px]`}>
-                        <ComponentMessageErrorInput order={1} type={errors.name?.type} />
-                        <input className={`outline-0 border-[1px] bg-tertiary dark:bg-primary text-primary dark:text-tertiary max-h-[20px] min-h-[20px] py-[20px] ${active_validation ? `${style_input(errors.name?.type)} pr-[35px]` : 'border-primary dark:border-secondary pr-[10px]'} pl-[10px] overflow-auto text-[18px] rounded-sm`} type="text" placeholder={t('contact.inputs.j_1')} {...register('name', {
-                            required: true,
-                            minLength: 3,
-                            maxLength: 15,
-                            pattern: /^[A-Za-z]+$/i
-                        })}
-                            onInput={() => {
-                                const maxLength = 15;
-                                if (ref_form.current.name.value.length > maxLength) {
-                                    ref_form.current.name.value = ref_form.current.name.value.substring(0, maxLength);
-                                }
-                            }}
-                        />
-                        <div className={`dark:opacity-70 ${style_icon(errors.name?.type)} `}>
-                            {
-                                get_icon(errors.name?.type === undefined)
+                <div className={`${animate ? 'animate-[presentationLeft_1.1s_ease-in-out]' : 'opacity-0'} transition duration-500 relative grid grid-cols-1 items-center gap-[5px]`}>
+                    <ComponentMessageErrorInput order={1} type={errors.name?.type} />
+                    <input className={`outline-0 border-[1px] bg-tertiary dark:bg-primary text-primary dark:text-tertiary max-h-[20px] min-h-[20px] py-[20px] ${active_validation ? `${style_input(errors.name?.type)} pr-[35px]` : 'border-primary dark:border-secondary pr-[10px]'} pl-[10px] overflow-auto text-[18px] rounded-sm`} type="text" placeholder={t('contact.inputs.j_1')} {...register('name', {
+                        required: true,
+                        minLength: 3,
+                        maxLength: 15,
+                        pattern: /^[A-Za-z]+$/i
+                    })}
+                        onInput={() => {
+                            const maxLength = 15;
+                            if (ref_form.current.name.value.length > maxLength) {
+                                ref_form.current.name.value = ref_form.current.name.value.substring(0, maxLength);
                             }
-                        </div>
-                    </div>
-                    <div className={`${animate ? 'animate-[presentationRight_1.1s_ease-in-out]' : 'opacity-0'} transition duration-500 relative grid grid-cols-1 items-center gap-[5px]`}>
-                        <ComponentMessageErrorInput order={2} type={errors.last_name?.type} />
-                        <input className={`outline-0 border-[1px] bg-tertiary dark:bg-primary text-primary dark:text-tertiary max-h-[20px] min-h-[20px] py-[20px] ${active_validation ? `${style_input(errors.last_name?.type)} pr-[35px]` : 'border-primary dark:border-secondary pr-[10px]'} pl-[10px] overflow-auto text-[18px] rounded-sm`} type="text" placeholder={t('contact.inputs.j_2')} {...register('last_name', {
-                            required: true,
-                            minLength: 3,
-                            maxLength: 20,
-                            pattern: /^[A-Za-z]+$/i
-                        })}
-                            onInput={() => {
-                                const maxLength = 20;
-                                if (ref_form.current.last_name.value.length > maxLength) {
-                                    ref_form.current.last_name.value = ref_form.current.last_name.value.substring(0, maxLength);
-                                }
-                            }}
-                        />
-                        <div className={`dark:opacity-70 ${style_icon(errors.last_name?.type)} `}>
-                            {
-                                get_icon(errors.last_name?.type === undefined)
-                            }
-                        </div>
+                        }}
+                    />
+                    <div className={`dark:opacity-70 ${style_icon(errors.name?.type)} `}>
+                        {
+                            get_icon(errors.name?.type === undefined)
+                        }
                     </div>
                 </div>
                 <div className={`${animate ? 'animate-[presentationLeft_1.3s_ease-in-out]' : 'opacity-0'} transition duration-500 relative grid grid-cols-1 items-center gap-[5px]`}>
-                    <ComponentMessageErrorInput order={3} type={errors.email?.type} />
+                    <ComponentMessageErrorInput order={2} type={errors.email?.type} />
                     <input className={`outline-0 border-[1px] bg-tertiary dark:bg-primary text-primary dark:text-tertiary max-h-[20px] min-h-[20px] py-[20px] ${active_validation ? `${style_input(errors.email?.type)} pr-[35px]` : 'border-primary dark:border-secondary pr-[10px]'} pl-[10px] overflow-auto text-[18px] rounded-sm`} type="email" placeholder={t('contact.inputs.j_3')} {...register('email', {
                         required: true,
                         pattern: /^[a-zA-Z0-9]+[\w\.-]*@[a-zA-Z0-9]+(\.[a-zA-Z]+)+$/i
@@ -160,7 +137,7 @@ export default function ComponentContact(props: Props) {
                     </div>
                 </div>
                 <div className={`${animate ? 'animate-[presentationRight_1.4s_ease-in-out]' : 'opacity-0'} transition duration-500 relative grid grid-cols-1 items-center gap-[5px]`}>
-                    <ComponentMessageErrorInput order={4} type={errors.message?.type} />
+                    <ComponentMessageErrorInput order={3} type={errors.message?.type} />
                     <textarea rows={2} className={`outline-0 border-[1px] bg-tertiary dark:bg-primary text-primary dark:text-tertiary overflow-hidden resize-none py-[8px] ${active_validation ? `${style_input(errors.message?.type)} pr-[35px]` : 'border-primary dark:border-secondary pr-[10px]'} pl-[10px] text-[19.5px] rounded-sm`} placeholder={t('contact.inputs.j_4')} {...register('message', {
                         required: true,
                         minLength: 10,

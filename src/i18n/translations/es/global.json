@@ -185,15 +185,10 @@
                     "text_4": "El nombre solo debe contener letras"
                 },
                 "j_2": {
-                    "text_1": "Se requiere un apellido",
-                    "text_2": "El apellido debe tener más de 3 caracteres",
-                    "text_4": "El apellido solo debe contener letras"
-                },
-                "j_3": {
                     "text_1": "Se requiere un correo electrónico",
                     "text_4": "El correo electrónico no es válido"
                 },
-                "j_4": {
+                "j_3": {
                     "text_1": "Se requiere un mensaje",
                     "text_2": "El mensaje debe tener más de 10 caracteres",
                     "text_4": "El mensaje contiene símbolos no permitidos"
