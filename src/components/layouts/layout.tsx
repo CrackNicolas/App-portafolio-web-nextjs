@@ -32,7 +32,7 @@ export default function ComponentLayout(props: Props) {
             {children}
             {
                 view_line(id) &&
-                <article className="flex flex-col gap-y-6">
+                <article className="flex flex-col gap-y-6 mt-[25px]">
                     <span className={` ${animate ? 'animate-[presentationLeft_0.9s_ease-in-out]' : 'opacity-0'}  bg-gradient-to-r from-primary to-secondary via-red-secondary w-[20px] h-[3px] bg-secondary transition duration-600 rounded-full`}></span>
                     <span className={` ${animate ? 'animate-[presentationLeft_1.1s_ease-in-out]' : 'opacity-0'}  bg-gradient-to-r from-primary to-secondary via-red-secondary w-[50px] h-[3px] bg-secondary transition duration-600 rounded-full`}></span>
                     {
