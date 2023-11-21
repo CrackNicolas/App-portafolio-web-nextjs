@@ -26,7 +26,7 @@ export default function ComponentItem(props: Props) {
     return (
         <div className={`${animate ? 'animate-[presentationBottom_1s_ease-in-out]' : 'opacity-0'}  group grid grid-cols-1 mg:grid-cols-2 gap-3 lg:gap-5`}>
             <div className={`relative ${(number % 2 !== 0) ? 'order-1' : "order-1 mg:order-2"} flex items-center`}>
-                <ComponentImage name={image} alt={`proyects.data.p_${number}.images.main`} />
+                <ComponentImage layout="responsive" name={image} alt={`proyects.data.p_${number}.images.main`} />
                 <div className="break-before absolute w-full h-full group-hover:bg-none bg-gradient-to-tr from-primary dark:from-secondary cursor-pointer"></div>
             </div>
             <div className={`group relative ${(number % 2 !== 0) ? 'order-2 items-end' : "order-1 items-start"} flex flex-col gap-1 lg:gap-2 cursor-pointer`}>

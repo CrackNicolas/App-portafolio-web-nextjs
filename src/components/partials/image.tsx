@@ -1,16 +1,21 @@
+import Image from "next/image";
+
 import { Use_translation } from "@/i18n/logic/use_translation";
 
 type Props = {
     name: string,
+    size?: number,
+    layout?: string,
     description_class?: string,
     alt?: string
 }
 
 export default function ComponentImage(props: Props) {
-    const { name, description_class = "", alt = `Logo ${name}` } = props;
+    const { name, size = 1, layout = "", description_class = "", alt = `Logo ${name}` } = props;
 
     const t = Use_translation(1);
 
+    //Tener en cuenta que siempre que se añada alguna imagen externa tambien se debe añadir su dominio en next.config.js
     const get_image = (name: string) => {
         switch (name) {
             case 'Aplicacion YouTube':
@@ -47,10 +52,12 @@ export default function ComponentImage(props: Props) {
                 return "https://clipground.com/images/jira-logo-clipart-2.png";
             case 'Trello':
                 return "/images/icons/trello.png";
+            default:
+                return "";
         }
     }
 
     return (
-        <img src={get_image(name)} className={`cursor-pointer transition duration-500 rounded-sm ${description_class}`} alt={alt ? t(alt) : alt} />
+        <Image width={size} height={size} layout={layout} src={get_image(name)} className={`cursor-pointer transition duration-500 rounded-sm ${description_class}`} alt={alt ? t(alt) : alt} />
     )
 }

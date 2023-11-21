@@ -32,27 +32,27 @@ export default function ComponentAbout(props: Props_section) {
                         <span className='mt-1 hover:font-semibold font-normal group-hover:text-secondary text-primary dark:text-tertiary text-[14px]'>React</span>
                     </div>
                     <div className="group w-full flex items-center flex-col h-[60px]">
-                        <ComponentImage name="Angular" description_class="w-[38px] h-[38px] hover:translate-y-[-3px]" />
+                        <ComponentImage name="Angular" size={38} description_class="hover:translate-y-[-3px]" />
                         <span className='mt-[1px] hover:font-semibold font-normal group-hover:text-secondary text-primary dark:text-tertiary text-[14px]'>Angular</span>
                     </div>
                     <div className="group w-full flex items-center flex-col pt-[5px] h-[60px]">
-                        <ComponentImage name="TypeScript" description_class="w-[28px] h-[28px] hover:translate-y-[-3px]" />
+                        <ComponentImage name="TypeScript" size={28} description_class="hover:translate-y-[-3px]" />
                         <span className='mt-[5.5px] hover:font-semibold font-normal group-hover:text-secondary text-primary dark:text-tertiary text-[14px]'>TypeScript</span>
                     </div>
                     <div className="group w-full flex items-center flex-col h-[60px]">
-                        <ComponentImage name="JavaScript" description_class="w-[38px] h-[38px] hover:translate-y-[-3px]" />
+                        <ComponentImage name="JavaScript" size={38} description_class="hover:translate-y-[-3px]" />
                         <span className='hover:font-semibold font-normal group-hover:text-secondary text-primary dark:text-tertiary text-[14px]'>JavaScript</span>
                     </div>
                     <div className="group w-full flex items-center flex-col pt-[3px] h-[60px]">
-                        <ComponentImage name="Node.js" description_class="w-[35px] h-[35px] hover:translate-y-[-3px]" />
+                        <ComponentImage name="Node.js" size={35} description_class="hover:translate-y-[-3px]" />
                         <span className='hover:font-semibold font-normal group-hover:text-secondary text-primary dark:text-tertiary text-[14px]'>Node.js</span>
                     </div>
                     <div className="group w-full flex items-center flex-col pt-[1px] h-[60px]">
-                        <ComponentImage name="CSS" description_class="w-[38px] h-[38px] hover:translate-y-[-3px]" />
+                        <ComponentImage name="CSS" size={38} description_class="hover:translate-y-[-3px]" />
                         <span className='hover:font-semibold font-normal group-hover:text-secondary text-primary dark:text-tertiary text-[14px]'>CSS</span>
                     </div>
                     <div className="group w-full flex items-center flex-col h-[60px]">
-                        <ComponentImage name="Tailwind" description_class="w-[35px] h-[35px] hover:translate-y-[-3px]" />
+                        <ComponentImage name="Tailwind" size={35} description_class="hover:translate-y-[-3px]" />
                         <span className='mt-1 hover:font-semibold font-normal group-hover:text-secondary text-primary dark:text-tertiary text-[14px]'>Tailwind</span>
                     </div>
                     <div className="group w-full flex items-center flex-col pt-[1px] h-[60px]">
@@ -60,39 +60,39 @@ export default function ComponentAbout(props: Props_section) {
                         <span className='mt-1 hover:font-semibold font-normal group-hover:text-secondary text-primary dark:text-tertiary text-[14px]'>Bootstrap</span>
                     </div>
                     <div className="group w-full flex items-center flex-col pt-[1.5px] h-[60px]">
-                        <ComponentImage name="HTML" description_class="w-[38px] h-[38px] hover:translate-y-[-3px]" />
+                        <ComponentImage name="HTML" size={38} description_class="hover:translate-y-[-3px]" />
                         <span className='hover:font-semibold font-normal group-hover:text-secondary text-primary dark:text-tertiary text-[14px]'>HTML</span>
                     </div>
                     <div className="group w-full flex items-center flex-col pt-[1px] h-[60px]">
-                        <ComponentImage name="Java" description_class="w-[38px] h-[38px] hover:translate-y-[-3px]" />
+                        <ComponentImage name="Java" size={38} description_class="hover:translate-y-[-3px]" />
                         <span className='hover:font-semibold font-normal group-hover:text-secondary text-primary dark:text-tertiary text-[14px]'>Java</span>
                     </div>
                     <div className="group w-full flex items-center flex-col pt-[1.5px] h-[60px]">
-                        <ComponentImage name="PHP" description_class="w-[37px] h-[37px] hover:translate-y-[-3px]" />
+                        <ComponentImage name="PHP" size={37} description_class="hover:translate-y-[-3px]" />
                         <span className='mt-[1.5px] hover:font-semibold font-normal group-hover:text-secondary text-primary dark:text-tertiary text-[14px]'>PHP</span>
                     </div>
                     <div className="group w-full flex items-center flex-col pt-[3px] h-[60px]">
-                        <ComponentImage name="C/C++" description_class="w-[35px] h-[35px] hover:translate-y-[-3px]" />
+                        <ComponentImage name="C/C++" size={35} description_class="hover:translate-y-[-3px]" />
                         <span className='mt-[1.5px] hover:font-semibold font-normal group-hover:text-secondary text-primary dark:text-tertiary text-[14px]'>C/C++</span>
                     </div>
                     <div className="group w-full flex items-center flex-col pt-[5px] h-[60px]">
-                        <ComponentImage name="MongoDB" description_class="w-[35px] h-[35px] hover:translate-y-[-3px]" />
+                        <ComponentImage name="MongoDB" size={35} description_class="hover:translate-y-[-3px]" />
                         <span className='mt-[2px] hover:font-semibold font-normal group-hover:text-secondary text-primary dark:text-tertiary text-[14px]'>MongoDB</span>
                     </div>
                     <div className="group w-full flex items-center flex-col h-[60px]">
-                        <ComponentImage name="MySql" description_class="w-[37px] h-[37px] hover:translate-y-[-3px]" />
+                        <ComponentImage name="MySql" size={37} description_class="hover:translate-y-[-3px]" />
                         <span className='mt-[1px] hover:font-semibold font-normal group-hover:text-secondary text-primary dark:text-tertiary text-[14px]'>MySql</span>
                     </div>
                     <div className="group w-full flex items-center flex-col pt-[5px] h-[60px]">
-                        <ComponentImage name="Scrum" description_class="w-[32px] h-[32px] hover:translate-y-[-3px]" />
+                        <ComponentImage name="Scrum" size={32} description_class="hover:translate-y-[-3px]" />
                         <span className='mt-[2px] hover:font-semibold font-normal group-hover:text-secondary text-primary dark:text-tertiary text-[14px]'>Scrum</span>
                     </div>
                     <div className="group w-full flex items-center flex-col pt-[5px] h-[60px]">
-                        <ComponentImage name="Jira" description_class="w-[32px] h-[32px] hover:translate-y-[-3px]" />
+                        <ComponentImage name="Jira" size={32} description_class="hover:translate-y-[-3px]" />
                         <span className='mt-[2px] hover:font-semibold font-normal group-hover:text-secondary text-primary dark:text-tertiary text-[14px]'>Jira</span>
                     </div>
                     <div className="group w-full flex items-center flex-col pt-[5px] h-[60px]">
-                        <ComponentImage name="Trello" description_class="w-[32px] h-[32px] hover:translate-y-[-3px]" />
+                        <ComponentImage name="Trello" size={32} description_class="hover:translate-y-[-3px]" />
                         <span className='mt-[2px] hover:font-semibold font-normal group-hover:text-secondary text-primary dark:text-tertiary text-[14px]'>Trello</span>
                     </div>
                     <div className="break-before absolute py-[2px] right-[-0.5px] rounded-t-md top-[-29.5px] w-[130px] text-center border-[1px] border-secondary bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-primary cursor-pointer text-tertiary font-bold tracking-wider">
