@@ -22,6 +22,7 @@ const config: Config = {
       boxShadow: {
         "1xl": "0 0 2px 0.1px",
         "3xl": "0 0 10px 0.5px",
+        "4xl": "0 5px 20px 4px"
       },
       keyframes: {
         opacity: {
@@ -35,6 +36,16 @@ const config: Config = {
         translateX: {
           "0%": { translate: "0px 0px" },
           "100%": { translate: "-220px 0px" },
+        },
+        presentationTop: {
+          "0%": {
+            translate: "0px -50px",
+            opacity: "0",
+          },
+          "100%": {
+            translate: "0px 0px",
+            opacity: "1",
+          },
         },
         presentationLeft: {
           "0%": {
