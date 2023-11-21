@@ -13,7 +13,8 @@
         "translator": "Translator",
         "copy": "Copy",
         "email": "Mail",
-        "theme": "Theme"
+        "theme": "Theme",
+        "link":"Link"
     },
     "button_view": {
         "txt_1": "See more",

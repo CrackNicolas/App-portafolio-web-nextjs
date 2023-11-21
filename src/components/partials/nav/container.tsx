@@ -35,8 +35,8 @@ export default function ComponentNav(props: Props) {
     }
 
     return (
-        <section id="nav" className={`fixed animate-[presentationLeft_1.5s_ease-in-out] z-30 left-0 bg-tertiary dark:bg-primary ${isWidth ? 'h-[40px] w-full' : 'w-[58px] h-screen pt-[20px] pb-[15px]'}`}>
-            <article className={`grid h-full ${isWidth ? 'grid-cols-8 ml:grid-cols-8 border-b-[0.1px] border-secondary pl-[10px] pr-[5px] sm:pl-[10px] sm:pr-[17px]' : 'grid-rows-7'}`}>
+        <section id="nav" className={`fixed animate-[presentationLeft_1.5s_ease-in-out] z-30 left-0 bg-tertiary dark:bg-primary ${isWidth ? 'h-[40px] w-full bottom-0' : 'w-[58px] h-screen pt-[20px] pb-[15px]'}`}>
+            <article className={`grid h-full ${isWidth ? 'grid-cols-8 ml:grid-cols-8 border-t-[0.1px] border-secondary pl-[10px] pr-[5px] sm:pl-[10px] sm:pr-[17px]' : 'grid-rows-7'}`}>
                 <article className={`flex h-full ${isWidth ? 'col-span-6 gap-x-6 sm:gap-x-4 md:gap-x-6 items-center' : 'row-span-6 flex-col gap-y-6'}`}>
                     <ComponentItem name="init" number={1} icon={(paint === 'init') ? 'init-fill' : 'init'} />
                     <ComponentItem name="about" number={2} icon={(paint === 'about') ? 'about-fill' : 'about'} />

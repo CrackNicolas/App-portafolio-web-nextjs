@@ -27,12 +27,12 @@ export default function ComponentLayout(props: Props) {
     }
 
     return (
-        <section id={id} className={`${padding} ${isWidth ? 'px-[10px] sm:px-[22px]' : 'pl-[10px] sm:pl-[22px]'} lg:pl-[80px] flex flex-col gap-[20px] m-auto max-w-[1275px] lg:pt-0 pt-10`}>
+        <section id={id} className={`${padding} ${isWidth ? 'px-[10px] sm:px-[22px]' : 'pl-[10px] sm:pl-[22px]'} lg:pl-[80px] flex flex-col gap-[20px] m-auto max-w-[1275px] pt-0`}>
             <ComponentNameSection animate={animate} name={`${id}.title`} icon={id} />
             {children}
             {
                 view_line(id) &&
-                <article className={` ${(id !== "about") ? 'mt-[50px]' : 'mt-[20px]'} flex flex-col gap-y-6`}>
+                <article className="flex flex-col gap-y-6">
                     <span className={` ${animate ? 'animate-[presentationLeft_0.9s_ease-in-out]' : 'opacity-0'}  bg-gradient-to-r from-primary to-secondary via-red-secondary w-[20px] h-[3px] bg-secondary transition duration-600 rounded-full`}></span>
                     <span className={` ${animate ? 'animate-[presentationLeft_1.1s_ease-in-out]' : 'opacity-0'}  bg-gradient-to-r from-primary to-secondary via-red-secondary w-[50px] h-[3px] bg-secondary transition duration-600 rounded-full`}></span>
                     {

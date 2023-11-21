@@ -15,43 +15,46 @@ export default function ComponentImage(props: Props) {
 
     const t = Use_translation(1);
 
+    const url_proyects = "/images/proyects"
+    const url_icons = "/images/icons";
+
     //Tener en cuenta que siempre que se añada alguna imagen externa tambien se debe añadir su dominio en next.config.js
     const get_image = (name: string) => {
         switch (name) {
             case 'Aplicacion YouTube':
-                return "/images/proyects/youtube/app.png";
+                return url_proyects + "/youtube/app.png";
             case 'YouTube':
-                return '/images/proyects/youtube/logo.png';
+                return url_proyects + "/youtube/logo.png";
             case 'Angular':
-                return "https://docs.angular.lat/assets/images/logos/angular/angular.svg";
+                return url_icons + "/angular.svg";
             case 'TypeScript':
-                return "https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg";
+                return url_icons + "/typescript.svg";
             case 'JavaScript':
-                return "https://img.icons8.com/fluency/48/null/javascript.png";
+                return url_icons + "/javascript.png";
             case 'Node.js':
-                return "https://img.icons8.com/fluency/48/null/node-js.png";
+                return url_icons + "/nodejs.png";
             case 'CSS':
-                return "https://img.icons8.com/fluency/48/null/css3.png";
+                return url_icons + "/css.png";
             case 'Tailwind':
-                return "https://img.icons8.com/fluency/48/null/tailwind_css.png";
+                return url_icons + "/tailwind.png";
             case 'HTML':
-                return "https://img.icons8.com/fluency/48/null/html-5.png";
+                return url_icons + "/html.png";
             case 'Java':
-                return "https://img.icons8.com/fluency/48/null/java-coffee-cup-logo.png";
+                return url_icons + "/java.png";
             case 'PHP':
-                return "https://img.icons8.com/fluency/48/null/php.png";
+                return url_icons + "/php.png";
             case 'C/C++':
-                return "https://img.icons8.com/fluency/48/null/c-plus-plus-logo.png";
+                return url_icons + "/c.png";
             case 'MongoDB':
-                return "/images/icons/mongodb.png";
+                return url_icons + "/mongodb.png";
             case 'MySql':
-                return "https://img.icons8.com/fluency/48/null/mysql-logo.png";
+                return url_icons + "/mysql.png";
             case 'Scrum':
-                return "https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2019/07/ScrumLogo.png";
+                return url_icons + "/scrum.png";
             case 'Jira':
-                return "https://clipground.com/images/jira-logo-clipart-2.png";
+                return url_icons + "/jira.png";
             case 'Trello':
-                return "/images/icons/trello.png";
+                return url_icons + "/trello.png";
             default:
                 return "";
         }

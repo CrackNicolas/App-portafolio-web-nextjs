@@ -68,22 +68,22 @@ export default function ComponentStart(props: Props) {
                     {t('start.txt_2')}
                 </p>
                 <div className="flex items-center gap-x-6 mb-[22px] sm:mb-[30px] w-[309.5px] sm:w-[376.1px]">
-                    <Next_link href="https://www.linkedin.com/in/nicolas-alejo-beltran/" target="_blank" rel="noopener noreferrer" className={`${animate ? 'animate-[presentationLeft_1.5s_ease-in-out]' : 'opacity-0'} group dark:hover:opacity-100 dark:opacity-50 rounded-full cursor-pointer transition duration-500`}>
+                    <Next_link href="https://www.linkedin.com/in/nicolas-alejo-beltran/" title="Linkedin" target="_blank" rel="noopener noreferrer" className={`${animate ? 'animate-[presentationLeft_1.5s_ease-in-out]' : 'opacity-0'} group dark:hover:opacity-100 dark:opacity-50 rounded-full cursor-pointer transition duration-500`}>
                         <ComponentIcon name="linkedin" size={18} description_class="dark:text-tertiary hover:text-secondary text-primary" />
                     </Next_link>
-                    <Next_link href="https://github.com/CrackNicolas" target="_blank" rel="noopener noreferrer" className={`${animate ? 'animate-[presentationLeft_1.6s_ease-in-out]' : 'opacity-0'} group dark:hover:opacity-100 dark:opacity-50 rounded-full cursor-pointer transition duration-500`}>
+                    <Next_link href="https://github.com/CrackNicolas" title="Git" target="_blank" rel="noopener noreferrer" className={`${animate ? 'animate-[presentationLeft_1.6s_ease-in-out]' : 'opacity-0'} group dark:hover:opacity-100 dark:opacity-50 rounded-full cursor-pointer transition duration-500`}>
                         <ComponentIcon name="git" size={20} description_class="dark:text-tertiary hover:text-secondary text-primary" />
                     </Next_link>
                     <span className={`${animate ? 'animate-[presentationRight_1.6s_ease-in-out] opacity-40' : 'opacity-0'} w-full h-[0.1px] bg-primary dark:bg-tertiary`}></span>
                 </div>
                 <div className="flex gap-x-[10px] sm:gap-x-[15px] w-[309.5px] sm:w-[376.1px]">
-                    <Link to="contact" spy={true} smooth={true} offset={0} duration={500} rel="noopener noreferrer" className={` bg-gradient-to-r from-primary to-secondary ${animate ? 'animate-[presentationBottom_1.6s_ease-in-out]' : 'opacity-0'} flex items-center min-w-[145px] sm:min-w-[171px] min-w-[145px] sm:max-w-[171px] gap-x-[8px] rounded-md py-[10px] px-[20px] cursor-pointer text-tertiary bg-secondary hover:opacity-90 border-[1px] border-secondary transition duration-500`}>
+                    <Link to="contact" spy={true} smooth={true} offset={0} duration={500} title={t('start.txt_3')} rel="noopener noreferrer" className={` bg-gradient-to-r from-primary to-secondary ${animate ? 'animate-[presentationBottom_1.6s_ease-in-out]' : 'opacity-0'} flex items-center min-w-[145px] sm:min-w-[171px] min-w-[145px] sm:max-w-[171px] gap-x-[8px] rounded-md py-[10px] px-[20px] cursor-pointer text-tertiary bg-secondary hover:opacity-90 border-[1px] border-secondary transition duration-500`}>
                         <ComponentIcon name="contact" size={16} description_class="w-[14px] h-[14px] sm:w-[16px] sm:h-[16px]" />
                         <span className="text-[15px] sm:text-[20px] font-semibold">
                             {t('start.txt_3')}
                         </span>
                     </Link>
-                    <a onClick={handle_download} href={`${domain}/pdf/Curriculum Beltran Alejo.pdf`} rel="noopener noreferrer" download="Curriculum Beltran Alejo.pdf" className={`${animate ? 'animate-[presentationBottom_1.6s_ease-in-out]' : 'opacity-0'} group flex items-center min-w-[156px] sm:min-w-[189px] min-w-[156px] sm:max-w-[189px] gap-x-[8px] rounded-md py-[10px] px-[20px] cursor-pointer ease-in duration-500 hover:bg-gradient-to-r from-primary to-secondary hover:text-tertiary bg-tertiary text-primary border-[1px] border-secondary dark:hover:border-secondary dark:border-tertiary transition duration-500`}>
+                    <a onClick={handle_download} href={`${domain}/pdf/Curriculum Beltran Alejo.pdf`} title={t('start.txt_4')} rel="noopener noreferrer" download="Curriculum Beltran Alejo.pdf" className={`${animate ? 'animate-[presentationBottom_1.6s_ease-in-out]' : 'opacity-0'} group flex items-center min-w-[156px] sm:min-w-[189px] min-w-[156px] sm:max-w-[189px] gap-x-[8px] rounded-md py-[10px] px-[20px] cursor-pointer ease-in duration-500 hover:bg-gradient-to-r from-primary to-secondary hover:text-tertiary bg-tertiary text-primary border-[1px] border-secondary dark:hover:border-secondary dark:border-tertiary transition duration-500`}>
                         <ComponentIcon name="dowload" size={16} description_class="group-hover:text-tertiary text-primary w-[14px] h-[14px] sm:w-[16px] sm:h-[16px]" />
                         <span className="text-[15px] sm:text-[20px] font-semibold">
                             {t('start.txt_4')}

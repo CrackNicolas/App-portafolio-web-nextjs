@@ -38,13 +38,13 @@ export default function ComponentItem(props: Props) {
                 </span>
                 <ComponentTechnologies number={number} />
                 <div className="absolute px-[3px] bottom-0 w-full flex justify-between items-center">
-                    <ComponentImage name={logo} alt={`proyects.data.p_${number}.images.logo`} description_class={`${(number % 2 !== 0) ? 'order-1' : "order-3"} w-[25px] h-[25px]`} />
+                    <ComponentImage name={logo} size={25} alt={`proyects.data.p_${number}.images.logo`} description_class={`${(number % 2 !== 0) ? 'order-1' : "order-3"} `} />
                     <span className="invisible group-hover:visible w-[250px] h-[0.5px] order-2 bg-secondary opacity-40"></span>
                     <div className={`flex gap-5 ${(number % 2 !== 0) ? 'order-3' : "order-1"} dark:text-tertiary `}>
-                        <Link href={links.git} rel="noopener noreferrer" className={`${(number % 2 !== 0) ? 'order-1' : "order-2"} `}>
+                        <Link href={links.git} rel="noopener noreferrer" title="Git" className={`${(number % 2 !== 0) ? 'order-1' : "order-2"} `}>
                             <ComponentIcon name="git" size={20} description_class="hover:text-secondary" />
                         </Link>
-                        <Link href={links.linkedin} rel="noopener noreferrer" className={`${(number % 2 !== 0) ? 'order-2' : "order-1"} `}>
+                        <Link href={links.linkedin} rel="noopener noreferrer" title={t("focus.link")} className={`${(number % 2 !== 0) ? 'order-2' : "order-1"} `}>
                             <ComponentIcon name="link" size={20} description_class="hover:text-secondary" />
                         </Link>
                     </div>
