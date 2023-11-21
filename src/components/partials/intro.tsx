@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useEffect, useRef } from "react";
 
 type Props = {
@@ -16,22 +17,22 @@ export default function ComponentIntro(props: Props) {
             for (let span of ref_logo.current.children) {
                 setTimeout(() => {
                     span.style.opacity = "1";
-                    span.style.transition = "ease-in-out 0.7s";
-                }, (index + 1) * 50);
+                    span.style.transition = "ease-in-out 0.1s";
+                }, (index + 1) * 45);
                 index++;
             }
 
             setTimeout(() => {
                 ref_intro.current.style.top = "-100vh";
                 setView(true);
-            }, 1700);
+            }, 1000);
         })
     }, [])
 
     return (
         <section ref={ref_intro} className="fixed top-0 left-0 w-full h-screen z-40 transition">
             <article className="grid place-items-center gap-0">
-                <img src="/images/logo/logo.png" className="animate-opacity mt-[70px] w-[240px] h-[240px]" alt="My Logo personal" />
+                <Image src="/images/logo/logo.png" width={240} height={240} className="animate-opacity mt-[70px]" alt="My Logo personal" />
                 <h1 ref={ref_logo} className="mt-[-50px] text-[2.5rem] font-semibold tracking-widest">
                     <span className="relative bottom-[-20px] opacity-0 text-primary dark:text-tertiary">F</span>
                     <span className="relative bottom-[-20px] opacity-0 text-primary dark:text-tertiary">U</span>
