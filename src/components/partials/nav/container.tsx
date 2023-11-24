@@ -48,20 +48,20 @@ export default function ComponentNav(props: Props) {
                 </article>
                 <article className={`col-span-2 flex ${isWidth ? 'justify-end' : 'items-end'}`}>
                     <div className={`flex items-center gap-y-3 ${isWidth ? 'h-full' : 'flex-col w-full'}`}>
-                        <button type="button" onClick={() => setVisible_options(!visible_options)} className="ml:hidden outline-none grid gap-y-1 place-items-center min-w-[30px] max-w-[30px] cursor-pointer text-primary dark:text-tertiary" title={t('focus.theme')}>
-                            <ComponentIcon name="settings" size={18} description_class={`${isWidth ? 'w-[17px] h-[17px]' : 'w-auto h-auto'}`} />
+                        <button type="button" onClick={() => setVisible_options(!visible_options)} className="ml:hidden outline-none grid gap-y-1 place-items-center min-w-[30px] max-w-[30px] cursor-pointer" title={t('focus.theme')}>
+                            <ComponentIcon name="settings" size={18} description_class={`${isWidth ? 'w-[17px] h-[17px]' : 'w-auto h-auto'} text-primary dark:text-tertiary hover:text-secondary `} />
                         </button>
                         <button type="button" onClick={() => update_theme(theme)} className="hidden outline-none group ml:grid gap-y-1 place-items-center sm:min-w-[45px] sm:max-w-[45px] ml:min-w-[35px] ml:max-w-[35px] cursor-pointer" title={t('focus.theme')}>
-                            <ComponentIcon name={theme} size={18} description_class={`group-hover:translate-y-[-1px] transition duration-700 ${isWidth ? 'w-[15.2px] h-[15.2px]' : 'w-auto h-auto'} group-hover:text-secondary text-primary dark:text-tertiary`} />
-                            <span className={`hidden sm:grid place-items-center font-semibold w-full h-[13px] text-[10.2px] transition duration-700 group-hover:text-secondary text-primary dark:text-tertiary`}>
+                            <ComponentIcon name={theme} size={18} description_class={`group-hover:translate-y-[-1px] transition duration-500 ${isWidth ? 'w-[15.2px] h-[15.2px]' : 'w-auto h-auto'} group-hover:text-secondary text-primary dark:text-tertiary`} />
+                            <span className={`hidden sm:grid place-items-center font-semibold w-full h-[13px] text-[10.2px] transition duration-500 text-primary dark:text-tertiary group-hover:opacity-100 dark:opacity-60 `}>
                                 {
                                     t('menu.button_8')
                                 }
                             </span>
                         </button>
                         <button type="button" onClick={() => update_lenguaje(!lenguaje)} className="hidden outline-none group ml:grid gap-y-1 place-items-center sm:min-w-[45px] sm:max-w-[45px] ml:min-w-[35px] ml:max-w-[35px] cursor-pointer" title={t('focus.translator')}>
-                            <ComponentIcon name="language" size={18} description_class={`group-hover:translate-y-[-1px] transition duration-700 ${isWidth ? 'w-[15.2px] h-[15.2px]' : 'w-auto h-auto'} group-hover:text-secondary text-primary dark:text-tertiary`} />
-                            <span className={` hidden sm:grid place-items-center font-semibold w-full h-[13px] text-[10.2px] transition duration-700 group-hover:text-secondary text-primary dark:text-tertiary`}>
+                            <ComponentIcon name="language" size={18} description_class={`group-hover:translate-y-[-1px] transition duration-500 ${isWidth ? 'w-[15.2px] h-[15.2px]' : 'w-auto h-auto'} text-primary dark:text-tertiary`} />
+                            <span className={` hidden sm:grid place-items-center font-semibold w-full h-[13px] text-[10.2px] transition duration-500 text-primary dark:text-tertiary group-hover:opacity-100 dark:opacity-60 `}>
                                 {
                                     lenguaje ? 'Inglés' : 'Spanish'
                                 }
