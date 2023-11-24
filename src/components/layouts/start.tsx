@@ -55,16 +55,16 @@ export default function ComponentStart(props: Props) {
     return (
         <section id="init" className={`relative grid items-center grid-cols-2 pb-[80px] pt-[40px] px-[10px] sm:px-[22px] lg:grid-cols-3 lg:pl-[80px] lg:pb-[180px] lg:pt-[80px] max-w-[1275px] m-auto`}>
             <article className={`${(!isWidth && animate) && `${(theme === 'dark') ? 'sandwich-background-dark' : 'sandwich-background-light'}`} ${!animate && 'opacity-0'} flex flex-col col-span-2 h-full`}>
-                <h2 className={`${animate ? 'animate-[presentationLeft_0.8s_ease-in-out]' : 'opacity-0'} dark:text-tertiary text-primary tracking-wider text-[20px] ml:text-[25px] sm:text-[30px] font-semibold`}>
+                <h1 className={`${animate ? 'animate-[presentationLeft_0.8s_ease-in-out]' : 'opacity-0'} dark:text-tertiary text-primary tracking-wider text-[20px] sm:text-[23px] font-semibold`}>
                     {t('start.txt_1')}
-                </h2>
-                <h1 className={`text-transparent bg-clip-text bg-gradient-to-r from-secondary to-primary dark:from-secondary dark:via-tertiary ${animate ? 'animate-[presentationLeft_1s_ease-in-out]' : 'opacity-0'} text-[40px] ml:text-[50px] sm:text-[58px] font-bold mb-[10px] sm:mb-[13px] tracking-wider text-secondary`}>
-                    Alejo Beltran
                 </h1>
-                <h4 className={`${animate ? 'animate-[presentationLeft_1.2s_ease-in-out]' : 'opacity-0'} dark:text-tertiary text-primary text-[18px] sm:text-[20px] font-semibold`}>
+                <h2 className={`text-transparent bg-clip-text bg-gradient-to-r from-secondary to-primary dark:from-secondary dark:via-tertiary ${animate ? 'animate-[presentationLeft_1s_ease-in-out]' : 'opacity-0'} text-[40px] ml:text-[50px] sm:text-[58px] font-bold mb-[10px] tracking-wider text-secondary`}>
+                    Alejo Beltran
+                </h2>
+                <h3 className={`${animate ? 'animate-[presentationLeft_1.2s_ease-in-out]' : 'opacity-0'} dark:text-tertiary text-primary text-[18px] sm:text-[20px] font-semibold`}>
                     Full Stack Development
-                </h4>
-                <p className={`${animate ? 'animate-[presentationLeft_1.4s_ease-in-out] opacity-60' : 'opacity-0'} text-[15px] dark:text-tertiary text-primary sm:text-[15px] mb-[20px] sm:mb-[30px] min-w-[200px] max-w-[460px]`}>
+                </h3>
+                <p className={`${animate ? 'animate-[presentationLeft_1.4s_ease-in-out] opacity-60' : 'opacity-0'} text-[15px] dark:text-tertiary text-primary mb-[20px] sm:mb-[30px] min-w-[200px] max-w-[450px]`}>
                     {t('start.txt_2')}
                 </p>
                 <div className="flex items-center gap-x-6 mb-[22px] sm:mb-[30px] w-[309.5px] sm:w-[376.1px]">
