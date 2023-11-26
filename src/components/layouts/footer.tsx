@@ -1,16 +1,14 @@
 import { useRef, useState } from "react";
 
+import Use_translation from "@/context/translation/use";
+
 import ComponentIcon from "../partials/icon";
 import ComponentMessageCopyText from "../partials/messages/alerts/copy_text";
 
-import { Use_translation } from "@/i18n/logic/use_translation";
+import { Props_section } from '@/types/props';
 
-import { type Props_section } from '@/types/props';
-
-export default function ComponentFooter(props: Props_section) {
-    const { animate } = props;
-
-    const t = Use_translation(1);
+export default function ComponentFooter({ animate }: Props_section) {
+    const { translate } = Use_translation();
 
     const [visible, setVisible] = useState<boolean>(false);
 
@@ -35,13 +33,13 @@ export default function ComponentFooter(props: Props_section) {
             </div>
             <article className="mx-auto leading-6 flex flex-col">
                 <span className={`${animate ? 'animate-[presentationLeft_1.7s_ease-in-out]' : 'opacity-0'} text-[13px] mx-auto text-center dark:text-tertiary text-secondary`}>
-                    {t('footer.title')}
+                    {translate('footer.title')}
                 </span>
                 <div className={`${animate ? 'animate-[presentationRight_1.7s_ease-in-out]' : 'opacity-0'} relative flex justify-between mx-auto w-[205px]`}>
-                    <span ref={ref_text} className="w-full text-[13px] mx-auto w-[180px] text-secondary dark:text-tertiary" title={t("focus.email")}>
+                    <span ref={ref_text} className="w-full text-[13px] mx-auto w-[180px] text-secondary dark:text-tertiary" title={translate('focus.email')}>
                         beltrannicolasalejo@gmail.com
                     </span>
-                    <button onClick={copyToClipboard} className="min-w-[20px] max-w-[20px] outline-none" title={t("focus.copy")}>
+                    <button onClick={copyToClipboard} className="min-w-[20px] max-w-[20px] outline-none" title={translate('focus.copy')}>
                         <ComponentIcon name="copy" size={15} description_class="text-secondary mx-auto" />
                     </button>
                 </div>

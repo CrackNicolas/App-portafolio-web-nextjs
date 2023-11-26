@@ -7,9 +7,7 @@ type Props = {
     number: number
 }
 
-export default function ComponentTechnologies(props: Props) {
-    const { number } = props;
-
+export default function ComponentTechnologies({number}: Props) {
     return (
         <Fragment>
             {

@@ -1,6 +1,8 @@
 import { useForm } from 'react-hook-form';
 import { useEffect, useRef, useState } from "react";
 
+import Use_translation from '@/context/translation/use';
+
 import ComponentIcon from '../partials/icon';
 import ComponentLayout from './layout';
 import ComponentRecaptcha from '../partials/recaptcha';
@@ -11,17 +13,15 @@ import ComponentMessageErrorInput from '../partials/messages/validations/error';
 import ComponentMessageConfirmation from '../partials/messages/alerts/confirmation';
 
 import { Send_email } from '@/logic/services/email';
-import { Use_translation } from "@/i18n/logic/use_translation";
 import { Use_window_width } from '@/logic/page/size';
 import { Insulting_message } from '@/logic/restrictions/insulting_message';
 import { Amount_lines_input } from '@/logic/style/amount_lines_input';
 
 import { Props_section } from '@/types/props';
 
-export default function ComponentContact(props: Props_section) {
-    const { animate } = props;
+export default function ComponentContact({animate}: Props_section) {
+    const { translate } = Use_translation();
 
-    const t = Use_translation(1);
     const width = Use_window_width();
 
     const { register, formState: { errors }, handleSubmit, watch } = useForm();
@@ -102,7 +102,7 @@ export default function ComponentContact(props: Props_section) {
             <form className="grid gap-[35px] sm:gap-[40px] px-[5px] mt-[35px]" method="POST" ref={ref_form} onSubmit={handleSubmit(onSubmit)}>
                 <div className={`${animate ? 'animate-[presentationLeft_1.1s_ease-in-out]' : 'opacity-0'} transition duration-500 relative grid grid-cols-1 items-center gap-[5px]`}>
                     <ComponentMessageErrorInput order={1} type={errors.name?.type} />
-                    <input className={`outline-0 border-[1px] bg-tertiary dark:bg-primary text-primary dark:text-tertiary max-h-[20px] min-h-[20px] py-[20px] ${active_validation ? `${style_input(errors.name?.type)} pr-[35px]` : 'border-primary dark:border-secondary pr-[10px]'} pl-[10px] overflow-auto text-[18px] rounded-sm`} type="text" placeholder={t('contact.inputs.j_1')} {...register('name', {
+                    <input className={`outline-0 border-[1px] bg-tertiary dark:bg-primary text-primary dark:text-tertiary max-h-[20px] min-h-[20px] py-[20px] ${active_validation ? `${style_input(errors.name?.type)} pr-[35px]` : 'border-primary dark:border-secondary pr-[10px]'} pl-[10px] overflow-auto text-[18px] rounded-sm`} type="text" placeholder={translate('contact.inputs.j_1')} {...register('name', {
                         required: true,
                         minLength: 3,
                         maxLength: 15,
@@ -123,7 +123,7 @@ export default function ComponentContact(props: Props_section) {
                 </div>
                 <div className={`${animate ? 'animate-[presentationLeft_1.3s_ease-in-out]' : 'opacity-0'} transition duration-500 relative grid grid-cols-1 items-center gap-[5px]`}>
                     <ComponentMessageErrorInput order={2} type={errors.email?.type} />
-                    <input className={`outline-0 border-[1px] bg-tertiary dark:bg-primary text-primary dark:text-tertiary max-h-[20px] min-h-[20px] py-[20px] ${active_validation ? `${style_input(errors.email?.type)} pr-[35px]` : 'border-primary dark:border-secondary pr-[10px]'} pl-[10px] overflow-auto text-[18px] rounded-sm`} type="email" placeholder={t('contact.inputs.j_3')} {...register('email', {
+                    <input className={`outline-0 border-[1px] bg-tertiary dark:bg-primary text-primary dark:text-tertiary max-h-[20px] min-h-[20px] py-[20px] ${active_validation ? `${style_input(errors.email?.type)} pr-[35px]` : 'border-primary dark:border-secondary pr-[10px]'} pl-[10px] overflow-auto text-[18px] rounded-sm`} type="email" placeholder={translate('contact.inputs.j_3')} {...register('email', {
                         required: true,
                         pattern: /^[a-zA-Z0-9]+[\w\.-]*@[a-zA-Z0-9]+(\.[a-zA-Z]+)+$/i
                     })} />
@@ -135,7 +135,7 @@ export default function ComponentContact(props: Props_section) {
                 </div>
                 <div className={`${animate ? 'animate-[presentationRight_1.4s_ease-in-out]' : 'opacity-0'} transition duration-500 relative grid grid-cols-1 items-center gap-[5px]`}>
                     <ComponentMessageErrorInput order={3} type={errors.message?.type} />
-                    <textarea rows={2} className={`outline-0 border-[1px] bg-tertiary dark:bg-primary text-primary dark:text-tertiary overflow-hidden resize-none py-[8px] ${active_validation ? `${style_input(errors.message?.type)} pr-[35px]` : 'border-primary dark:border-secondary pr-[10px]'} pl-[10px] text-[19.5px] rounded-sm`} placeholder={t('contact.inputs.j_4')} {...register('message', {
+                    <textarea rows={2} className={`outline-0 border-[1px] bg-tertiary dark:bg-primary text-primary dark:text-tertiary overflow-hidden resize-none py-[8px] ${active_validation ? `${style_input(errors.message?.type)} pr-[35px]` : 'border-primary dark:border-secondary pr-[10px]'} pl-[10px] text-[19.5px] rounded-sm`} placeholder={translate('contact.inputs.j_4')} {...register('message', {
                         required: true,
                         minLength: 10,
                         maxLength: 500,
@@ -160,7 +160,7 @@ export default function ComponentContact(props: Props_section) {
                 <button className={`bg-gradient-to-r dark:from-secondary dark:to-secondary from-primary to-secondary hover:from-secondary hover:to-primary ${animate ? 'animate-[presentationBottom_1.5s_ease-in-out]' : 'opacity-0'} outline-none group flex justify-center items-center transition duration-700 mx-auto mt-[-10px] px-[20px] w-full py-[5px] gap-x-3 rounded-sm`} type="submit" onClick={() => setActive_validation(true)}>
                     <ComponentIcon name="send" size={16} description_class="group-hover:rotate-45 text-tertiary" />
                     <span className='text-tertiary text-[18px] font-bold'>
-                        {t('menu.button_6')}
+                        {translate('menu.button_6')}
                     </span>
                 </button>
                 <ComponentMessageError open={error_email} setOpen={setError_email} />

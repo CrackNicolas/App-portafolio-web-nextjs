@@ -1,10 +1,10 @@
 import Link from "next/link";
 
+import Use_translation from "@/context/translation/use";
+
 import ComponentIcon from "../icon";
 import ComponentImage from "../image";
 import ComponentTechnologies from "./technologies";
-
-import { Use_translation } from "@/i18n/logic/use_translation";
 
 type Props = {
     animate: boolean,
@@ -19,7 +19,7 @@ type Props = {
 export default function ComponentItem(props: Props) {
     const { animate, number, image, links } = props;
 
-    const t = Use_translation(1);
+    const { translate } = Use_translation();
 
     const logo = image.split(' ')[image.split(' ').length - 1]
 
@@ -31,10 +31,10 @@ export default function ComponentItem(props: Props) {
             </div>
             <div className={`group relative ${(number % 2 !== 0) ? 'order-2 items-end' : "order-1 items-start"} flex flex-col gap-1 lg:gap-2 cursor-pointer`}>
                 <span className="font-bold text-[20px] lg:text-[25px] text-secondary">
-                    {t(`proyects.data.p_${number}.title`)}
+                    {translate(`proyects.data.p_${number}.title`)}
                 </span>
                 <span className="bg-gradient-to-r from-primary to-secondary group-hover:from-secondary group-hover:to-primary text-[13px] lg:text-[15px] shadow-2xl shadow-primary group-hover:shadow-none transition duration-500 cursor-pointer text-tertiary bg-secondary rounded-sm px-3 py-2">
-                    {t(`proyects.data.p_${number}.description`)}
+                    {translate(`proyects.data.p_${number}.description`)}
                 </span>
                 <ComponentTechnologies number={number} />
                 <div className="absolute px-[3px] bottom-0 w-full flex justify-between items-center">
@@ -44,7 +44,7 @@ export default function ComponentItem(props: Props) {
                         <Link href={links.git} rel="noopener noreferrer" title="Git" className={`${(number % 2 !== 0) ? 'order-1' : "order-2"} `}>
                             <ComponentIcon name="git" size={20} description_class="hover:text-secondary" />
                         </Link>
-                        <Link href={links.linkedin} rel="noopener noreferrer" title={t("focus.link")} className={`${(number % 2 !== 0) ? 'order-2' : "order-1"} `}>
+                        <Link href={links.linkedin} rel="noopener noreferrer" title={translate('focus.link')} className={`${(number % 2 !== 0) ? 'order-2' : "order-1"} `}>
                             <ComponentIcon name="link" size={20} description_class="hover:text-secondary" />
                         </Link>
                     </div>

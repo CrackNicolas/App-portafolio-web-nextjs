@@ -1,13 +1,11 @@
 import ComponentItem from "../partials/education/item";
 import ComponentLayout from "./layout";
 
-import { type Props_section } from '@/types/props';
+import { Props_section } from '@/types/props';
 
-export default function ComponentEducacion(props: Props_section) {
-    const { animate } = props;
-
+export default function ComponentEducacion({ animate }: Props_section) {
     return (
-        <ComponentLayout {...props} id="education" padding="pb-[95px]" children={
+        <ComponentLayout animate={animate} id="education" padding="pb-[95px]" children={
             <article className={`${animate ? 'animate-[presentationBottom_1s_ease-in-out]' : 'opacity-0'} mt-4 grid grid-cols-1 md:grid-cols-2 gap-2 ml:gap-5`}>
                 <ComponentItem number={1} />
                 <ComponentItem number={2} />

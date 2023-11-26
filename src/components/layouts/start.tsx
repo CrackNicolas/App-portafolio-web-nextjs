@@ -2,10 +2,10 @@ import Image from "next/image";
 import Next_link from "next/link";
 
 import { Link } from "react-scroll";
-import { useContext, useState } from "react";
+import { useState } from "react";
 
-import Context_theme from "@/context/theme/instance";
-import Context_translation from '@/context/translation/instance';
+import Use_theme from "@/context/theme/use";
+import Use_translation from "@/context/translation/use";
 
 import ComponentIcon from "../partials/icon";
 import ComponentMessage from "../partials/messages/alerts/confirmation";
@@ -14,8 +14,8 @@ import { Media_query } from "@/logic/page/media_query";
 import { Props_section } from "@/types/props";
 
 export default function ComponentStart({ animate }: Props_section) {
-    const { theme } = useContext(Context_theme);
-    const { translate } = useContext(Context_translation);
+    const { theme } = Use_theme();
+    const { translate } = Use_translation();
 
     const domain = process.env.DEVELOPMENT_DOMAIN;
 
@@ -53,9 +53,7 @@ export default function ComponentStart({ animate }: Props_section) {
         <section id="init" className={`relative grid items-center grid-cols-2 pb-[80px] pt-[40px] px-[10px] sm:px-[22px] lg:grid-cols-3 lg:pl-[80px] lg:pb-[180px] lg:pt-[80px] max-w-[1275px] m-auto`}>
             <article className={`${(!isWidth && animate) && `${(theme === 'dark') ? 'sandwich-background-dark' : 'sandwich-background-light'}`} ${!animate && 'opacity-0'} flex flex-col col-span-2 h-full`}>
                 <h1 className={`${animate ? 'animate-[presentationLeft_0.8s_ease-in-out]' : 'opacity-0'} dark:text-tertiary text-primary tracking-wider text-[20px] sm:text-[23px] font-semibold`}>
-                    {
-                        translate('start.txt_1')
-                    }
+                    {translate('start.txt_1')}
                 </h1>
                 <h2 className={`text-transparent bg-clip-text bg-gradient-to-r from-secondary to-primary dark:from-secondary dark:via-tertiary ${animate ? 'animate-[presentationLeft_1s_ease-in-out]' : 'opacity-0'} text-[40px] ml:text-[50px] sm:text-[58px] font-bold mb-[10px] tracking-wider text-secondary`}>
                     Alejo Beltran

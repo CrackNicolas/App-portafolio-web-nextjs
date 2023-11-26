@@ -1,13 +1,12 @@
 import Image from "next/image";
+
 import { useEffect, useRef } from "react";
 
 type Props = {
     setView: any
 }
 
-export default function ComponentIntro(props: Props) {
-    const { setView } = props;
-
+export default function ComponentIntro({setView}: Props) {
     const ref_intro = useRef<any>(null);
     const ref_logo = useRef<any>(null);
 

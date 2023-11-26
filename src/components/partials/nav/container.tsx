@@ -1,7 +1,7 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 
-import Context_theme from '@/context/theme/instance'
-import Context_translation from "@/context/translation/instance";
+import Use_theme from "@/context/theme/use";
+import Use_translation from "@/context/translation/use";
 
 import ComponentItem from "./item";
 import ComponentIcon from "../icon";
@@ -14,8 +14,8 @@ type Props = {
 }
 
 export default function ComponentNav({ paint }: Props) {
-    const { theme, update_theme } = useContext(Context_theme);
-    const { language, update_language, translate } = useContext(Context_translation);
+    const { theme, update_theme } = Use_theme();
+    const { language, update_language, translate } = Use_translation();
 
     const [visible_options, setVisible_options] = useState<boolean>(false);
 

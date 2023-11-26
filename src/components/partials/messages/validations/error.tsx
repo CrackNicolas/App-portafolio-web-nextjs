@@ -1,4 +1,4 @@
-import { Use_translation } from "@/i18n/logic/use_translation";
+import Use_translation from "@/context/translation/use";
 
 type Props = {
     order: number,
@@ -8,7 +8,7 @@ type Props = {
 export default function ComponentMessageError(props: Props) {
     const { order, type } = props;
 
-    const t = Use_translation(1);
+    const { translate } = Use_translation();
 
     const get_error = (type: string) => {
         switch (type) {
@@ -21,7 +21,7 @@ export default function ComponentMessageError(props: Props) {
     return (type === undefined) ? '' : (
         <p className="absolute top-[-27px] dark:opacity-70 text-[13.7px] mg:text-[15px] font-normal tracking-wide text-red-500 max-line">
             {
-                t(`contact.validations.inputs.j_${order}.text_${get_error(type)}`)
+                translate(`contact.validations.inputs.j_${order}.text_${get_error(type)}`)
             }
         </p>
     )

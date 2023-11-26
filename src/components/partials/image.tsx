@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { Use_translation } from "@/i18n/logic/use_translation";
+import Use_translation from "@/context/translation/use";
 
 type Props = {
     name: string,
@@ -13,7 +13,7 @@ type Props = {
 export default function ComponentImage(props: Props) {
     const { name, size = 1, layout = "", description_class = "", alt = `Logo ${name}` } = props;
 
-    const t = Use_translation(1);
+    const { translate } = Use_translation();
 
     const url_proyects = "/images/proyects"
     const url_icons = "/images/icons";
@@ -61,6 +61,6 @@ export default function ComponentImage(props: Props) {
     }
 
     return (
-        <Image width={size} height={size} layout={layout} src={get_image(name)} className={`cursor-pointer transition duration-500 rounded-sm ${description_class}`} alt={alt ? t(alt) : alt} />
+        <Image width={size} height={size} layout={layout} src={get_image(name)} className={`cursor-pointer transition duration-500 rounded-sm ${description_class}`} alt={alt ? translate(alt) : alt} />
     )
 }

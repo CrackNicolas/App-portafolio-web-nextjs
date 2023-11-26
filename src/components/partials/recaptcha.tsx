@@ -1,8 +1,8 @@
-import { forwardRef, useContext } from "react";
+import { forwardRef } from "react";
 
 import ReCAPTCHA from "react-google-recaptcha";
 
-import Context_translation from "@/context/translation/instance";
+import Use_translation from "@/context/translation/use";
 
 type Props = {
     state_captcha: boolean,
@@ -12,7 +12,7 @@ type Props = {
 const ComponentRecaptcha = forwardRef((props: Props, ref: any) => {
     const { state_captcha, onChange } = props;
 
-    const { language, t } = useContext(Context_translation);
+    const { language, translate } = Use_translation();
 
     return (
         <div className="grid place-items-center">
@@ -26,7 +26,7 @@ const ComponentRecaptcha = forwardRef((props: Props, ref: any) => {
                 (state_captcha === false) &&
                 <p className='text-[13.7px] mg:text-[15px] font-normal text-red-500'>
                     {
-                        t("contact.validations.recaptcha.title")
+                        translate('contact.validations.recaptcha.title')
                     }
                 </p>
             }

@@ -5,8 +5,8 @@ import { I18nextProvider } from "react-i18next";
 
 import i18next from 'i18next'
 
-import en from '@/i18n/translations/en/global.json'
-import es from '@/i18n/translations/es/global.json';
+import en from '@/i18n/en/global.json'
+import es from '@/i18n/es/global.json';
 
 i18next.init({
   interpolation: {

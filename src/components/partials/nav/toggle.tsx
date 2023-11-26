@@ -1,24 +1,21 @@
-import { Fragment, useEffect, useContext } from 'react'
+import { Fragment, useEffect } from 'react'
 
 import { Dialog, Transition } from '@headlessui/react';
 
-import Context_theme from '@/context/theme/instance'
-import Context_translation from "@/context/translation/instance";
+import Use_theme from '@/context/theme/use';
+import Use_translation from '@/context/translation/use';
 
 import ComponentIcon from '../icon';
 
 import { Use_window_width } from '@/logic/page/size';
 
-type Props = {
-    open: boolean,
-    setOpen: any
-}
+import { Props_modal } from '@/types/props';
 
-export default function ComponentToggle(props: Props) {
+export default function ComponentToggle(props: Props_modal) {
     const { open, setOpen } = props;
 
-    const { theme, update_theme } = useContext(Context_theme);
-    const { language, update_language, translate } = useContext(Context_translation);
+    const { theme, update_theme } = Use_theme();
+    const { language, update_language, translate } = Use_translation();
 
     const width = Use_window_width();
 

@@ -1,6 +1,6 @@
-import ComponentIcon from "../icon";
+import Use_translation from "@/context/translation/use";
 
-import { Use_translation } from "@/i18n/logic/use_translation";
+import ComponentIcon from "../icon";
 
 type Props = {
     name: string,
@@ -10,7 +10,7 @@ type Props = {
 export default function ComponentItem(props: Props) {
     const { name, number } = props;
 
-    const t = Use_translation(1);
+    const { translate } = Use_translation();
 
     return (
         <div className={`group transition duration-500 p-[10px] sm:p-[20px] ${(number === 3) ? 'md:col-span-full lg:col-span-1' : 'md:col-span-1'} rounded-md border-[0.1px] border-primary dark:border-secondary hover:border-transparent bg-tertiary dark:bg-primary cursor-pointer hover:shadow-3xl hover:shadow-primary dark:hover:shadow-secondary`}>
@@ -18,10 +18,10 @@ export default function ComponentItem(props: Props) {
                 <ComponentIcon name={name} size={50} description_class="text-tertiary" />
             </div>
             <h3 className="group-hover:text-secondary transition duration-500 text-primary dark:text-tertiary font-bold text-[20px] sm:text-[22px] mb-[5px] sm:mb-[15px] tracking-wider">
-                {t(`services.item_${number}.txt_1`)}
+                {translate(`services.item_${number}.txt_1`)}
             </h3>
             <p className="group-hover:opacity-100 transition duration-500 text-[15px] sm:text-[17px] opacity-70 text-primary dark:text-tertiary">
-                {t(`services.item_${number}.txt_2`)}
+                {translate(`services.item_${number}.txt_2`)}
             </p>
         </div>
     )
