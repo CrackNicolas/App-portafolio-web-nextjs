@@ -1,27 +1,26 @@
-import { Fragment, useEffect } from 'react'
+import { Fragment, useEffect, useContext } from 'react'
 
 import { Dialog, Transition } from '@headlessui/react';
+
+import Context_theme from '@/context/theme/instance'
+import Context_translation from "@/context/translation/instance";
 
 import ComponentIcon from '../icon';
 
 import { Use_window_width } from '@/logic/page/size';
-import { Use_translation } from '@/i18n/logic/use_translation';
 
 type Props = {
     open: boolean,
-    setOpen: any,
-    theme: string,
-    lenguaje: boolean,
-    update_theme: any,
-    update_lenguaje: any
+    setOpen: any
 }
 
 export default function ComponentToggle(props: Props) {
-    const { open, setOpen, theme, update_theme, lenguaje, update_lenguaje } = props;
+    const { open, setOpen } = props;
+
+    const { theme, update_theme } = useContext(Context_theme);
+    const { language, update_language, translate } = useContext(Context_translation);
 
     const width = Use_window_width();
-
-    const t = Use_translation(1);
 
     useEffect(() => {
         if (width > 450) {
@@ -45,7 +44,7 @@ export default function ComponentToggle(props: Props) {
                                 <div className='flex flex-col gap-5 py-9 px-4 w-[300px]'>
                                     <Dialog.Title as="h3" className="text-center font-semibold leading-6 text-secondary dark:text-tertiary border-b-[1px] dark:border-tertiary border-secondary pb-1 rounded-lg">
                                         {
-                                            t('toggle.title.theme')
+                                            translate('toggle.title.theme')
                                         }
                                     </Dialog.Title>
                                     <div className='flex justify-between w-full'>
@@ -60,18 +59,18 @@ export default function ComponentToggle(props: Props) {
                                 <div className='flex flex-col gap-5 pb-5 px-4 w-[300px]'>
                                     <Dialog.Title as="h3" className="text-center font-semibold leading-6 text-secondary dark:text-tertiary border-b-[1px] dark:border-tertiary border-secondary pb-1 rounded-lg">
                                         {
-                                            t('toggle.title.lenguaje')
+                                            translate('toggle.title.lenguaje')
                                         }
                                     </Dialog.Title>
                                     <div className='flex mx-auto flex-col w-[150px] gap-y-2'>
-                                        <span onClick={() => update_lenguaje(true)} className={`border-x-[15px] rounded-full ${lenguaje ? 'text-secondary border-secondary' : 'text-primary dark:text-tertiary border-transparent'} `}>
+                                        <span onClick={() => update_language('en')} className={`border-x-[15px] rounded-full ${(language === "es") ? 'text-secondary border-secondary' : 'text-primary dark:text-tertiary border-transparent'} `}>
                                             {
-                                                t('toggle.lenguaje.l_1')
+                                                translate('toggle.lenguaje.l_1')
                                             }
                                         </span>
-                                        <span onClick={() => update_lenguaje(false)} className={`border-x-[15px] rounded-full ${!lenguaje ? 'text-secondary border-secondary' : 'text-primary dark:text-tertiary border-transparent'} `}>
+                                        <span onClick={() => update_language('es')} className={`border-x-[15px] rounded-full ${(language === "en") ? 'text-secondary border-secondary' : 'text-primary dark:text-tertiary border-transparent'} `}>
                                             {
-                                                t('toggle.lenguaje.l_2')
+                                                translate('toggle.lenguaje.l_2')
                                             }
                                         </span>
                                     </div>

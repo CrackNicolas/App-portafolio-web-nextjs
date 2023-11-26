@@ -16,13 +16,10 @@ import { Use_window_width } from '@/logic/page/size';
 import { Insulting_message } from '@/logic/restrictions/insulting_message';
 import { Amount_lines_input } from '@/logic/style/amount_lines_input';
 
-type Props = {
-    animate: boolean,
-    lenguaje: boolean
-}
+import { Props_section } from '@/types/props';
 
-export default function ComponentContact(props: Props) {
-    const { animate, lenguaje } = props;
+export default function ComponentContact(props: Props_section) {
+    const { animate } = props;
 
     const t = Use_translation(1);
     const width = Use_window_width();
@@ -158,7 +155,7 @@ export default function ComponentContact(props: Props) {
                     </div>
                 </div>
                 <aside className={`${animate ? 'animate-[presentationBottom_1.5s_ease-in-out]' : 'opacity-0'} transition duration-500 overflow-hidden overflow-auto py-0`}>
-                    <ComponentRecaptcha ref={recaptcha} lenguaje={lenguaje} onChange={onChange} state_captcha={state_captcha} />
+                    <ComponentRecaptcha ref={recaptcha} onChange={onChange} state_captcha={state_captcha} />
                 </aside>
                 <button className={`bg-gradient-to-r dark:from-secondary dark:to-secondary from-primary to-secondary hover:from-secondary hover:to-primary ${animate ? 'animate-[presentationBottom_1.5s_ease-in-out]' : 'opacity-0'} outline-none group flex justify-center items-center transition duration-700 mx-auto mt-[-10px] px-[20px] w-full py-[5px] gap-x-3 rounded-sm`} type="submit" onClick={() => setActive_validation(true)}>
                     <ComponentIcon name="send" size={16} description_class="group-hover:rotate-45 text-tertiary" />

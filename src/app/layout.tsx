@@ -8,36 +8,37 @@
   4 - Analizar uso de memoria RAM.
   5 - Ver toda la configuracion de NEXT.JS
   6 - Analizar si se puede no usar el type any
-  7 - Reducir peso de imagenes
   
 **/
 
-import { ReactNode } from 'react'
-
-import type { Metadata } from 'next'
+import { Metadata } from 'next/types'
 
 import ClientOnly from '@/client/only'
+import ThemeProvider from '@/context/theme/provider'
+import LanguageProvider from '@/context/translation/provider'
 
 import './globals.css'
+
+import { Props_layouts } from '@/types/props'
 
 export const metadata: Metadata = {
   title: 'Alejo Beltran',
   description: 'Creado por Beltran Alejo',
   icons: {
     icon: '/favicon.ico'
-  },
+  }
 }
 
-type Props = {
-  children: ReactNode
-}
-
-export default function RootLayout(props: Props) {
+export default function RootLayout({ children }: Props_layouts) {
   return (
     <html lang="en">
       <body className="bg-tertiary dark:bg-primary">
         <ClientOnly>
-          {props.children}
+          <ThemeProvider>
+            <LanguageProvider>
+              {children}
+            </LanguageProvider>
+          </ThemeProvider>
         </ClientOnly>
       </body>
     </html>

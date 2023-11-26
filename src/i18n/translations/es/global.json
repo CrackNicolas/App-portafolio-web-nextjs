@@ -1,4 +1,12 @@
 {
+    "page_404": {
+        "title": "Oops, esta página no existe",
+        "subtitle": {
+            "txt_1": "Parece que te has perdido, pero no te preocupes. Puedes volver a la",
+            "txt_2": "página de inicio",
+            "txt_3": "para encontrar lo que estás buscando."
+        }
+    },
     "toggle": {
         "title": {
             "theme": "Modificar tema",

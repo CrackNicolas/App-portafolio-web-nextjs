@@ -5,3 +5,6 @@ export type Props_modal = {
     open: boolean,
     setOpen: any
 }
+export type Props_layouts = {
+    children: ReactNode
+}

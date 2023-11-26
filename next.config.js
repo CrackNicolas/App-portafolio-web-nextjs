@@ -8,9 +8,6 @@ const nextConfig = {
                 'http://localhost:3000'
                 :
                 'https://app-portafolio-web-nextjs.vercel.app',
-    },
-    images: {
-        domains: ['img.icons8.com', 'd1jnx9ba8s6j9r.cloudfront.net', 'clipground.com', 'upload.wikimedia.org', 'docs.angular.lat'],
     }
 }
 

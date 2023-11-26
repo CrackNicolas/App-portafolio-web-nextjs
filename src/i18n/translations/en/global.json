@@ -1,4 +1,12 @@
 {
+    "page_404": {
+        "title": "Oops, this page does not exist",
+        "subtitle": {
+            "txt_1": "It seems like you're lost, but don't worry. You can go back to the",
+            "txt_2": "homepage",
+            "txt_3": "to find what you are looking for."
+        }
+    },
     "toggle": {
         "title": {
             "theme": "Modify theme",

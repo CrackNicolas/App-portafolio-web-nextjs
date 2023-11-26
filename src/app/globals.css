@@ -34,6 +34,37 @@ body::-webkit-scrollbar-thumb:hover {
     -webkit-box-orient: vertical;
 }
 
+.animation-404 .logo:nth-child(1) {
+    transform: rotate(90deg) translateY(70px);
+    animation: animate-logo-1 2s linear infinite;
+}
+
+.animation-404 .logo:nth-child(2) {
+    transform: rotate(-90deg) translateY(70px);
+    animation: animate-logo-2 2s linear infinite;
+}
+
+@keyframes animate-logo-1 {
+    from {
+        transform: rotate(90deg) translateY(70px);
+    }
+
+    to {
+        transform: translateY(-100px);
+    }
+}
+
+@keyframes animate-logo-2 {
+    from {
+        transform: rotate(-90deg) translateY(70px);
+    }
+
+    to {
+        transform: translateY(-100px);
+    }
+}
+
+
 .sandwich-background-dark::before,
 .sandwich-background-light::before {
     content: "";

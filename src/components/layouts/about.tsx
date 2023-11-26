@@ -11,12 +11,16 @@ export default function ComponentAbout(props: Props_section) {
     const { animate } = props;
 
     const t = Use_translation(1);
+    
+    const a = (c:string) => {
+        return "aaa "+t(c);
+    }
 
     return (
         <ComponentLayout {...props} id="about" children={
             <Fragment>
                 <h4 className={`${animate ? 'animate-[presentationLeft_1.1s_ease-in-out]' : 'opacity-0'} text-primary dark:text-tertiary font-bold text-[22px] ml:text-[30px] sm:text-[38px] tracking-widest`}>
-                    {t('about.subtitle')}
+                    {a('about.subtitle')}
                 </h4>
                 <p className={`${animate ? 'animate-[presentationLeft_1.3s_ease-in-out] opacity-80' : 'opacity-0'} text-primary dark:text-tertiary ml:text-[18px] sm:text-[20px] mb-[45px] leading-6`}>
                     {t('about.description')}
