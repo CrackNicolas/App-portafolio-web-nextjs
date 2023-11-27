@@ -23,9 +23,7 @@ export default function ComponentNav({ paint }: Props) {
 
     const refresh = () => {
         window.location.reload();
-        setTimeout(() => {
-            update_language((language === "es") ? 'en' : 'es')
-        }, 150);
+        update_language((language === "es") ? 'en' : 'es')
     }
 
     return (
