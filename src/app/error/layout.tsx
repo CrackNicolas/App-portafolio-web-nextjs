@@ -1,17 +1,11 @@
-import { ReactNode } from 'react'
-
 import { Metadata } from 'next/types'
+
+import { Props_layouts } from '@/types/props'
 
 export const metadata: Metadata = {
   title: '404'
 }
 
-type Props = {
-  children: ReactNode
-}
-
-export default function RootLayout(props: Props) {
-  const { children } = props;
-
-  return children
+export default function RootLayout({ children }: Props_layouts) {
+  return children;
 }

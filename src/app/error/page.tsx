@@ -2,12 +2,14 @@
 
 import Link from "next/link"
 
+import Use_translation from "@/context/translation/use";
+
 import ComponentIcon from "@/components/partials/icon"
 
-import { Use_translation } from "@/i18n/logic/use_translation"
-
 export default function Page404() {
-    const t = Use_translation(1);
+    const { translate, language } = Use_translation();
+
+    console.log("lenguaje: " + language);
 
     return (
         <main className="bg-primary h-screen grid place-items-center">
@@ -24,22 +26,22 @@ export default function Page404() {
                 <div className="flex flex-col items-center gap-y-1">
                     <h2 className="text-tertiary text-[18px]">
                         {
-                            t('page_404.title')
+                            translate('page_404.title')
                         }
                     </h2>
                     <span className="text-[15px] text-gray-600 text-tertiary text-center">
                         {
-                            t('page_404.subtitle.txt_1')
+                            translate('page_404.subtitle.txt_1')
                         }
                         {' '}
                         <Link href="/" className="text-secondary" title="Página de inicio">
                             {
-                                t('page_404.subtitle.txt_2')
+                                translate('page_404.subtitle.txt_2')
                             }
                         </Link>
                         {' '}
                         {
-                            t('page_404.subtitle.txt_3')
+                            translate('page_404.subtitle.txt_3')
                         }
                     </span>
                 </div>

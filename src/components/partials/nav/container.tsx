@@ -18,8 +18,14 @@ export default function ComponentNav({ paint }: Props) {
     const { language, update_language, translate } = Use_translation();
 
     const [visible_options, setVisible_options] = useState<boolean>(false);
+    const [state, setState] = useState<boolean>(false);
 
     const isWidth = Media_query('1024');
+
+    const update = (value: boolean) => {
+        setState(value);
+        update_language(value ? 'en' : 'es');
+    }
 
     return (
         <section id="nav" className={`fixed animate-[presentationLeft_1.5s_ease-in-out] z-30 left-0 bg-tertiary dark:bg-primary ${isWidth ? 'h-[40px] w-full bottom-0' : 'w-[58px] h-screen pt-[20px] pb-[15px]'}`}>
@@ -46,11 +52,11 @@ export default function ComponentNav({ paint }: Props) {
                                 }
                             </span>
                         </button>
-                        <button type="button" onClick={() => update_language(language)} className="hidden outline-none group ml:grid gap-y-1 place-items-center sm:min-w-[45px] sm:max-w-[45px] ml:min-w-[35px] ml:max-w-[35px] cursor-pointer" title={translate('focus.translator')}>
-                            <ComponentIcon name="language" size={18} description_class={`group-hover:translate-y-[-1px] transition duration-500 ${isWidth ? 'w-[15.2px] h-[15.2px]' : 'w-auto h-auto'} group-hover:text-secondary text-primary dark:text-tertiary`} />
+                        <button type="button" onClick={() => update(!state)} className="hidden outline-none group ml:grid gap-y-1 place-items-center sm:min-w-[45px] sm:max-w-[45px] ml:min-w-[35px] ml:max-w-[35px] cursor-pointer" title={translate('focus.translator')}>
+                            <ComponentIcon name={state? 'language-fill':'language'} size={18} description_class={`group-hover:translate-y-[-1px] transition duration-500 ${isWidth ? 'w-[15.2px] h-[15.2px]' : 'w-auto h-auto'} group-hover:text-secondary text-primary dark:text-tertiary`} />
                             <span className={` hidden sm:grid place-items-center font-semibold w-full h-[13px] text-[10.2px] transition duration-500 text-primary dark:text-tertiary group-hover:opacity-100 dark:opacity-60 `}>
                                 {
-                                    (language === "en") ? 'Inglés' : 'Spanish'
+                                    (language === "es") ? 'Inglés' : 'Spanish'
                                 }
                             </span>
                         </button>

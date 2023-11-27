@@ -9,19 +9,15 @@ import Context_language from './instance';
 import { Props_layouts } from '@/types/props';
 
 export default function LanguageProvider({ children }: Props_layouts) {
-    const [language, setLanguage] = useState<string>('es');
+    const stored_language = localStorage.getItem('language');
+    const [language, setLanguage] = useState<string>(stored_language || 'es');
 
     const [t, i18n] = useTranslation("global");
 
     const update_language = (language: string) => {
-        if (language === "es") {
-            i18n.changeLanguage('en');
-            setLanguage("en");
-        }
-        if (language === "en") {
-            i18n.changeLanguage('es');
-            setLanguage("es");
-        }
+        i18n.changeLanguage(language);
+        setLanguage(language);
+        localStorage.setItem('language', language);
     }
 
     const translate = (chain: string): any => {
