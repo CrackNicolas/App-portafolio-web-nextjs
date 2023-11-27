@@ -32,6 +32,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Props_layouts) {
   return (
     <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://www.google.com" />
+        <meta name="theme-color" content="#000000" />
+      </head>
       <body className="bg-tertiary dark:bg-primary">
         <ClientOnly>
           <ThemeProvider>

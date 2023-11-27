@@ -36,11 +36,12 @@ export default function Home() {
     window.addEventListener('scroll', handle_scroll);
     return () => window.removeEventListener('scroll', handle_scroll);
   }, [])
-
+//<ComponentIntro setView={setView} />
+//${view ? 'visible ' : 'hidden'}
   return (
     <main>
-      <ComponentIntro setView={setView} />
-      <section ref={sections} className={`${view ? 'visible ' : 'hidden'}`}>
+      
+      <section ref={sections} className={`visible`}>
         <ComponentNav paint={paint_icon} />
         <ComponentStart animate={(paint_icon === 'init')} />
         <ComponentAbout animate={(paint_icon === 'about')} />
