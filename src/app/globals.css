@@ -50,7 +50,7 @@ body::-webkit-scrollbar-thumb:hover {
     }
 
     to {
-        transform: translateY(-100px);
+        transform: translateY(-70px);
     }
 }
 
@@ -60,7 +60,7 @@ body::-webkit-scrollbar-thumb:hover {
     }
 
     to {
-        transform: translateY(-100px);
+        transform: translateY(-70px);
     }
 }
 

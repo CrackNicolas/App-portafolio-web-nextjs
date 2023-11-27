@@ -11,10 +11,12 @@ type Props = {
 }
 
 export default function ThemeProvider({ children }: Props) {
-    const [theme, setTheme] = useState<string>(Detect_theme());
+    const stored_language = localStorage.getItem('theme');
+    const [theme, setTheme] = useState<string>(stored_language || Detect_theme());
 
     const update_theme = (theme: string) => {
         setTheme((theme === 'dark') ? 'light' : 'dark');
+        localStorage.setItem('theme', (theme === 'dark') ? 'light' : 'dark');
     }
 
     useEffect(() => {

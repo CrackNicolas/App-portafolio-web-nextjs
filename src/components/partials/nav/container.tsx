@@ -18,13 +18,14 @@ export default function ComponentNav({ paint }: Props) {
     const { language, update_language, translate } = Use_translation();
 
     const [visible_options, setVisible_options] = useState<boolean>(false);
-    const [state, setState] = useState<boolean>(false);
 
     const isWidth = Media_query('1024');
 
-    const update = (value: boolean) => {
-        setState(value);
-        update_language(value ? 'en' : 'es');
+    const refresh = () => {
+        window.location.reload();
+        setTimeout(() => {
+            update_language((language === "es") ? 'en' : 'es')
+        }, 150);
     }
 
     return (
@@ -52,8 +53,8 @@ export default function ComponentNav({ paint }: Props) {
                                 }
                             </span>
                         </button>
-                        <button type="button" onClick={() => update(!state)} className="hidden outline-none group ml:grid gap-y-1 place-items-center sm:min-w-[45px] sm:max-w-[45px] ml:min-w-[35px] ml:max-w-[35px] cursor-pointer" title={translate('focus.translator')}>
-                            <ComponentIcon name={state? 'language-fill':'language'} size={18} description_class={`group-hover:translate-y-[-1px] transition duration-500 ${isWidth ? 'w-[15.2px] h-[15.2px]' : 'w-auto h-auto'} group-hover:text-secondary text-primary dark:text-tertiary`} />
+                        <button type="button" onClick={() => refresh()} className="hidden outline-none group ml:grid gap-y-1 place-items-center sm:min-w-[45px] sm:max-w-[45px] ml:min-w-[35px] ml:max-w-[35px] cursor-pointer" title={translate('focus.translator')}>
+                            <ComponentIcon name="language" size={18} description_class={`group-hover:translate-y-[-1px] transition duration-500 ${isWidth ? 'w-[15.2px] h-[15.2px]' : 'w-auto h-auto'} group-hover:text-secondary ${(language === 'es') ? 'text-primary dark:text-tertiary' : 'text-secondary'} `} />
                             <span className={` hidden sm:grid place-items-center font-semibold w-full h-[13px] text-[10.2px] transition duration-500 text-primary dark:text-tertiary group-hover:opacity-100 dark:opacity-60 `}>
                                 {
                                     (language === "es") ? 'Inglés' : 'Spanish'

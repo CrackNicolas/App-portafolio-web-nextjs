@@ -7,29 +7,27 @@ import Use_translation from "@/context/translation/use";
 import ComponentIcon from "@/components/partials/icon"
 
 export default function Page404() {
-    const { translate, language } = Use_translation();
-
-    console.log("lenguaje: " + language);
+    const { translate } = Use_translation();
 
     return (
-        <main className="bg-primary h-screen grid place-items-center">
-            <article className="bg-primary w-[300px] ml:w-[400px] h-[300px] grid place-items-center">
+        <main className="bg-tertiary dark:bg-primary h-screen grid place-items-center">
+            <article className="bg-transparent w-[300px] ml:w-[400px] h-[300px] grid place-items-center">
                 <div className="flex flex-col items-center">
                     <div className="animation-404">
-                        <ComponentIcon name="bug" size={30} description_class="text-red-500 logo" />
-                        <ComponentIcon name="bug" size={30} description_class="text-red-500 logo" />
+                        <ComponentIcon name="bug" size={30} description_class="text-secondary dark:text-red-500 logo" />
+                        <ComponentIcon name="bug" size={30} description_class="text-secondary dark:text-red-500 logo" />
                     </div>
-                    <h1 className="text-tertiary text-[100px]">
+                    <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-secondary via-primary dark:via-red-500 dark:to-secondary text-[100px]">
                         404
                     </h1>
                 </div>
-                <div className="flex flex-col items-center gap-y-1">
-                    <h2 className="text-tertiary text-[18px]">
+                <div className="flex flex-col items-center gap-y-0">
+                    <h2 className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-secondary via-primary dark:via-tertiary dark:to-secondary text-[18px]">
                         {
                             translate('page_404.title')
                         }
                     </h2>
-                    <span className="text-[15px] text-gray-600 text-tertiary text-center">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary via-primary to-secondary dark:via-tertiary dark:to-tertiary  text-[15px] text-center">
                         {
                             translate('page_404.subtitle.txt_1')
                         }
