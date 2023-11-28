@@ -60,17 +60,17 @@ export default function ComponentStart() {
                 <h3 className={` dark:text-tertiary text-primary text-[18px] sm:text-[20px] font-semibold`}>
                     Full Stack Development
                 </h3>
-                <p className={`text-[15px] dark:text-tertiary text-primary mb-[20px] sm:mb-[30px] min-w-[200px] max-w-[450px]`}>
+                <p className={`text-[15px] dark:text-tertiary text-primary opacity-100 dark:opacity-50 h-[92px] mb-[20px] sm:mb-[30px] min-w-[200px] max-w-[450px]`}>
                     {translate('start.txt_2')}
                 </p>
-                <div className="flex items-center gap-x-6 mb-[22px] sm:mb-[30px] w-[309.5px] sm:w-[376.1px]">
+                <div className="flex items-center gap-x-6 mb-[22px] sm:mb-[30px] px-[1px] w-[309.5px] sm:w-[376.1px]">
                     <Next_link href="https://www.linkedin.com/in/nicolas-alejo-beltran/" title="Linkedin" target="_blank" rel="noopener noreferrer" className={` group dark:hover:opacity-100 dark:opacity-50 rounded-full cursor-pointer transition duration-500`}>
                         <ComponentIcon name="linkedin" size={18} description_class="dark:text-tertiary hover:text-secondary text-primary" />
                     </Next_link>
                     <Next_link href="https://github.com/CrackNicolas" title="Git" target="_blank" rel="noopener noreferrer" className={` group dark:hover:opacity-100 dark:opacity-50 rounded-full cursor-pointer transition duration-500`}>
                         <ComponentIcon name="git" size={20} description_class="dark:text-tertiary hover:text-secondary text-primary" />
                     </Next_link>
-                    <span className={` w-full h-[0.1px] bg-primary dark:bg-tertiary`}></span>
+                    <span className={` opacity-100 dark:opacity-50 w-full h-[0.1px] bg-primary dark:bg-tertiary`}></span>
                 </div>
                 <div className="flex gap-x-[10px] sm:gap-x-[15px] w-[309.5px] sm:w-[376.1px]">
                     <Link to="contact" href="#contact" spy={true} smooth={true} offset={0} duration={500} title={translate('start.txt_3')} rel="noopener noreferrer" className={` bg-gradient-to-r from-primary to-secondary flex items-center min-w-[145px] sm:min-w-[171px] min-w-[145px] sm:max-w-[171px] gap-x-[8px] rounded-md py-[10px] px-[20px] cursor-pointer text-tertiary bg-secondary hover:opacity-90 border-[1px] border-secondary transition duration-500`}>
