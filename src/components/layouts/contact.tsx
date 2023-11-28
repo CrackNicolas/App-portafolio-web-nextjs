@@ -17,9 +17,7 @@ import { Use_window_width } from '@/logic/page/size';
 import { Insulting_message } from '@/logic/restrictions/insulting_message';
 import { Amount_lines_input } from '@/logic/style/amount_lines_input';
 
-import { Props_section } from '@/types/props';
-
-export default function ComponentContact({animate}: Props_section) {
+export default function ComponentContact() {
     const { translate } = Use_translation();
 
     const width = Use_window_width();
@@ -98,9 +96,9 @@ export default function ComponentContact({animate}: Props_section) {
     }
 
     return (
-        <ComponentLayout id="contact" animate={animate} children={
+        <ComponentLayout id="contact" children={
             <form className="grid gap-[35px] sm:gap-[40px] px-[5px] mt-[35px]" method="POST" ref={ref_form} onSubmit={handleSubmit(onSubmit)}>
-                <div className={`${animate ? 'animate-[presentationLeft_1.1s_ease-in-out]' : 'opacity-0'} transition duration-500 relative grid grid-cols-1 items-center gap-[5px]`}>
+                <div className={`transition duration-500 relative grid grid-cols-1 items-center gap-[5px]`}>
                     <ComponentMessageErrorInput order={1} type={errors.name?.type} />
                     <input className={`outline-0 border-[1px] bg-tertiary dark:bg-primary text-primary dark:text-tertiary max-h-[20px] min-h-[20px] py-[20px] ${active_validation ? `${style_input(errors.name?.type)} pr-[35px]` : 'border-primary dark:border-secondary pr-[10px]'} pl-[10px] overflow-auto text-[18px] rounded-sm`} type="text" placeholder={translate('contact.inputs.j_1')} {...register('name', {
                         required: true,
@@ -121,7 +119,7 @@ export default function ComponentContact({animate}: Props_section) {
                         }
                     </div>
                 </div>
-                <div className={`${animate ? 'animate-[presentationLeft_1.3s_ease-in-out]' : 'opacity-0'} transition duration-500 relative grid grid-cols-1 items-center gap-[5px]`}>
+                <div className={` transition duration-500 relative grid grid-cols-1 items-center gap-[5px]`}>
                     <ComponentMessageErrorInput order={2} type={errors.email?.type} />
                     <input className={`outline-0 border-[1px] bg-tertiary dark:bg-primary text-primary dark:text-tertiary max-h-[20px] min-h-[20px] py-[20px] ${active_validation ? `${style_input(errors.email?.type)} pr-[35px]` : 'border-primary dark:border-secondary pr-[10px]'} pl-[10px] overflow-auto text-[18px] rounded-sm`} type="email" placeholder={translate('contact.inputs.j_3')} {...register('email', {
                         required: true,
@@ -133,7 +131,7 @@ export default function ComponentContact({animate}: Props_section) {
                         }
                     </div>
                 </div>
-                <div className={`${animate ? 'animate-[presentationRight_1.4s_ease-in-out]' : 'opacity-0'} transition duration-500 relative grid grid-cols-1 items-center gap-[5px]`}>
+                <div className={`transition duration-500 relative grid grid-cols-1 items-center gap-[5px]`}>
                     <ComponentMessageErrorInput order={3} type={errors.message?.type} />
                     <textarea rows={2} className={`outline-0 border-[1px] bg-tertiary dark:bg-primary text-primary dark:text-tertiary overflow-hidden resize-none py-[8px] ${active_validation ? `${style_input(errors.message?.type)} pr-[35px]` : 'border-primary dark:border-secondary pr-[10px]'} pl-[10px] text-[19.5px] rounded-sm`} placeholder={translate('contact.inputs.j_4')} {...register('message', {
                         required: true,
@@ -154,10 +152,10 @@ export default function ComponentContact({animate}: Props_section) {
                         }
                     </div>
                 </div>
-                <aside className={`${animate ? 'animate-[presentationBottom_1.5s_ease-in-out]' : 'opacity-0'} transition duration-500 overflow-hidden overflow-auto py-0`}>
+                <aside className={`transition duration-500 overflow-hidden overflow-auto py-0`}>
                     <ComponentRecaptcha ref={recaptcha} onChange={onChange} state_captcha={state_captcha} />
                 </aside>
-                <button className={`bg-gradient-to-r dark:from-secondary dark:to-secondary from-primary to-secondary hover:from-secondary hover:to-primary ${animate ? 'animate-[presentationBottom_1.5s_ease-in-out]' : 'opacity-0'} outline-none group flex justify-center items-center transition duration-700 mx-auto mt-[-10px] px-[20px] w-full py-[5px] gap-x-3 rounded-sm`} type="submit" onClick={() => setActive_validation(true)}>
+                <button className={`bg-gradient-to-r dark:from-secondary dark:to-secondary from-primary to-secondary hover:from-secondary hover:to-primary outline-none group flex justify-center items-center transition duration-700 mx-auto mt-[-10px] px-[20px] w-full py-[5px] gap-x-3 rounded-sm`} type="submit" onClick={() => setActive_validation(true)}>
                     <ComponentIcon name="send" size={16} description_class="group-hover:rotate-45 text-tertiary" />
                     <span className='text-tertiary text-[18px] font-bold'>
                         {translate('menu.button_6')}

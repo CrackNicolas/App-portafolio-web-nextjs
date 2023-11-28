@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    productionBrowserSourceMaps: true,
     env: {
         KEY_RECAPTCHA: '6LfoLOklAAAAAMZ0rM3pBfmzxa6Kj47b5EIvA45C',
         KEY_EMAIL: 're_Ex9S7ZqP_HsvNt7b7EpjTH9eTSR5x7yau',

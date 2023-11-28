@@ -5,9 +5,7 @@ import Use_translation from "@/context/translation/use";
 import ComponentIcon from "../partials/icon";
 import ComponentMessageCopyText from "../partials/messages/alerts/copy_text";
 
-import { Props_section } from '@/types/props';
-
-export default function ComponentFooter({ animate }: Props_section) {
+export default function ComponentFooter() {
     const { translate } = Use_translation();
 
     const [visible, setVisible] = useState<boolean>(false);
@@ -32,10 +30,10 @@ export default function ComponentFooter({ animate }: Props_section) {
                 <ComponentIcon name="footer" size={24} description_class="bi bi-chat-square-quote-fill text-secondary" />
             </div>
             <article className="mx-auto leading-6 flex flex-col">
-                <span className={`${animate ? 'animate-[presentationLeft_1.7s_ease-in-out]' : 'opacity-0'} text-[13px] mx-auto text-center dark:text-tertiary text-secondary`}>
+                <span className={` text-[13px] mx-auto text-center dark:text-tertiary text-secondary`}>
                     {translate('footer.title')}
                 </span>
-                <div className={`${animate ? 'animate-[presentationRight_1.7s_ease-in-out]' : 'opacity-0'} relative flex justify-between mx-auto w-[205px]`}>
+                <div className={`relative flex justify-between mx-auto w-[205px]`}>
                     <span ref={ref_text} className="w-full text-[13px] mx-auto w-[180px] text-secondary dark:text-tertiary" title={translate('focus.email')}>
                         beltrannicolasalejo@gmail.com
                     </span>

@@ -36,21 +36,20 @@ export default function Home() {
     window.addEventListener('scroll', handle_scroll);
     return () => window.removeEventListener('scroll', handle_scroll);
   }, [])
-//<ComponentIntro setView={setView} />
-//${view ? 'visible ' : 'hidden'}
+
   return (
     <main>
-      
-      <section ref={sections} className={`visible`}>
+      <ComponentIntro setView={setView} />
+      <section ref={sections} className={`${view ? 'visible ' : 'hidden'}`}>
         <ComponentNav paint={paint_icon} />
-        <ComponentStart animate={(paint_icon === 'init')} />
-        <ComponentAbout animate={(paint_icon === 'about')} />
-        <ComponentServices animate={(paint_icon === 'services')} />
-        <ComponentExperience animate={(paint_icon === 'experience')} />
-        <ComponentProyects animate={(paint_icon === 'proyects')} />
-        <ComponentEducacion animate={(paint_icon === 'education')} />
-        <ComponentContact animate={(paint_icon === 'contact')} />
-        <ComponentFooter animate={(paint_icon === 'contact')} />
+        <ComponentStart />
+        <ComponentAbout />
+        <ComponentServices />
+        <ComponentExperience />
+        <ComponentProyects />
+        <ComponentEducacion />
+        <ComponentContact />
+        <ComponentFooter />
       </section>
     </main>
   )

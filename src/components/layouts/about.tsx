@@ -5,23 +5,19 @@ import Use_translation from '@/context/translation/use';
 import ComponentTools from '../partials/about/tools';
 import ComponentLayout from './layout';
 
-import { Props_section } from '@/types/props';
-
-export default function ComponentAbout(props: Props_section) {
-    const { animate } = props
-
+export default function ComponentAbout() {
     const { translate } = Use_translation();
 
     return (
-        <ComponentLayout {...props} id="about" children={
+        <ComponentLayout id="about" children={
             <Fragment>
-                <p className={`${animate ? 'animate-[presentationLeft_1.1s_ease-in-out]' : 'opacity-0'} text-primary dark:text-tertiary font-bold text-[22px] ml:text-[30px] sm:text-[38px] tracking-widest`}>
+                <p className={`text-primary dark:text-tertiary font-bold text-[22px] ml:text-[30px] sm:text-[38px] tracking-widest`}>
                     {translate('about.subtitle')}
                 </p>
-                <p className={`${animate ? 'animate-[presentationLeft_1.3s_ease-in-out] opacity-80' : 'opacity-0'} text-primary dark:text-tertiary ml:text-[18px] sm:text-[20px] mb-[45px] leading-6`}>
+                <p className={`text-primary dark:text-tertiary ml:text-[18px] sm:text-[20px] mb-[45px] leading-6`}>
                     {translate('about.description')}
                 </p>
-                <article className={`${animate ? 'animate-[presentationBottom_1.5s_ease-in-out]' : 'opacity-0'} relative shadow-md shadow-primary dark:shadow-secondary cursor-pointer transition duration-500 hover:shadow-none hover:border-secondary border-[0.1px] dark:border-secondary rounded-md rounded-tr-none w-full grid px-3 py-8 grid-cols-4 ml:px-4 ml:py-8 ml:grid-cols-5 sm:py-8 md:grid-cols-8 lg:px-5 lg:py-11 lg:grid-cols-9 gap-[15px] ml:gap-[35px] items-center`}>
+                <article className={` relative shadow-md shadow-primary dark:shadow-secondary cursor-pointer transition duration-500 hover:shadow-none hover:border-secondary border-[0.1px] dark:border-secondary rounded-md rounded-tr-none w-full grid px-3 py-8 grid-cols-4 ml:px-4 ml:py-8 ml:grid-cols-5 sm:py-8 md:grid-cols-8 lg:px-5 lg:py-11 lg:grid-cols-9 gap-[15px] ml:gap-[35px] items-center`}>
                     <ComponentTools type="icon" name="Next.js" size={33} view_box="0 0 180 180" description_text="mt-[-3px]" />
                     <ComponentTools type="icon" name="React" size={30} view_box="-10.5 -9.45 21 18.9" color="text-blue-500" />
                     <ComponentTools type="image" name="Angular" size={37} description_image="mt-[-4px]" description_text="mt-[-3px]" />

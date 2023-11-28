@@ -7,43 +7,41 @@ import ComponentIcon from '../partials/icon';
 import ComponentItem from "../partials/proyects/item";
 import ComponentLayout from "./layout";
 
-import { Props_section } from '@/types/props';
-
-export default function ComponentProyects({animate}: Props_section) {
+export default function ComponentProyects() {
     const { translate } = Use_translation();
 
     const [view_datails, setView_datails] = useState<boolean>(true);
 
     return (
-        <ComponentLayout animate={animate} id="proyects" children={
+        <ComponentLayout id="proyects" children={
             <Fragment>
                 <article className="mt-3 mb-[20px] gap-8 flex flex-col transition duration-500">
-                    <ComponentItem animate={animate} number={1} image="Aplicacion YouTube" links={{
+                    <ComponentItem number={1} image="Aplicacion YouTube" links={{
                         git: "a",
                         linkedin: "b"
                     }} />
-                    <span className={`${animate ? 'animate-[presentationBottom_1s_ease-in-out]' : 'opacity-0'} w-full h-[0.1px] bg-secondary opacity-50`}></span>
-                    <ComponentItem animate={animate} number={2} image="Aplicacion YouTube" links={{
+                    <span className={` w-full h-[0.1px] bg-secondary opacity-50`}></span>
+                    <ComponentItem number={2} image="Aplicacion YouTube" links={{
                         git: "aa",
                         linkedin: "bb"
                     }} />
                     {
                         !view_datails &&
                         <Fragment>
-                            <span className={`${animate ? 'animate-[presentationBottom_1s_ease-in-out]' : 'opacity-0'} w-full h-[0.1px] bg-secondary opacity-50`}></span>
-                            <ComponentItem animate={animate} number={3} image="Aplicacion YouTube" links={{
+                            <span className={` w-full h-[0.1px] bg-secondary opacity-50`}></span>
+                            <ComponentItem number={3} image="Aplicacion YouTube" links={{
                                 git: "a",
                                 linkedin: "b"
                             }} />
-                            <span className={`${animate ? 'animate-[presentationBottom_1s_ease-in-out]' : 'opacity-0'} w-full h-[0.1px] bg-secondary opacity-50`}></span>
-                            <ComponentItem animate={animate} number={4} image="Aplicacion YouTube" links={{
+                            <span className={` w-full h-[0.1px] bg-secondary opacity-50`}></span>
+                            <ComponentItem number={4} image="Aplicacion YouTube" links={{
                                 git: "aa",
                                 linkedin: "bb"
                             }} />
                         </Fragment>
                     }
                 </article>
-                <Link to={view_datails ? '' : 'proyects'} href="#proyects" onClick={() => setView_datails(!view_datails)} spy={true} smooth={true} offset={0} duration={500} rel="noopener noreferrer" className={` ${animate ? 'animate-[presentationLeft_1.2s_ease-in-out]' : 'opacity-0'} bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-primary group grid place-items-center xl:flex xl:justify-center py-0 xl:py-[5px] w-full xl:w-auto xl:min-w-[158px] xl:max-w-[158px] mx-auto pl-[20px] pr-[18px] gap-x-2 rounded-md cursor-pointer text-tertiary border-[0.1px] border-secondary`}>
+                <Link to={view_datails ? '' : 'proyects'} href="#proyects" onClick={() => setView_datails(!view_datails)} spy={true} smooth={true} offset={0} duration={500} rel="noopener noreferrer" className={` bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-primary group grid place-items-center xl:flex xl:justify-center py-0 xl:py-[5px] w-full xl:w-auto xl:min-w-[158px] xl:max-w-[158px] mx-auto pl-[20px] pr-[18px] gap-x-2 rounded-md cursor-pointer text-tertiary border-[0.1px] border-secondary`}>
                     <span className="text-[18px] font-semibold">
                         {
                             translate((view_datails) ? 'proyects.buttons.b_1' : 'proyects.buttons.b_2')
