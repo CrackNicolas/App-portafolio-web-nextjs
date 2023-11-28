@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   title: 'Alejo Beltran',
   description: 'Creado por Beltran Alejo',
   keywords: ['Next.js', 'React', 'JavaScript', 'TypeScript', 'Tailwind', 'CSS', 'HTML'],
-  themeColor:'#000000',
+  themeColor: '#000000',
   icons: {
     icon: '/favicon.ico'
   }
@@ -37,6 +37,7 @@ export default function RootLayout({ children }: Props_layouts) {
     <html lang="en">
       <Head>
         <link rel="preconnect" href="https://www.google.com" />
+        <link rel="dns-prefetch" href="https://www.google.com" />
       </Head>
       <body className="bg-tertiary dark:bg-primary">
         <ClientOnly>
