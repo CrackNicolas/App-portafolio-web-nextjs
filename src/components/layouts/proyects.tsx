@@ -43,7 +43,7 @@ export default function ComponentProyects({animate}: Props_section) {
                         </Fragment>
                     }
                 </article>
-                <Link to={view_datails ? '' : 'proyects'} onClick={() => setView_datails(!view_datails)} spy={true} smooth={true} offset={0} duration={500} rel="noopener noreferrer" className={` ${animate ? 'animate-[presentationLeft_1.2s_ease-in-out]' : 'opacity-0'} bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-primary group grid place-items-center xl:flex xl:justify-center py-0 xl:py-[5px] w-full xl:w-auto xl:min-w-[158px] xl:max-w-[158px] mx-auto pl-[20px] pr-[18px] gap-x-2 rounded-md cursor-pointer text-tertiary border-[0.1px] border-secondary`}>
+                <Link to={view_datails ? '' : 'proyects'} href="#proyects" onClick={() => setView_datails(!view_datails)} spy={true} smooth={true} offset={0} duration={500} rel="noopener noreferrer" className={` ${animate ? 'animate-[presentationLeft_1.2s_ease-in-out]' : 'opacity-0'} bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-primary group grid place-items-center xl:flex xl:justify-center py-0 xl:py-[5px] w-full xl:w-auto xl:min-w-[158px] xl:max-w-[158px] mx-auto pl-[20px] pr-[18px] gap-x-2 rounded-md cursor-pointer text-tertiary border-[0.1px] border-secondary`}>
                     <span className="text-[18px] font-semibold">
                         {
                             translate((view_datails) ? 'proyects.buttons.b_1' : 'proyects.buttons.b_2')

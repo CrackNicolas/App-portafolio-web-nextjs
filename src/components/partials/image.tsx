@@ -61,6 +61,6 @@ export default function ComponentImage(props: Props) {
     }
 
     return (
-        <Image width={size} height={size} layout={layout} src={get_image(name)} className={`cursor-pointer transition duration-500 rounded-sm ${description_class}`} alt={alt ? translate(alt) : alt} />
+        <Image width={size} height={size} layout={layout} src={get_image(name)} className={`cursor-pointer transition duration-500 rounded-sm ${description_class}`} alt={alt ? translate(alt) : alt} priority />
     )
 }

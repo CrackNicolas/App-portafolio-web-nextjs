@@ -55,7 +55,7 @@ export default function ComponentItem(props: Props) {
                 </div>
                 {
                     ((number === 2 && view_datails) || (number === 4)) &&
-                    <Link to={view_datails ? '' : 'experience'} onClick={() => setView_datails(!view_datails)} spy={true} smooth={true} offset={0} duration={500} rel="noopener noreferrer" className={`${animate ? 'animate-[presentationLeft_1.2s_ease-in-out]' : 'opacity-0'} bg-gradient-to-r from-primary to-secondary hover:from-secondary grid place-items-center xl:flex xl:justify-center hover:to-primary group break-before-auto absolute inset-x-1 xl:inset-auto xl:translate-x-[-134px] translate-y-[30px] xl:translate-y-[10px] pl-[20px] pr-[18px] py-0 xl:py-[5px] xl:min-w-[158px] xl:max-w-[158px] gap-x-2 rounded-md cursor-pointer text-tertiary border-[0.1px] border-secondary`}>
+                    <Link to={view_datails ? '' : 'experience'} href="#experience" onClick={() => setView_datails(!view_datails)} spy={true} smooth={true} offset={0} duration={500} rel="noopener noreferrer" className={`${animate ? 'animate-[presentationLeft_1.2s_ease-in-out]' : 'opacity-0'} bg-gradient-to-r from-primary to-secondary hover:from-secondary grid place-items-center xl:flex xl:justify-center hover:to-primary group break-before-auto absolute inset-x-1 xl:inset-auto xl:translate-x-[-134px] translate-y-[30px] xl:translate-y-[10px] pl-[20px] pr-[18px] py-0 xl:py-[5px] xl:min-w-[158px] xl:max-w-[158px] gap-x-2 rounded-md cursor-pointer text-tertiary border-[0.1px] border-secondary`}>
                         <span className="text-[18px] font-semibold">
                             {
                                 translate((view_datails) ? 'proyects.buttons.b_1' : 'proyects.buttons.b_2')

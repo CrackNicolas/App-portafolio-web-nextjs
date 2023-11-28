@@ -74,7 +74,7 @@ export default function ComponentStart({ animate }: Props_section) {
                     <span className={`${animate ? 'animate-[presentationRight_1.6s_ease-in-out] opacity-40' : 'opacity-0'} w-full h-[0.1px] bg-primary dark:bg-tertiary`}></span>
                 </div>
                 <div className="flex gap-x-[10px] sm:gap-x-[15px] w-[309.5px] sm:w-[376.1px]">
-                    <Link to="contact" spy={true} smooth={true} offset={0} duration={500} title={translate('start.txt_3')} rel="noopener noreferrer" className={` bg-gradient-to-r from-primary to-secondary ${animate ? 'animate-[presentationBottom_1.6s_ease-in-out]' : 'opacity-0'} flex items-center min-w-[145px] sm:min-w-[171px] min-w-[145px] sm:max-w-[171px] gap-x-[8px] rounded-md py-[10px] px-[20px] cursor-pointer text-tertiary bg-secondary hover:opacity-90 border-[1px] border-secondary transition duration-500`}>
+                    <Link to="contact" href="#contact" spy={true} smooth={true} offset={0} duration={500} title={translate('start.txt_3')} rel="noopener noreferrer" className={` bg-gradient-to-r from-primary to-secondary ${animate ? 'animate-[presentationBottom_1.6s_ease-in-out]' : 'opacity-0'} flex items-center min-w-[145px] sm:min-w-[171px] min-w-[145px] sm:max-w-[171px] gap-x-[8px] rounded-md py-[10px] px-[20px] cursor-pointer text-tertiary bg-secondary hover:opacity-90 border-[1px] border-secondary transition duration-500`}>
                         <ComponentIcon name="contact" size={16} description_class="w-[14px] h-[14px] sm:w-[16px] sm:h-[16px]" />
                         <span className="text-[15px] sm:text-[20px] font-semibold">
                             {translate('start.txt_3')}
@@ -90,7 +90,7 @@ export default function ComponentStart({ animate }: Props_section) {
                 </div>
             </article>
             <article className={`${(isWidth) ? 'sandwich-background-dark' : 'pr-5'} ${animate ? 'animate-[presentationRight_1.6s_ease-in-out]' : 'opacity-0'} relative grid place-items-center col-span-full mt-16 lg:justify-end lg:items-center lg:mt-0 lg:col-span-1 h-full`}>
-                <Image width={230} height={230} className={`${animate ? 'animate-[presentationRight_1.6s_ease-in-out]' : 'opacity-0'} rounded-full transition duration-500 min-w-[230px] min-h-[230px] max-w-[230px] max-h-[230px] sm:min-w-[320px] sm:min-h-[320px] sm:max-w-[320px] sm:max-h-[320px]`} src="/images/main/perfil.jpg" alt={translate('start.image.alt')} />
+                <Image width={230} height={230} className={`${animate ? 'animate-[presentationRight_1.6s_ease-in-out]' : 'opacity-0'} rounded-full transition duration-500 min-w-[230px] min-h-[230px] max-w-[230px] max-h-[230px] sm:min-w-[320px] sm:min-h-[320px] sm:max-w-[320px] sm:max-h-[320px]`} src="/images/main/perfil.jpg" alt={translate('start.image.alt')} priority />
             </article>
         </section>
     )

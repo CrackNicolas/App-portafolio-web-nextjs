@@ -24,6 +24,7 @@ import { Props_layouts } from '@/types/props'
 export const metadata: Metadata = {
   title: 'Alejo Beltran',
   description: 'Creado por Beltran Alejo',
+  keywords:['Next.js','React','JavaScript','TypeScript','Tailwind','CSS','HTML'],
   icons: {
     icon: '/favicon.ico'
   }
