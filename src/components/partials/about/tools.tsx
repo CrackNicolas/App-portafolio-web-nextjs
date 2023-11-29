@@ -18,7 +18,7 @@ export default function ComponentTools(props: Props) {
         <div className="cursor-default w-full max-h-[60px] min-h-[60px] w-full grid place-items-center flex-col transition duration-700">
             {
                 (type === "icon") &&
-                <ComponentIcon name={name.toLocaleLowerCase()} size={size} description_class={` ${(name === "Next.js") && 'border-[0.1px] rounded-full dark:border-secondary '} hover:translate-y-[-3px] ${color}`} view_box={view_box} />
+                <ComponentIcon name={name.toLocaleLowerCase()} size={size} description_class={` ${(name === "Next.js") && 'border-[0.1px] rounded-full dark:border-secondary'} hover:translate-y-[-3px] ${color}`} view_box={view_box} />
             }
             {
                 (type === "image") &&

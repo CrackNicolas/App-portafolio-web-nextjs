@@ -49,7 +49,7 @@ export default function ComponentStart() {
     };
 
     return (
-        <section id="init" className={`relative grid items-center grid-cols-2 pb-[80px] pt-[40px] px-[10px] sm:px-[22px] lg:grid-cols-3 lg:pl-[80px] lg:pb-[180px] lg:pt-[80px] max-w-[1275px] m-auto`}>
+        <section id="init" className={`relative grid items-center grid-cols-2 pb-[80px] pt-[40px] px-[10px] sm:px-[22px] lg:grid-cols-3 lg:pl-[80px] lg:pb-[180px] lg:pt-[80px] max-w-[1275px] mb-16 mx-auto`}>
             <article className={`${(!isWidth) && `${(theme === 'dark') ? 'sandwich-background-dark' : 'sandwich-background-light'}`} flex flex-col col-span-2 h-full`}>
                 <h1 className={` dark:text-tertiary text-primary tracking-wider text-[20px] sm:text-[23px] font-semibold`}>
                     {translate('start.txt_1')}
