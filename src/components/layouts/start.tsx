@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Next_link from "next/link";
 
 import { Link } from "react-scroll";
