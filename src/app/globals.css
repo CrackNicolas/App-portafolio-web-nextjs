@@ -115,8 +115,8 @@ body::-webkit-scrollbar-thumb:hover {
 
     .sandwich-background-light::before,
     .sandwich-background-dark::before {
-        background: linear-gradient(-110deg,
-                theme("colors.secondary") 30%,
+        background: linear-gradient(0deg,
+                theme("colors.secondary") 0%,
                 theme("colors.primary") 100%,
                 theme("colors.secondary") 100%,
                 theme("colors.primary") 100%);

@@ -88,9 +88,7 @@ export default function ComponentStart() {
                     <ComponentMessage open={completed} setOpen={setCompleted} view_url={view_url} />
                 </div>
             </article>
-            <article className={`${(isWidth) ? 'sandwich-background-dark' : 'pr-5'} relative grid place-items-center col-span-full mt-16 lg:justify-end lg:items-center lg:mt-0 lg:col-span-1 h-full`}>
-                <Image width={230} height={230} className={`rounded-full transition duration-500 min-w-[230px] min-h-[230px] max-w-[230px] max-h-[230px] sm:min-w-[320px] sm:min-h-[320px] sm:max-w-[320px] sm:max-h-[320px]`} src="/images/main/perfil.jpg" alt={translate('start.image.alt')} priority />
-            </article>
+            <article className={`${(isWidth) ? 'sandwich-background-dark' : 'pr-5'} wave-div  relative grid place-items-center col-span-full mt-16 lg:justify-end lg:items-center lg:mt-0 lg:col-span-1 h-[170px]`}></article>
         </section>
     )
 }
