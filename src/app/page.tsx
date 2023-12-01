@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 
 import ComponentNav from "@/components/partials/nav/container";
-import ComponentIntro from "@/components/partials/intro";
 import ComponentStart from "@/components/layouts/start";
 import ComponentAbout from "@/components/layouts/about";
 import ComponentFooter from "@/components/layouts/footer";
@@ -14,7 +13,6 @@ import ComponentEducacion from "@/components/layouts/education";
 import ComponentExperience from "@/components/layouts/experience";
 
 export default function Home() {
-  const [view, setView] = useState<boolean>(false);
   const [paint_icon, setPaint_icon] = useState<string>('init');
 
   const sections = useRef<any>(null);
@@ -39,8 +37,7 @@ export default function Home() {
 
   return (
     <main>
-      <ComponentIntro setView={setView} />
-      <section ref={sections} className={`${view ? 'visible ' : 'hidden'}`}>
+      <section ref={sections}>
         <ComponentNav paint={paint_icon} />
         <ComponentStart />
         <ComponentAbout />
