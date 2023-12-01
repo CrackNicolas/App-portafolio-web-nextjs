@@ -60,12 +60,12 @@ export default function ComponentToggle(props: Props_modal) {
                                         }
                                     </Dialog.Title>
                                     <div className='flex mx-auto flex-col w-[150px] gap-y-2'>
-                                        <span onClick={() => update_language('en')} className={`border-x-[15px] rounded-full ${(language === "es") ? 'text-secondary border-secondary' : 'text-primary dark:text-tertiary border-transparent'} `}>
+                                        <span onClick={() => update_language('es')} className={`py-[2px] border-x-[15px] rounded-full ${(language === "es") ? 'text-secondary border-secondary' : 'text-primary dark:text-tertiary border-transparent'} `}>
                                             {
                                                 translate('toggle.lenguaje.l_1')
                                             }
                                         </span>
-                                        <span onClick={() => update_language('es')} className={`border-x-[15px] rounded-full ${(language === "en") ? 'text-secondary border-secondary' : 'text-primary dark:text-tertiary border-transparent'} `}>
+                                        <span onClick={() => update_language('en')} className={`py-[2px] border-x-[15px] rounded-full ${(language === "en") ? 'text-secondary border-secondary' : 'text-primary dark:text-tertiary border-transparent'} `}>
                                             {
                                                 translate('toggle.lenguaje.l_2')
                                             }
