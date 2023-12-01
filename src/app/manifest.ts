@@ -1,6 +1,6 @@
-import { MetadataRoute } from 'next';
+import { Manifest } from 'next/dist/lib/metadata/types/manifest-types';
 
-export default function manifest(): MetadataRoute.Manifest {
+export default function manifest(): Manifest {
     return {
         name: "My Portfolio Web Full Stack",
         short_name: "Portfolio",

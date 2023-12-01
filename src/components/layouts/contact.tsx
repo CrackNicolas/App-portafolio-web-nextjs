@@ -96,7 +96,7 @@ export default function ComponentContact() {
     }
 
     return (
-        <ComponentLayout id="contact" children={
+        <ComponentLayout id="contact">
             <form className="grid gap-[35px] sm:gap-[40px] px-[5px] mt-[35px]" method="POST" ref={ref_form} onSubmit={handleSubmit(onSubmit)}>
                 <div className={`transition duration-500 relative grid grid-cols-1 items-center gap-[5px]`}>
                     <ComponentMessageErrorInput order={1} type={errors.name?.type} />
@@ -104,7 +104,7 @@ export default function ComponentContact() {
                         required: true,
                         minLength: 3,
                         maxLength: 15,
-                        pattern: /^[A-Za-z]+$/i
+                        pattern: /^[A-Z a-z]+$/i
                     })}
                         onInput={() => {
                             const maxLength = 15;
@@ -166,6 +166,6 @@ export default function ComponentContact() {
                 <ComponentMessageWarning open={warning_email} setOpen={setWarning_email} />
                 <ComponentMessageConfirmation open={send_email} setOpen={setSend_email} />
             </form>
-        } />
+        </ComponentLayout>
     )
 }

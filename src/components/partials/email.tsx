@@ -1,8 +1,10 @@
+import { FC } from "react";
+
 interface EmailTemplateProps {
     data: any;
 }
 
-export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({ data }) => (
+export const EmailTemplate: FC<Readonly<EmailTemplateProps>> = ({ data }) => (
     <div>
         <h1>
             Mensaje de mi portafolio

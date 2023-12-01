@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 
 export function Send_email(form: any) {
     const data = {

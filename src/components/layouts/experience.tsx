@@ -7,7 +7,7 @@ export default function ComponentExperience() {
     const [view_datails, setView_datails] = useState<boolean>(true);
 
     return (
-        <ComponentLayout id="experience" padding="pb-[80px]" children={
+        <ComponentLayout id="experience" padding="pb-[80px]">
             <article className="mt-4 grid grid-cols-1 xl:gap-0 gap-y-3 sm:gap-y-5">
                 <ComponentItem number={1} />
                 <ComponentItem number={2} view_datails={view_datails} setView_datails={setView_datails} />
@@ -19,6 +19,6 @@ export default function ComponentExperience() {
                     </Fragment>
                 }
             </article>
-        } />
+        </ComponentLayout>
     )
 }

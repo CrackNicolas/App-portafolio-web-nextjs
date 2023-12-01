@@ -1,16 +1,14 @@
 'use client'
 
-import { ReactNode, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import Context_theme from './instance';
 
 import { Detect_theme } from "@/logic/style/detect_theme";
 
-type Props = {
-    children: ReactNode
-}
+import { Props_layouts } from '@/types/props';
 
-export default function ThemeProvider({ children }: Props) {
+export default function ThemeProvider({ children }: Props_layouts) {
     const stored_language = localStorage.getItem('theme');
     const [theme, setTheme] = useState<string>(stored_language || Detect_theme());
 

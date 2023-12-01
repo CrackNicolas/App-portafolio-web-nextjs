@@ -40,7 +40,7 @@ export default function ComponentNav({ paint }: Props) {
                 </article>
                 <article className={`col-span-2 flex ${isWidth ? 'justify-end' : 'items-end'}`}>
                     <div className={`flex items-center gap-y-3 ${isWidth ? 'h-full' : 'flex-col w-full'}`}>
-                        <button type="button" onClick={() => setVisible_options(!visible_options)} className="ml:hidden outline-none grid gap-y-1 place-items-center min-w-[30px] max-w-[30px] cursor-pointer" title={translate('focus.theme')}>
+                        <button type="button" onClick={() => setVisible_options(!visible_options)} className="ml:hidden outline-none grid gap-y-1 place-items-center min-w-[30px] max-w-[30px] cursor-pointer" title={translate('focus.settings')}>
                             <ComponentIcon name="settings" size={18} description_class={`${isWidth ? 'w-[17px] h-[17px]' : 'w-auto h-auto'} text-primary dark:text-tertiary hover:text-secondary `} />
                         </button>
                         <button type="button" onClick={() => update_theme(theme)} className="hidden outline-none group ml:grid gap-y-1 place-items-center sm:min-w-[45px] sm:max-w-[45px] ml:min-w-[35px] ml:max-w-[35px] cursor-pointer" title={translate('focus.theme')}>

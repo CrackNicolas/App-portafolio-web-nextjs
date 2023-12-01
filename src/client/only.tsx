@@ -1,12 +1,14 @@
 'use client'
 
-import { useEffect, useState, ReactNode } from 'react';
+import { useEffect, useState } from 'react';
 import { I18nextProvider } from "react-i18next";
 
 import i18next from 'i18next'
 
 import en from '@/i18n/en/global.json'
 import es from '@/i18n/es/global.json';
+
+import { Props_layouts } from '@/types/props';
 
 i18next.init({
   interpolation: {
@@ -23,11 +25,7 @@ i18next.init({
   }
 })
 
-type Props = {
-  children: ReactNode;
-}
-
-export default function ClientOnly({ children }: Props) {
+export default function ClientOnly({ children }: Props_layouts) {
   const [has_mounted, setHas_mounted] = useState<boolean>(false);
 
   useEffect(() => {

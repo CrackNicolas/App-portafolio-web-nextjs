@@ -22,7 +22,8 @@
         "copy": "Copiar",
         "email": "Correo",
         "theme": "Tema",
-        "link": "Enlace"
+        "link": "Enlace",
+        "settings": "Configuraciones"
     },
     "button_view": {
         "txt_1": "Ver más",

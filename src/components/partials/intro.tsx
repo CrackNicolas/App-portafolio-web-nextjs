@@ -6,7 +6,7 @@ type Props = {
     setView: any
 }
 
-export default function ComponentIntro({setView}: Props) {
+export default function ComponentIntro({ setView }: Props) {
     const ref_intro = useRef<any>(null);
     const ref_logo = useRef<any>(null);
 

@@ -1,16 +1,3 @@
-/**
-  CAMBIOS NECESARIOS A CUMPLIR
-
-  1 - Analizar rendimiento.
-  2 - Analizar cuales son componentes del lado del cliente con 'use client' y 
-      cuales son de servidor usando 'use server'
-  3 - Analizar seguridad
-  4 - Analizar uso de memoria RAM.
-  5 - Ver toda la configuracion de NEXT.JS
-  6 - Analizar si se puede no usar el type any
-  
-**/
-
 import { Metadata } from 'next/types'
 import Head from 'next/head'
 

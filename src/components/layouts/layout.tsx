@@ -1,5 +1,6 @@
 import { Fragment, ReactNode } from "react"
 
+import ComponentLine from "../partials/line";
 import ComponentNameSection from "../partials/name_section"
 
 import { Media_query } from "@/logic/page/media_query";
@@ -32,18 +33,18 @@ export default function ComponentLayout(props: Props) {
             {
                 view_line(id) &&
                 <article className="flex flex-col gap-y-6 mt-[25px]">
-                    <span className={` bg-gradient-to-r from-primary to-secondary via-red-secondary w-[20px] h-[3px] bg-secondary transition duration-600 rounded-full`}></span>
-                    <span className={` bg-gradient-to-r from-primary to-secondary via-red-secondary w-[50px] h-[3px] bg-secondary transition duration-600 rounded-full`}></span>
+                    <ComponentLine width="w-[20px]" />
+                    <ComponentLine width="w-[50px]" />
                     {
                         (id !== "about") &&
                         <Fragment>
-                            <span className={` bg-gradient-to-r from-primary to-secondary via-red-secondary w-[100px] h-[3px] bg-secondary transition duration-600 rounded-full`}></span>
-                            <span className={` bg-gradient-to-r from-primary to-secondary via-red-secondary w-[150px] h-[3px] bg-secondary transition duration-600 rounded-full`}></span>
+                            <ComponentLine width="w-[100px]" />
+                            <ComponentLine width="w-[150px]" />
                             {
                                 (id !== "services" && id !== "about") &&
                                 <Fragment>
-                                    <span className={` bg-gradient-to-r from-primary to-secondary via-red-secondary w-[200px] h-[3px] bg-secondary transition duration-600 rounded-full`}></span>
-                                    <span className={` bg-gradient-to-r from-primary to-secondary via-red-secondary w-[250px] h-[3px] bg-secondary transition duration-600 rounded-full`}></span>
+                                    <ComponentLine width="w-[200px]" />
+                                    <ComponentLine width="w-[250px]" />
                                 </Fragment>
                             }
                         </Fragment>
