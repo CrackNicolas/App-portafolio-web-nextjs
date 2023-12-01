@@ -31,7 +31,7 @@ export default function ComponentIntro({ setView }: Props) {
     return (
         <section ref={ref_intro} className="fixed top-0 left-0 w-full h-screen z-40 transition">
             <article className="grid place-items-center gap-0">
-                <Image src="/images/logo/logo.png" width={240} height={240} className="animate-opacity mt-[70px]" alt="My Logo personal" priority />
+                <Image src="/images/logo/logo.png" width={240} height={240} className="mt-[70px]" alt="My Logo personal" priority />
                 <h1 ref={ref_logo} className="mt-[-50px] text-[2.5rem] font-semibold tracking-widest">
                     <span className="relative bottom-[-20px] opacity-0 text-primary dark:text-tertiary">F</span>
                     <span className="relative bottom-[-20px] opacity-0 text-primary dark:text-tertiary">U</span>
